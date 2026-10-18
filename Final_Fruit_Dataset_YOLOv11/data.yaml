@@ -1,0 +1,10 @@
+path: C:/prgrm_sites/strawberry_diseases/Final_Fruit_Dataset_YOLOv11
+train: train/images
+val: valid/images
+test: test/images
+nc: 4
+names:
+- Anthracnose Fruit Rot
+- Gray Mold
+- Powdery Mildew Fruit
+- Healthy Fruit
