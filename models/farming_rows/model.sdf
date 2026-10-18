@@ -25,6 +25,3174 @@
           </mesh>
         </geometry>
       </collision>
+      <visual name="strawberry_r1_p01_cls2_powdery_mildew">
+        <pose>0.1018 -0.2000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit108_94964ee9.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p02_cls1_gray_mold">
+        <pose>0.1018 0.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold104_3c5118f4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p03_cls3_healthy">
+        <pose>0.1018 1.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_-6193-_d0ae3fb8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p04_cls0_anthracnose">
+        <pose>0.1018 2.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot32_1e80124f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p05_cls3_healthy">
+        <pose>0.1018 3.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_images-1-_71dd4028.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p06_cls2_powdery_mildew">
+        <pose>0.1018 4.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit123_437c2f20.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p07_cls0_anthracnose">
+        <pose>0.1018 5.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot3_d52257c2.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p08_cls1_gray_mold">
+        <pose>0.1018 6.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold108_10d75b88.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p09_cls1_gray_mold">
+        <pose>0.1018 7.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold143_3123cf6c.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p10_cls3_healthy">
+        <pose>0.1018 8.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_images-6-_9281137e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p11_cls2_powdery_mildew">
+        <pose>0.1018 9.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit127_1550980f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p12_cls0_anthracnose">
+        <pose>0.1018 10.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot42_4e7958f4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p13_cls1_gray_mold">
+        <pose>0.1018 11.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold145_7d225fa9.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p14_cls2_powdery_mildew">
+        <pose>0.1018 12.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit129_94f53264.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p15_cls0_anthracnose">
+        <pose>0.1018 13.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot47_e00cccf4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p16_cls3_healthy">
+        <pose>0.1018 14.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_images89_5ffa2bef.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p17_cls1_gray_mold">
+        <pose>0.1018 15.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold153_afebc144.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p18_cls2_powdery_mildew">
+        <pose>0.1018 16.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit130_435722d3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p19_cls3_healthy">
+        <pose>0.1018 17.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_images91_184526ca.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p20_cls0_anthracnose">
+        <pose>0.1018 18.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot50_b49db795.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p21_cls1_gray_mold">
+        <pose>0.1018 19.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold170_ec4f8372.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p22_cls3_healthy">
+        <pose>0.1018 20.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img200430334764_28191343.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p23_cls2_powdery_mildew">
+        <pose>0.1018 21.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit136_d36f5ebd.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p24_cls0_anthracnose">
+        <pose>0.1018 22.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot56_3b2fdae1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p25_cls2_powdery_mildew">
+        <pose>0.1018 23.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit146_8f2099e6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p26_cls1_gray_mold">
+        <pose>0.1018 24.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold179_5feeb04c.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p27_cls0_anthracnose">
+        <pose>0.1018 25.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot68_301e0408.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p28_cls3_healthy">
+        <pose>0.1018 26.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img200430609454_60b1a8e8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p29_cls1_gray_mold">
+        <pose>0.1018 27.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold204_be42d4dc.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p30_cls3_healthy">
+        <pose>0.1018 28.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img20043090882_fb321a0e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p31_cls0_anthracnose">
+        <pose>0.1018 29.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot75_c772e9c8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p32_cls2_powdery_mildew">
+        <pose>0.1018 30.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit148_90614da8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p33_cls0_anthracnose">
+        <pose>0.1018 31.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot93_dfcbe669.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p34_cls2_powdery_mildew">
+        <pose>0.1018 32.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit160_dc0f31a6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p35_cls1_gray_mold">
+        <pose>0.1018 33.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold206_d104c047.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r1_p36_cls3_healthy">
+        <pose>0.1018 34.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img287129218950_46abb55a.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p01_cls2_powdery_mildew">
+        <pose>0.8585 -0.2000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit47_294e1972.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p02_cls3_healthy">
+        <pose>0.8585 0.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img287129221549_b30bba28.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p03_cls0_anthracnose">
+        <pose>0.8585 1.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot99_6250436f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p04_cls1_gray_mold">
+        <pose>0.8585 2.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold212_9c118989.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p05_cls2_powdery_mildew">
+        <pose>0.8585 3.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit53_13aa0d79.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p06_cls1_gray_mold">
+        <pose>0.8585 4.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold219_5c4fa1ff.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p07_cls3_healthy">
+        <pose>0.8585 5.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img287129246359_4bb206c3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p08_cls0_anthracnose">
+        <pose>0.8585 6.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot32_1e80124f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p09_cls3_healthy">
+        <pose>0.8585 7.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img287129250138_8da3a7f5.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p10_cls2_powdery_mildew">
+        <pose>0.8585 8.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit54_6086aac1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p11_cls1_gray_mold">
+        <pose>0.8585 9.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold235_46a8b4e3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p12_cls0_anthracnose">
+        <pose>0.8585 10.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot3_d52257c2.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p13_cls3_healthy">
+        <pose>0.8585 11.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img287129355496_f6402c02.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p14_cls1_gray_mold">
+        <pose>0.8585 12.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold237_cf6688b9.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p15_cls0_anthracnose">
+        <pose>0.8585 13.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot42_4e7958f4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p16_cls2_powdery_mildew">
+        <pose>0.8585 14.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit69_3a3e8e0b.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p17_cls2_powdery_mildew">
+        <pose>0.8585 15.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit76_14bc6754.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p18_cls3_healthy">
+        <pose>0.8585 16.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img322332192521_7ea39667.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p19_cls1_gray_mold">
+        <pose>0.8585 17.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold239_8a2b2bda.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p20_cls0_anthracnose">
+        <pose>0.8585 18.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot47_e00cccf4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p21_cls0_anthracnose">
+        <pose>0.8585 19.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot50_b49db795.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p22_cls1_gray_mold">
+        <pose>0.8585 20.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold240_f4a8958c.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p23_cls3_healthy">
+        <pose>0.8585 21.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img322332224068_40fa3193.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p24_cls2_powdery_mildew">
+        <pose>0.8585 22.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit108_94964ee9.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p25_cls3_healthy">
+        <pose>0.8585 23.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_img38797201017_58a2ddd8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p26_cls0_anthracnose">
+        <pose>0.8585 24.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot56_3b2fdae1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p27_cls2_powdery_mildew">
+        <pose>0.8585 25.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit123_437c2f20.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p28_cls1_gray_mold">
+        <pose>0.8585 26.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold24_b8d30cd3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p29_cls1_gray_mold">
+        <pose>0.8585 27.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold292_397fc31e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p30_cls3_healthy">
+        <pose>0.8585 28.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1011489420-612x612_e8edf53c.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p31_cls2_powdery_mildew">
+        <pose>0.8585 29.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit127_1550980f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p32_cls0_anthracnose">
+        <pose>0.8585 30.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot68_301e0408.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p33_cls1_gray_mold">
+        <pose>0.8585 31.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold29_c0c01f5d.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p34_cls3_healthy">
+        <pose>0.8585 32.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1133449891-612x612_9edc5356.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p35_cls0_anthracnose">
+        <pose>0.8585 33.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot75_c772e9c8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r2_p36_cls2_powdery_mildew">
+        <pose>0.8585 34.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit129_94f53264.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p01_cls3_healthy">
+        <pose>1.9418 -0.2000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-114368249-612x612_121e1b1b.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p02_cls2_powdery_mildew">
+        <pose>1.9418 0.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit130_435722d3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p03_cls1_gray_mold">
+        <pose>1.9418 1.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold305_90645675.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p04_cls0_anthracnose">
+        <pose>1.9418 2.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot93_dfcbe669.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p05_cls0_anthracnose">
+        <pose>1.9418 3.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot99_6250436f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p06_cls1_gray_mold">
+        <pose>1.9418 4.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold316_61694bc4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p07_cls2_powdery_mildew">
+        <pose>1.9418 5.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit136_d36f5ebd.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p08_cls3_healthy">
+        <pose>1.9418 6.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1149202108-612x612_5435c73f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p09_cls0_anthracnose">
+        <pose>1.9418 7.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot32_1e80124f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p10_cls2_powdery_mildew">
+        <pose>1.9418 8.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit146_8f2099e6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p11_cls3_healthy">
+        <pose>1.9418 9.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1152181660-612x612_8abef3fb.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p12_cls1_gray_mold">
+        <pose>1.9418 10.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold335_a2bea70c.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p13_cls0_anthracnose">
+        <pose>1.9418 11.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot3_d52257c2.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p14_cls3_healthy">
+        <pose>1.9418 12.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1153232097-612x612_7f74899e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p15_cls2_powdery_mildew">
+        <pose>1.9418 13.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit148_90614da8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p16_cls1_gray_mold">
+        <pose>1.9418 14.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold362_f11ac2f3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p17_cls1_gray_mold">
+        <pose>1.9418 15.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold38_ee1b6a7e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p18_cls3_healthy">
+        <pose>1.9418 16.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1153456072-612x612_c522107a.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p19_cls2_powdery_mildew">
+        <pose>1.9418 17.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit160_dc0f31a6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p20_cls0_anthracnose">
+        <pose>1.9418 18.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot42_4e7958f4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p21_cls2_powdery_mildew">
+        <pose>1.9418 19.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit47_294e1972.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p22_cls3_healthy">
+        <pose>1.9418 20.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1160753921-612x612_f350eda2.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p23_cls0_anthracnose">
+        <pose>1.9418 21.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot47_e00cccf4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p24_cls1_gray_mold">
+        <pose>1.9418 22.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold397_7cb117e0.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p25_cls2_powdery_mildew">
+        <pose>1.9418 23.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit53_13aa0d79.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p26_cls0_anthracnose">
+        <pose>1.9418 24.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot50_b49db795.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p27_cls1_gray_mold">
+        <pose>1.9418 25.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold411_9e9ed1c5.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p28_cls3_healthy">
+        <pose>1.9418 26.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1179406341-612x612_1d07bffb.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p29_cls1_gray_mold">
+        <pose>1.9418 27.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold423_820d70dc.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p30_cls3_healthy">
+        <pose>1.9418 28.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1239793825-612x612_ed5de8a6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p31_cls0_anthracnose">
+        <pose>1.9418 29.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot56_3b2fdae1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p32_cls2_powdery_mildew">
+        <pose>1.9418 30.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit54_6086aac1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p33_cls3_healthy">
+        <pose>1.9418 31.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1250327967-612x612_a461dbff.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p34_cls2_powdery_mildew">
+        <pose>1.9418 32.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit69_3a3e8e0b.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p35_cls1_gray_mold">
+        <pose>1.9418 33.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold432_8c8a79b7.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r3_p36_cls0_anthracnose">
+        <pose>1.9418 34.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot68_301e0408.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p01_cls1_gray_mold">
+        <pose>2.6985 -0.2000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold446_e9e2678a.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p02_cls3_healthy">
+        <pose>2.6985 0.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1253247755-612x612_fd8415ac.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p03_cls0_anthracnose">
+        <pose>2.6985 1.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot75_c772e9c8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p04_cls2_powdery_mildew">
+        <pose>2.6985 2.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit76_14bc6754.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p05_cls3_healthy">
+        <pose>2.6985 3.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1268652483-612x612_cfe29c7e.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p06_cls1_gray_mold">
+        <pose>2.6985 4.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold470_44d45d83.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p07_cls0_anthracnose">
+        <pose>2.6985 5.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot93_dfcbe669.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p08_cls2_powdery_mildew">
+        <pose>2.6985 6.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit108_94964ee9.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p09_cls0_anthracnose">
+        <pose>2.6985 7.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot99_6250436f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p10_cls1_gray_mold">
+        <pose>2.6985 8.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold510_31e34b19.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p11_cls2_powdery_mildew">
+        <pose>2.6985 9.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit123_437c2f20.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p12_cls3_healthy">
+        <pose>2.6985 10.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1404652072-612x612-1-_a0291f35.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p13_cls2_powdery_mildew">
+        <pose>2.6985 11.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit127_1550980f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p14_cls0_anthracnose">
+        <pose>2.6985 12.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot32_1e80124f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p15_cls3_healthy">
+        <pose>2.6985 13.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-146801426-612x612_318ac157.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p16_cls1_gray_mold">
+        <pose>2.6985 14.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold511_d741d701.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p17_cls0_anthracnose">
+        <pose>2.6985 15.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot3_d52257c2.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p18_cls3_healthy">
+        <pose>2.6985 16.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-146965216-612x612_ce7fbf82.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p19_cls2_powdery_mildew">
+        <pose>2.6985 17.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit129_94f53264.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p20_cls1_gray_mold">
+        <pose>2.6985 18.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold517_341783df.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p21_cls0_anthracnose">
+        <pose>2.6985 19.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot42_4e7958f4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p22_cls1_gray_mold">
+        <pose>2.6985 20.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold536_16d23090.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p23_cls2_powdery_mildew">
+        <pose>2.6985 21.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit130_435722d3.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p24_cls3_healthy">
+        <pose>2.6985 22.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-147459273-612x612_2ac3e4a7.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p25_cls1_gray_mold">
+        <pose>2.6985 23.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold540_77fc183a.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p26_cls3_healthy">
+        <pose>2.6985 24.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1477816166-612x612_ce60eb29.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p27_cls0_anthracnose">
+        <pose>2.6985 25.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot47_e00cccf4.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p28_cls2_powdery_mildew">
+        <pose>2.6985 26.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit136_d36f5ebd.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p29_cls1_gray_mold">
+        <pose>2.6985 27.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold542_669b458f.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p30_cls2_powdery_mildew">
+        <pose>2.6985 28.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit146_8f2099e6.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p31_cls0_anthracnose">
+        <pose>2.6985 29.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot50_b49db795.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p32_cls3_healthy">
+        <pose>2.6985 30.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-1481260106-612x612_0fb94355.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p33_cls1_gray_mold">
+        <pose>2.6985 31.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls1_gray_mold543_20e87204.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p34_cls2_powdery_mildew">
+        <pose>2.6985 32.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls2_powdery_mildew_fruit148_90614da8.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p35_cls3_healthy">
+        <pose>2.6985 33.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls3_healthy_istockphoto-153016566-612x612_3791e787.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="strawberry_r4_p36_cls0_anthracnose">
+        <pose>2.6985 34.8000 1.0904 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/strawberry_panel.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/test/images/cls0_anthracnose_fruit_rot56_3b2fdae1.jpg</albedo_map>
+              <roughness>0.9</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
     </link>
   </model>
 </sdf>
