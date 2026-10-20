@@ -1,0 +1,635 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+  <model name="agri_rover">
+    <pose>0 0 0 0 0 0</pose>
+
+    <!-- Main Rover Chassis + Suspension + Mast + Dual Opposite Cameras -->
+    <link name="base_link">
+      <inertial>
+        <pose>0 0 0.30 0 0 0</pose>
+        <mass>25.0</mass>
+        <inertia>
+          <ixx>0.85</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.45</iyy>
+          <iyz>0</iyz>
+          <izz>1.75</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Chassis Collision -->
+      <collision name="chassis_collision">
+        <pose>0 0 0.35 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.70 0.44 0.14</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Main Dark Charcoal Chassis Deck -->
+      <visual name="chassis_body_visual">
+        <pose>0 0 0.35 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.70 0.44 0.14</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.15 0.16 0.18 1</ambient>
+          <diffuse>0.20 0.22 0.24 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+
+      <!-- Lower Undercarriage Frame -->
+      <visual name="undercarriage_visual">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.52 0.30 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <!-- Front Headlight Housing -->
+      <visual name="front_headlight_box_visual">
+        <pose>0.351 0 0.33 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.20 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.10 0.10 0.12 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Front Left Headlight Lens -->
+      <visual name="front_left_light_visual">
+        <pose>0.362 0.065 0.33 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.008</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.9 0.9 0.85 1</ambient>
+          <diffuse>1.0 1.0 0.95 1</diffuse>
+          <emissive>0.8 0.8 0.7 1</emissive>
+        </material>
+      </visual>
+
+      <!-- Front Right Headlight Lens -->
+      <visual name="front_right_light_visual">
+        <pose>0.362 -0.065 0.33 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.008</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.9 0.9 0.85 1</ambient>
+          <diffuse>1.0 1.0 0.95 1</diffuse>
+          <emissive>0.8 0.8 0.7 1</emissive>
+        </material>
+      </visual>
+
+      <!-- Front Cyan Status LED Strip (matching reference photo) -->
+      <visual name="front_led_strip_visual">
+        <pose>0.353 0 0.385 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.008 0.12 0.010</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.9 1.0 1</ambient>
+          <diffuse>0.3 0.95 1.0 1</diffuse>
+          <emissive>0.2 0.85 1.0 1</emissive>
+        </material>
+      </visual>
+
+      <!-- 4 Vertical Suspension Struts -->
+      <visual name="strut_fl_visual">
+        <pose>0.24 0.20 0.22 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.024</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="strut_fr_visual">
+        <pose>0.24 -0.20 0.22 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.024</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="strut_rl_visual">
+        <pose>-0.24 0.20 0.22 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.024</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="strut_rr_visual">
+        <pose>-0.24 -0.20 0.22 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.024</radius>
+            <length>0.18</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+
+      <!-- Rear Telemetry Antenna -->
+      <visual name="rear_antenna_visual">
+        <pose>-0.28 0.17 0.56 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.006</radius>
+            <length>0.28</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.12 0.12 0.12 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Central Camera Mast Base Flange -->
+      <visual name="mast_base_visual">
+        <pose>0.02 0 0.43 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.045</radius>
+            <length>0.02</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.22 1</ambient>
+          <diffuse>0.25 0.25 0.28 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Central Aluminum Vertical Mast Pole -->
+      <visual name="mast_pole_visual">
+        <pose>0.02 0 0.82 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.018</radius>
+            <length>0.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.75 0.77 0.80 1</ambient>
+          <diffuse>0.82 0.84 0.88 1</diffuse>
+          <specular>0.7 0.7 0.7 1</specular>
+        </material>
+      </visual>
+
+      <!-- Top GNSS/GPS Receiver Disk -->
+      <visual name="gnss_disk_visual">
+        <pose>0.02 0 1.235 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.085</radius>
+            <length>0.035</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.15 0.16 0.18 1</ambient>
+          <diffuse>0.20 0.22 0.24 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+
+      <!-- Cross-Bracket on Mast for Opposite-Facing Dual Cameras (at Z = 1.0904 m) -->
+      <visual name="camera_mount_bar_visual">
+        <pose>0.02 0 1.0904 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.010</radius>
+            <length>0.14</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- LEFT CAMERA VISUAL (Facing +Y_rover -> Left Strawberry Row) -->
+      <visual name="left_camera_body_visual">
+        <pose>0.02 0.075 1.0904 0 0 1.5707963</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.055 0.045</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="left_camera_lens_visual">
+        <pose>0.02 0.102 1.0904 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.015</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.15 0.25 1</ambient>
+          <diffuse>0.10 0.25 0.40 1</diffuse>
+          <specular>0.9 0.9 0.9 1</specular>
+        </material>
+      </visual>
+
+      <!-- RIGHT CAMERA VISUAL (Facing -Y_rover -> Right Strawberry Row) -->
+      <visual name="right_camera_body_visual">
+        <pose>0.02 -0.075 1.0904 0 0 -1.5707963</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.055 0.045</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="right_camera_lens_visual">
+        <pose>0.02 -0.102 1.0904 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.015</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.15 0.25 1</ambient>
+          <diffuse>0.10 0.25 0.40 1</diffuse>
+          <specular>0.9 0.9 0.9 1</specular>
+        </material>
+      </visual>
+
+      <!-- LEFT CAMERA SENSOR (Looking left at Row 2) -->
+      <sensor name="left_row_camera" type="camera">
+        <pose>0.02 0.105 1.0904 0 0 1.5707963</pose>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>640</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>15.0</far>
+          </clip>
+          <optical_frame_id>left_camera_optical_link</optical_frame_id>
+          <camera_info_topic>/rover/left_camera/camera_info</camera_info_topic>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>15</update_rate>
+        <visualize>true</visualize>
+        <topic>/rover/left_camera/image_raw</topic>
+      </sensor>
+
+      <!-- RIGHT CAMERA SENSOR (Looking right at Row 3) -->
+      <sensor name="right_row_camera" type="camera">
+        <pose>0.02 -0.105 1.0904 0 0 -1.5707963</pose>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>640</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>15.0</far>
+          </clip>
+          <optical_frame_id>right_camera_optical_link</optical_frame_id>
+          <camera_info_topic>/rover/right_camera/camera_info</camera_info_topic>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>15</update_rate>
+        <visualize>true</visualize>
+        <topic>/rover/right_camera/image_raw</topic>
+      </sensor>
+    </link>
+
+    <!-- FRONT LEFT WHEEL -->
+    <link name="front_left_wheel">
+      <pose>0.24 0.25 0.13 -1.5707963 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.007</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.007</iyy>
+          <iyz>0</iyz>
+          <izz>0.012</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="tire_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.10 1</ambient>
+          <diffuse>0.14 0.14 0.14 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="rim_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.075</radius>
+            <length>0.082</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.22 0.22 0.24 1</ambient>
+          <diffuse>0.28 0.28 0.30 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- FRONT RIGHT WHEEL -->
+    <link name="front_right_wheel">
+      <pose>0.24 -0.25 0.13 -1.5707963 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.007</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.007</iyy>
+          <iyz>0</iyz>
+          <izz>0.012</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="tire_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.10 1</ambient>
+          <diffuse>0.14 0.14 0.14 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="rim_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.075</radius>
+            <length>0.082</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.22 0.22 0.24 1</ambient>
+          <diffuse>0.28 0.28 0.30 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- REAR LEFT WHEEL -->
+    <link name="rear_left_wheel">
+      <pose>-0.24 0.25 0.13 -1.5707963 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.007</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.007</iyy>
+          <iyz>0</iyz>
+          <izz>0.012</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="tire_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.10 1</ambient>
+          <diffuse>0.14 0.14 0.14 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="rim_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.075</radius>
+            <length>0.082</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.22 0.22 0.24 1</ambient>
+          <diffuse>0.28 0.28 0.30 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- REAR RIGHT WHEEL -->
+    <link name="rear_right_wheel">
+      <pose>-0.24 -0.25 0.13 -1.5707963 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.007</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.007</iyy>
+          <iyz>0</iyz>
+          <izz>0.012</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="tire_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.13</radius>
+            <length>0.08</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.10 1</ambient>
+          <diffuse>0.14 0.14 0.14 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <visual name="rim_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.075</radius>
+            <length>0.082</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.22 0.22 0.24 1</ambient>
+          <diffuse>0.28 0.28 0.30 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- 4 Wheel Revolute Joints -->
+    <joint name="front_left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="front_right_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="rear_left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rear_left_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="rear_right_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rear_right_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e16</lower>
+          <upper>1e16</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Automatic Forward Motion Along the Row (0.35 m/s) + /cmd_vel Control -->
+    <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
+      <initial_linear>0.35 0 0</initial_linear>
+      <initial_angular>0 0 0</initial_angular>
+      <topic>/model/agri_rover/cmd_vel</topic>
+    </plugin>
+
+    <!-- Publish Odom and TF (odom -> base_link) -->
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <odom_publish_frequency>30</odom_publish_frequency>
+      <odom_topic>/model/agri_rover/odometry</odom_topic>
+      <tf_topic>/model/agri_rover/tf</tf_topic>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <joint_name>front_left_wheel_joint</joint_name>
+      <joint_name>front_right_wheel_joint</joint_name>
+      <joint_name>rear_left_wheel_joint</joint_name>
+      <joint_name>rear_right_wheel_joint</joint_name>
+    </plugin>
+  </model>
+</sdf>

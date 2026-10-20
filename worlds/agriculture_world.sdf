@@ -73,5 +73,12 @@
       <name>farming_rows</name>
       <pose>0 0 0 0 0 0</pose>
     </include>
+
+    <!-- Agricultural Inspection Rover between Row 2 and Row 3 -->
+    <include>
+      <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/agri_rover</uri>
+      <name>agri_rover</name>
+      <pose>1.40 -1.00 0.0 0 0 1.5707963</pose>
+    </include>
   </world>
 </sdf>

@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<robot name="agri_rover">
+
+  <material name="charcoal">
+    <color rgba="0.20 0.22 0.24 1.0"/>
+  </material>
+  <material name="dark_gray">
+    <color rgba="0.12 0.12 0.14 1.0"/>
+  </material>
+  <material name="tire_black">
+    <color rgba="0.14 0.14 0.14 1.0"/>
+  </material>
+  <material name="silver">
+    <color rgba="0.82 0.84 0.88 1.0"/>
+  </material>
+  <material name="cyan_led">
+    <color rgba="0.25 0.92 1.0 1.0"/>
+  </material>
+  <material name="headlight">
+    <color rgba="1.0 1.0 0.9 1.0"/>
+  </material>
+  <material name="lens_blue">
+    <color rgba="0.15 0.35 0.55 1.0"/>
+  </material>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <!-- Main Dark Charcoal Chassis Deck -->
+    <visual>
+      <origin xyz="0 0 0.35" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.70 0.44 0.14"/>
+      </geometry>
+      <material name="charcoal"/>
+    </visual>
+
+    <!-- Lower Undercarriage Frame -->
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.52 0.30 0.06"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <!-- Front Headlight Housing -->
+    <visual>
+      <origin xyz="0.351 0 0.33" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.20 0.05"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <!-- Front Left & Right Headlight Lenses -->
+    <visual>
+      <origin xyz="0.362 0.065 0.33" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.016" length="0.008"/>
+      </geometry>
+      <material name="headlight"/>
+    </visual>
+    <visual>
+      <origin xyz="0.362 -0.065 0.33" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.016" length="0.008"/>
+      </geometry>
+      <material name="headlight"/>
+    </visual>
+
+    <!-- Front Cyan LED Strip -->
+    <visual>
+      <origin xyz="0.353 0 0.385" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.008 0.12 0.010"/>
+      </geometry>
+      <material name="cyan_led"/>
+    </visual>
+
+    <!-- 4 Vertical Suspension Struts -->
+    <visual>
+      <origin xyz="0.24 0.20 0.22" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.024" length="0.18"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="0.24 -0.20 0.22" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.024" length="0.18"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.24 0.20 0.22" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.024" length="0.18"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.24 -0.20 0.22" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.024" length="0.18"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <!-- Rear Telemetry Antenna -->
+    <visual>
+      <origin xyz="-0.28 0.17 0.56" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.006" length="0.28"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+
+    <!-- Central Camera Mast Base Flange -->
+    <visual>
+      <origin xyz="0.02 0 0.43" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.02"/>
+      </geometry>
+      <material name="charcoal"/>
+    </visual>
+
+    <!-- Central Aluminum Vertical Mast Pole -->
+    <visual>
+      <origin xyz="0.02 0 0.82" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.018" length="0.80"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <!-- Top GNSS/GPS Receiver Disk -->
+    <visual>
+      <origin xyz="0.02 0 1.235" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.085" length="0.035"/>
+      </geometry>
+      <material name="charcoal"/>
+    </visual>
+
+    <!-- Cross-Bracket on Mast for Dual Opposite Cameras -->
+    <visual>
+      <origin xyz="0.02 0 1.0904" rpy="1.5707963 0 0"/>
+      <geometry>
+        <cylinder radius="0.010" length="0.14"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+  </link>
+
+  <!-- Left Camera Link (Facing +Y -> Left Row) -->
+  <link name="left_camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.055 0.045"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="0.027 0 0" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.016" length="0.015"/>
+      </geometry>
+      <material name="lens_blue"/>
+    </visual>
+  </link>
+
+  <joint name="left_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_camera_link"/>
+    <origin xyz="0.02 0.075 1.0904" rpy="0 0 1.5707963"/>
+  </joint>
+
+  <link name="left_camera_optical_link"/>
+  <joint name="left_camera_optical_joint" type="fixed">
+    <parent link="left_camera_link"/>
+    <child link="left_camera_optical_link"/>
+    <origin xyz="0.03 0 0" rpy="-1.5707963 0 -1.5707963"/>
+  </joint>
+
+  <!-- Right Camera Link (Facing -Y -> Right Row) -->
+  <link name="right_camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.055 0.045"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="0.027 0 0" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.016" length="0.015"/>
+      </geometry>
+      <material name="lens_blue"/>
+    </visual>
+  </link>
+
+  <joint name="right_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_camera_link"/>
+    <origin xyz="0.02 -0.075 1.0904" rpy="0 0 -1.5707963"/>
+  </joint>
+
+  <link name="right_camera_optical_link"/>
+  <joint name="right_camera_optical_joint" type="fixed">
+    <parent link="right_camera_link"/>
+    <child link="right_camera_optical_link"/>
+    <origin xyz="0.03 0 0" rpy="-1.5707963 0 -1.5707963"/>
+  </joint>
+
+  <!-- 4 Wheels -->
+  <link name="front_left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.08"/>
+      </geometry>
+      <material name="tire_black"/>
+    </visual>
+  </link>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <origin xyz="0.24 0.25 0.13" rpy="-1.5707963 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="front_right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.08"/>
+      </geometry>
+      <material name="tire_black"/>
+    </visual>
+  </link>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <origin xyz="0.24 -0.25 0.13" rpy="-1.5707963 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rear_left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.08"/>
+      </geometry>
+      <material name="tire_black"/>
+    </visual>
+  </link>
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel"/>
+    <origin xyz="-0.24 0.25 0.13" rpy="-1.5707963 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rear_right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.08"/>
+      </geometry>
+      <material name="tire_black"/>
+    </visual>
+  </link>
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel"/>
+    <origin xyz="-0.24 -0.25 0.13" rpy="-1.5707963 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
