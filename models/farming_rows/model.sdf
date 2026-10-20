@@ -4,19 +4,48 @@
     <static>true</static>
     <pose>0 0 0 0 0 0</pose>
     <link name="rows_link">
-      <visual name="rows_visual">
+      <!-- Galvanized Steel Support Stands, Legs & Lower Gutter Channels -->
+      <visual name="rows_steel_structure_visual">
         <geometry>
           <mesh>
-            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/2_farming_rows.stl</uri>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/rows_steel_structure.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
         <material>
-          <ambient>0.75 0.78 0.75 1</ambient>
-          <diffuse>0.82 0.85 0.82 1</diffuse>
-          <specular>0.2 0.2 0.2 1</specular>
+          <ambient>0.52 0.56 0.60 1</ambient>
+          <diffuse>0.68 0.72 0.76 1</diffuse>
+          <specular>0.65 0.65 0.65 1</specular>
+          <pbr>
+            <metal>
+              <roughness>0.35</roughness>
+              <metalness>0.75</metalness>
+            </metal>
+          </pbr>
         </material>
       </visual>
+
+      <!-- White Hydroponic Strawberry Grow-Bags -->
+      <visual name="rows_white_growbags_visual">
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/rows_white_growbags.stl</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.90 0.90 0.88 1</ambient>
+          <diffuse>0.97 0.97 0.95 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+          <pbr>
+            <metal>
+              <roughness>0.65</roughness>
+              <metalness>0.05</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
       <collision name="rows_collision">
         <geometry>
           <mesh>
@@ -25,6 +54,666 @@
           </mesh>
         </geometry>
       </collision>
+
+      <!-- Realistic Greenhouse Floor Matting with Fallen Leaves & Soil -->
+      <visual name="greenhouse_floor_visual">
+        <pose>1.40 17.30 0.002 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/greenhouse_floor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.85 0.85 0.85 1</ambient>
+          <diffuse>0.95 0.95 0.95 1</diffuse>
+          <specular>0.08 0.08 0.08 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/greenhouse_floor.png</albedo_map>
+              <roughness>0.92</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 1 Coco-Peat Substrate Strip -->
+      <visual name="row_1_soil_strip">
+        <pose>0.1018 17.30 0.991 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/soil_strip.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.9 0.9 0.9 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 1 Lush Green Strawberry Foliage Canopy -->
+      <visual name="row_1_foliage_canopy">
+        <pose>0.1018 17.30 0.992 0 0 0</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/foliage_hedge.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.85 0.75 1</ambient>
+          <diffuse>0.92 0.98 0.90 1</diffuse>
+          <specular>0.12 0.15 0.12 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/strawberry_foliage.png</albedo_map>
+              <roughness>0.80</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 1 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <visual name="row_1_front_bucket">
+        <pose>0.1018 -1.24 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <visual name="row_1_rear_bucket">
+        <pose>0.1018 35.84 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <!-- Row 2 Coco-Peat Substrate Strip -->
+      <visual name="row_2_soil_strip">
+        <pose>0.8585 17.30 0.991 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/soil_strip.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.9 0.9 0.9 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 2 Lush Green Strawberry Foliage Canopy -->
+      <visual name="row_2_foliage_canopy">
+        <pose>0.8585 17.30 0.992 0 0 0</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/foliage_hedge.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.85 0.75 1</ambient>
+          <diffuse>0.92 0.98 0.90 1</diffuse>
+          <specular>0.12 0.15 0.12 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/strawberry_foliage.png</albedo_map>
+              <roughness>0.80</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 2 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <visual name="row_2_front_bucket">
+        <pose>0.8585 -1.24 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <visual name="row_2_rear_bucket">
+        <pose>0.8585 35.84 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <!-- Row 3 Coco-Peat Substrate Strip -->
+      <visual name="row_3_soil_strip">
+        <pose>1.9418 17.30 0.991 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/soil_strip.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.9 0.9 0.9 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 3 Lush Green Strawberry Foliage Canopy -->
+      <visual name="row_3_foliage_canopy">
+        <pose>1.9418 17.30 0.992 0 0 0</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/foliage_hedge.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.85 0.75 1</ambient>
+          <diffuse>0.92 0.98 0.90 1</diffuse>
+          <specular>0.12 0.15 0.12 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/strawberry_foliage.png</albedo_map>
+              <roughness>0.80</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 3 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <visual name="row_3_front_bucket">
+        <pose>1.9418 -1.24 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <visual name="row_3_rear_bucket">
+        <pose>1.9418 35.84 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <!-- Row 4 Coco-Peat Substrate Strip -->
+      <visual name="row_4_soil_strip">
+        <pose>2.6985 17.30 0.991 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/soil_strip.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.9 0.9 0.9 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 4 Lush Green Strawberry Foliage Canopy -->
+      <visual name="row_4_foliage_canopy">
+        <pose>2.6985 17.30 0.992 0 0 0</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/foliage_hedge.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.75 0.85 0.75 1</ambient>
+          <diffuse>0.92 0.98 0.90 1</diffuse>
+          <specular>0.12 0.15 0.12 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/strawberry_foliage.png</albedo_map>
+              <roughness>0.80</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Row 4 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <visual name="row_4_front_bucket">
+        <pose>2.6985 -1.24 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <visual name="row_4_rear_bucket">
+        <pose>2.6985 35.84 0.70 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.22 0.24 0.16</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.08 0.08 0.09 1</ambient>
+          <diffuse>0.12 0.12 0.14 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 1 at Y=-1m -->
+      <visual name="gh_post_left_0">
+        <pose>-0.80 -1.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_0">
+        <pose>3.60 -1.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_0">
+        <pose>1.40 -1.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 2 at Y=4m -->
+      <visual name="gh_post_left_1">
+        <pose>-0.80 4.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_1">
+        <pose>3.60 4.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_1">
+        <pose>1.40 4.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 3 at Y=9m -->
+      <visual name="gh_post_left_2">
+        <pose>-0.80 9.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_2">
+        <pose>3.60 9.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_2">
+        <pose>1.40 9.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 4 at Y=14m -->
+      <visual name="gh_post_left_3">
+        <pose>-0.80 14.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_3">
+        <pose>3.60 14.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_3">
+        <pose>1.40 14.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 5 at Y=19m -->
+      <visual name="gh_post_left_4">
+        <pose>-0.80 19.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_4">
+        <pose>3.60 19.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_4">
+        <pose>1.40 19.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 6 at Y=24m -->
+      <visual name="gh_post_left_5">
+        <pose>-0.80 24.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_5">
+        <pose>3.60 24.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_5">
+        <pose>1.40 24.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 7 at Y=29m -->
+      <visual name="gh_post_left_6">
+        <pose>-0.80 29.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_6">
+        <pose>3.60 29.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_6">
+        <pose>1.40 29.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <!-- Greenhouse Steel Arch Frame 8 at Y=34m -->
+      <visual name="gh_post_left_7">
+        <pose>-0.80 34.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_post_right_7">
+        <pose>3.60 34.00 1.40 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.03</radius>
+            <length>2.80</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="gh_truss_beam_7">
+        <pose>1.40 34.00 2.80 0 1.5707963 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.025</radius>
+            <length>4.44</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.55 0.58 0.62 1</ambient>
+          <diffuse>0.70 0.73 0.76 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
       <visual name="strawberry_r1_p01_cls2_powdery_mildew">
         <pose>0.1018 -0.2000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>

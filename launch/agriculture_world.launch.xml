@@ -3,6 +3,7 @@
     <let name="urdf_path" value="$(find-pkg-share agriculture_sim)/urdf/agri_rover.urdf"/>
     <let name="bridge_config_path" value="$(find-pkg-share agriculture_sim)/config/agriculture_bridge.yaml"/>
     <let name="rviz_config_path" value="$(find-pkg-share agriculture_sim)/rviz/agriculture_config.rviz"/>
+    <let name="yolo_model_path" value="/home/burneye228/ros2_ws/src/agriculture_sim/Final_Fruit_Dataset_YOLOv11/runs/detect/train4/weights/best.pt"/>
 
     <set_env name="GZ_SIM_RESOURCE_PATH" value="$(find-pkg-share agriculture_sim)/models:$(env GZ_SIM_RESOURCE_PATH '')"/>
 
@@ -22,7 +23,13 @@
         <param name="config_file" value="$(var bridge_config_path)" />
     </node>
 
-    <!-- 4. RViz2 with RobotModel, TF, and Left/Right Strawberry Cameras -->
+    <!-- 4. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->
+    <node pkg="agriculture_sim" exec="yolo_strawberry_detector.py" name="yolo_strawberry_detector" output="screen">
+        <param name="model_path" value="$(var yolo_model_path)"/>
+        <param name="conf_threshold" value="0.25"/>
+    </node>
+
+    <!-- 5. RViz2 with RobotModel, TF, and Left/Right YOLOv11 Detection Feeds -->
     <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)" output="screen">
         <param name="use_sim_time" value="true"/>
     </node>
