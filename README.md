@@ -1,6 +1,6 @@
 # agriculture_sim
 
-Gazebo Sim (Harmonic) models and worlds for the vertical strawberry farming agriculture project in ROS 2.
+Gazebo Sim models and worlds for the vertical strawberry farming agriculture project in ROS 2.
 
 ## Contents
 
