@@ -922,6 +922,2703 @@
           </pbr>
         </material>
       </visual>
+      <!-- Field Soil Bump 1 (left lane, Y=0.39m) -->
+      <visual name="field_bump_vis_1">
+        <pose>-0.6900 0.3867 -0.2301 0 1.5707963 0.1349</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2467</radius>
+            <length>0.3969</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 2 (left lane, Y=1.30m) -->
+      <visual name="field_bump_vis_2">
+        <pose>-0.4400 1.3020 -0.2948 0 1.5707963 -0.0586</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3052</radius>
+            <length>0.6532</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 3 (left lane, Y=2.19m) -->
+      <visual name="field_bump_vis_3">
+        <pose>-0.6900 2.1857 -0.2946 0 1.5707963 0.1363</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3106</radius>
+            <length>0.3364</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 4 (left lane, Y=3.10m) -->
+      <visual name="field_bump_vis_4">
+        <pose>-0.6900 3.1000 -0.2477 0 1.5707963 -0.1466</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2648</radius>
+            <length>0.3515</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 5 (left lane, Y=5.05m) -->
+      <visual name="field_bump_vis_5">
+        <pose>-0.6900 5.0526 -0.2498 0 1.5707963 -0.0111</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2631</radius>
+            <length>0.3492</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 6 (left lane, Y=5.73m) -->
+      <visual name="field_bump_vis_6">
+        <pose>-0.1900 5.7283 -0.2893 0 1.5707963 0.0392</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3001</radius>
+            <length>0.3543</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 7 (left lane, Y=6.75m) -->
+      <visual name="field_bump_vis_7">
+        <pose>-0.1900 6.7473 -0.2945 0 1.5707963 -0.0236</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3093</radius>
+            <length>0.3213</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 8 (left lane, Y=7.77m) -->
+      <visual name="field_bump_vis_8">
+        <pose>-0.4400 7.7742 -0.2897 0 1.5707963 -0.0290</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3034</radius>
+            <length>0.6797</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 9 (left lane, Y=10.02m) -->
+      <visual name="field_bump_vis_9">
+        <pose>-0.4400 10.0244 -0.2848 0 1.5707963 0.0569</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3020</radius>
+            <length>0.6381</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 10 (left lane, Y=10.79m) -->
+      <visual name="field_bump_vis_10">
+        <pose>-0.1900 10.7935 -0.2929 0 1.5707963 -0.0404</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3084</radius>
+            <length>0.3754</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 11 (left lane, Y=11.99m) -->
+      <visual name="field_bump_vis_11">
+        <pose>-0.6900 11.9886 -0.2142 0 1.5707963 -0.1754</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2288</radius>
+            <length>0.3389</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 12 (left lane, Y=12.88m) -->
+      <visual name="field_bump_vis_12">
+        <pose>-0.6900 12.8850 -0.2537 0 1.5707963 -0.1585</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2701</radius>
+            <length>0.3606</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 13 (left lane, Y=14.73m) -->
+      <visual name="field_bump_vis_13">
+        <pose>-0.4400 14.7327 -0.2566 0 1.5707963 -0.1246</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2744</radius>
+            <length>0.6920</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 14 (left lane, Y=15.76m) -->
+      <visual name="field_bump_vis_14">
+        <pose>-0.1900 15.7582 -0.2142 0 1.5707963 -0.1105</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2244</radius>
+            <length>0.3952</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 15 (left lane, Y=16.59m) -->
+      <visual name="field_bump_vis_15">
+        <pose>-0.1900 16.5876 -0.3008 0 1.5707963 -0.1799</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3155</radius>
+            <length>0.3885</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 16 (left lane, Y=17.67m) -->
+      <visual name="field_bump_vis_16">
+        <pose>-0.4400 17.6699 -0.2160 0 1.5707963 -0.1769</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2289</radius>
+            <length>0.6555</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 17 (left lane, Y=19.40m) -->
+      <visual name="field_bump_vis_17">
+        <pose>-0.4400 19.3964 -0.2110 0 1.5707963 0.1641</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2229</radius>
+            <length>0.6835</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 18 (left lane, Y=20.07m) -->
+      <visual name="field_bump_vis_18">
+        <pose>-0.4400 20.0695 -0.2401 0 1.5707963 0.1691</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2548</radius>
+            <length>0.6535</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 19 (left lane, Y=21.34m) -->
+      <visual name="field_bump_vis_19">
+        <pose>-0.1900 21.3383 -0.2967 0 1.5707963 0.0608</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3070</radius>
+            <length>0.3264</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 20 (left lane, Y=22.51m) -->
+      <visual name="field_bump_vis_20">
+        <pose>-0.4400 22.5091 -0.2580 0 1.5707963 -0.1274</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2719</radius>
+            <length>0.6257</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 21 (left lane, Y=23.62m) -->
+      <visual name="field_bump_vis_21">
+        <pose>-0.1900 23.6183 -0.2488 0 1.5707963 0.1710</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2589</radius>
+            <length>0.3976</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 22 (left lane, Y=24.63m) -->
+      <visual name="field_bump_vis_22">
+        <pose>-0.4400 24.6303 -0.2660 0 1.5707963 0.0869</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2789</radius>
+            <length>0.6367</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 23 (left lane, Y=25.60m) -->
+      <visual name="field_bump_vis_23">
+        <pose>-0.6900 25.5986 -0.2914 0 1.5707963 0.1730</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3071</radius>
+            <length>0.3550</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 24 (left lane, Y=26.72m) -->
+      <visual name="field_bump_vis_24">
+        <pose>-0.1900 26.7168 -0.2870 0 1.5707963 -0.0631</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2974</radius>
+            <length>0.3629</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 25 (left lane, Y=27.73m) -->
+      <visual name="field_bump_vis_25">
+        <pose>-0.4400 27.7286 -0.2561 0 1.5707963 -0.0472</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2700</radius>
+            <length>0.6337</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 26 (left lane, Y=29.89m) -->
+      <visual name="field_bump_vis_26">
+        <pose>-0.1900 29.8920 -0.2273 0 1.5707963 -0.0848</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2443</radius>
+            <length>0.4130</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 27 (left lane, Y=30.57m) -->
+      <visual name="field_bump_vis_27">
+        <pose>-0.4400 30.5721 -0.2289 0 1.5707963 0.1783</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2397</radius>
+            <length>0.6280</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 28 (left lane, Y=31.85m) -->
+      <visual name="field_bump_vis_28">
+        <pose>-0.6900 31.8457 -0.2287 0 1.5707963 -0.1499</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2431</radius>
+            <length>0.3468</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 29 (left lane, Y=32.88m) -->
+      <visual name="field_bump_vis_29">
+        <pose>-0.6900 32.8839 -0.2871 0 1.5707963 0.1030</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3009</radius>
+            <length>0.4129</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 30 (center lane, Y=0.86m) -->
+      <visual name="field_bump_vis_30">
+        <pose>1.1500 0.8614 -0.2891 0 1.5707963 -0.0050</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3033</radius>
+            <length>0.3457</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 31 (center lane, Y=1.79m) -->
+      <visual name="field_bump_vis_31">
+        <pose>1.1500 1.7885 -0.2980 0 1.5707963 -0.1779</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3125</radius>
+            <length>0.4040</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 32 (center lane, Y=2.99m) -->
+      <visual name="field_bump_vis_32">
+        <pose>1.4000 2.9941 -0.2542 0 1.5707963 -0.1360</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2694</radius>
+            <length>0.6809</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 33 (center lane, Y=4.93m) -->
+      <visual name="field_bump_vis_33">
+        <pose>1.6500 4.9340 -0.2937 0 1.5707963 -0.1020</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3056</radius>
+            <length>0.4158</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 34 (center lane, Y=5.90m) -->
+      <visual name="field_bump_vis_34">
+        <pose>1.1500 5.8983 -0.2203 0 1.5707963 -0.1575</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2381</radius>
+            <length>0.4020</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 35 (center lane, Y=6.84m) -->
+      <visual name="field_bump_vis_35">
+        <pose>1.4000 6.8386 -0.2957 0 1.5707963 -0.0445</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3124</radius>
+            <length>0.6465</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 36 (center lane, Y=7.54m) -->
+      <visual name="field_bump_vis_36">
+        <pose>1.6500 7.5370 -0.2302 0 1.5707963 -0.0640</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2465</radius>
+            <length>0.3322</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 37 (center lane, Y=9.53m) -->
+      <visual name="field_bump_vis_37">
+        <pose>1.6500 9.5341 -0.2507 0 1.5707963 0.0743</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2666</radius>
+            <length>0.3499</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 38 (center lane, Y=10.35m) -->
+      <visual name="field_bump_vis_38">
+        <pose>1.6500 10.3540 -0.2498 0 1.5707963 -0.0906</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2639</radius>
+            <length>0.3466</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 39 (center lane, Y=11.49m) -->
+      <visual name="field_bump_vis_39">
+        <pose>1.4000 11.4873 -0.3003 0 1.5707963 -0.1624</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3123</radius>
+            <length>0.6775</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 40 (center lane, Y=12.22m) -->
+      <visual name="field_bump_vis_40">
+        <pose>1.6500 12.2236 -0.2801 0 1.5707963 -0.1646</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2934</radius>
+            <length>0.3860</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 41 (center lane, Y=13.57m) -->
+      <visual name="field_bump_vis_41">
+        <pose>1.1500 13.5723 -0.2395 0 1.5707963 0.0352</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2570</radius>
+            <length>0.3526</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 42 (center lane, Y=15.25m) -->
+      <visual name="field_bump_vis_42">
+        <pose>1.4000 15.2477 -0.2347 0 1.5707963 0.1733</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2489</radius>
+            <length>0.6974</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 43 (center lane, Y=16.12m) -->
+      <visual name="field_bump_vis_43">
+        <pose>1.6500 16.1222 -0.2919 0 1.5707963 -0.0774</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3088</radius>
+            <length>0.3428</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 44 (center lane, Y=17.47m) -->
+      <visual name="field_bump_vis_44">
+        <pose>1.6500 17.4690 -0.2672 0 1.5707963 -0.1207</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2807</radius>
+            <length>0.3625</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 45 (center lane, Y=18.15m) -->
+      <visual name="field_bump_vis_45">
+        <pose>1.4000 18.1516 -0.2799 0 1.5707963 -0.1101</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2937</radius>
+            <length>0.6366</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 46 (center lane, Y=20.41m) -->
+      <visual name="field_bump_vis_46">
+        <pose>1.1500 20.4149 -0.2162 0 1.5707963 0.0162</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2292</radius>
+            <length>0.3482</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 47 (center lane, Y=21.26m) -->
+      <visual name="field_bump_vis_47">
+        <pose>1.1500 21.2604 -0.2975 0 1.5707963 -0.0387</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3122</radius>
+            <length>0.3721</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 48 (center lane, Y=22.47m) -->
+      <visual name="field_bump_vis_48">
+        <pose>1.6500 22.4688 -0.2611 0 1.5707963 -0.0230</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2770</radius>
+            <length>0.3311</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 49 (center lane, Y=23.37m) -->
+      <visual name="field_bump_vis_49">
+        <pose>1.6500 23.3683 -0.2952 0 1.5707963 0.1701</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3130</radius>
+            <length>0.3335</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 50 (center lane, Y=24.99m) -->
+      <visual name="field_bump_vis_50">
+        <pose>1.6500 24.9852 -0.2062 0 1.5707963 0.0169</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2211</radius>
+            <length>0.4127</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 51 (center lane, Y=25.66m) -->
+      <visual name="field_bump_vis_51">
+        <pose>1.1500 25.6645 -0.2950 0 1.5707963 -0.0751</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3079</radius>
+            <length>0.3931</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 52 (center lane, Y=26.44m) -->
+      <visual name="field_bump_vis_52">
+        <pose>1.1500 26.4446 -0.2724 0 1.5707963 0.0056</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2843</radius>
+            <length>0.3483</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 53 (center lane, Y=27.62m) -->
+      <visual name="field_bump_vis_53">
+        <pose>1.1500 27.6187 -0.2478 0 1.5707963 0.1512</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2614</radius>
+            <length>0.3666</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 54 (center lane, Y=28.54m) -->
+      <visual name="field_bump_vis_54">
+        <pose>1.1500 28.5422 -0.3049 0 1.5707963 -0.1647</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3184</radius>
+            <length>0.3590</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 55 (center lane, Y=30.45m) -->
+      <visual name="field_bump_vis_55">
+        <pose>1.1500 30.4515 -0.2493 0 1.5707963 0.0186</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2660</radius>
+            <length>0.3326</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 56 (center lane, Y=31.11m) -->
+      <visual name="field_bump_vis_56">
+        <pose>1.4000 31.1137 -0.2438 0 1.5707963 -0.1630</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2563</radius>
+            <length>0.6553</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 57 (center lane, Y=32.12m) -->
+      <visual name="field_bump_vis_57">
+        <pose>1.1500 32.1196 -0.2427 0 1.5707963 0.0607</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2525</radius>
+            <length>0.3793</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 58 (center lane, Y=33.44m) -->
+      <visual name="field_bump_vis_58">
+        <pose>1.1500 33.4411 -0.2974 0 1.5707963 0.1306</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3076</radius>
+            <length>0.3619</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 59 (right lane, Y=0.46m) -->
+      <visual name="field_bump_vis_59">
+        <pose>2.9900 0.4638 -0.2188 0 1.5707963 -0.0251</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2298</radius>
+            <length>0.3531</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 60 (right lane, Y=1.25m) -->
+      <visual name="field_bump_vis_60">
+        <pose>3.4900 1.2544 -0.2220 0 1.5707963 -0.1475</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2352</radius>
+            <length>0.3260</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 61 (right lane, Y=2.37m) -->
+      <visual name="field_bump_vis_61">
+        <pose>3.4900 2.3722 -0.2903 0 1.5707963 -0.0939</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3012</radius>
+            <length>0.3639</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 62 (right lane, Y=3.57m) -->
+      <visual name="field_bump_vis_62">
+        <pose>3.4900 3.5716 -0.2199 0 1.5707963 -0.0621</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2289</radius>
+            <length>0.3872</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 63 (right lane, Y=4.50m) -->
+      <visual name="field_bump_vis_63">
+        <pose>2.9900 4.5021 -0.2162 0 1.5707963 0.1529</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2258</radius>
+            <length>0.4015</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 64 (right lane, Y=5.35m) -->
+      <visual name="field_bump_vis_64">
+        <pose>2.9900 5.3537 -0.2031 0 1.5707963 0.1421</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2201</radius>
+            <length>0.3757</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 65 (right lane, Y=6.45m) -->
+      <visual name="field_bump_vis_65">
+        <pose>3.2400 6.4523 -0.2442 0 1.5707963 -0.0476</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2621</radius>
+            <length>0.6463</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 66 (right lane, Y=7.54m) -->
+      <visual name="field_bump_vis_66">
+        <pose>3.4900 7.5405 -0.2681 0 1.5707963 0.0685</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2803</radius>
+            <length>0.4077</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 67 (right lane, Y=8.19m) -->
+      <visual name="field_bump_vis_67">
+        <pose>3.4900 8.1928 -0.2086 0 1.5707963 -0.0437</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2203</radius>
+            <length>0.3706</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 68 (right lane, Y=9.85m) -->
+      <visual name="field_bump_vis_68">
+        <pose>2.9900 9.8493 -0.3018 0 1.5707963 -0.0363</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3157</radius>
+            <length>0.3933</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 69 (right lane, Y=10.97m) -->
+      <visual name="field_bump_vis_69">
+        <pose>2.9900 10.9742 -0.2398 0 1.5707963 -0.0780</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2558</radius>
+            <length>0.3405</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 70 (right lane, Y=12.25m) -->
+      <visual name="field_bump_vis_70">
+        <pose>3.2400 12.2474 -0.2071 0 1.5707963 0.0952</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2227</radius>
+            <length>0.6363</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 71 (right lane, Y=13.53m) -->
+      <visual name="field_bump_vis_71">
+        <pose>3.2400 13.5281 -0.2286 0 1.5707963 -0.1309</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2393</radius>
+            <length>0.6361</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 72 (right lane, Y=14.68m) -->
+      <visual name="field_bump_vis_72">
+        <pose>2.9900 14.6782 -0.2996 0 1.5707963 -0.1596</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3093</radius>
+            <length>0.3470</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 73 (right lane, Y=15.51m) -->
+      <visual name="field_bump_vis_73">
+        <pose>2.9900 15.5066 -0.2179 0 1.5707963 0.1053</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2293</radius>
+            <length>0.3452</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 74 (right lane, Y=16.76m) -->
+      <visual name="field_bump_vis_74">
+        <pose>3.2400 16.7615 -0.3055 0 1.5707963 0.1077</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3175</radius>
+            <length>0.6735</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 75 (right lane, Y=17.86m) -->
+      <visual name="field_bump_vis_75">
+        <pose>3.2400 17.8580 -0.3066 0 1.5707963 0.1220</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3157</radius>
+            <length>0.6508</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 76 (right lane, Y=20.24m) -->
+      <visual name="field_bump_vis_76">
+        <pose>3.4900 20.2442 -0.2848 0 1.5707963 -0.0508</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3018</radius>
+            <length>0.4037</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 77 (right lane, Y=21.37m) -->
+      <visual name="field_bump_vis_77">
+        <pose>2.9900 21.3660 -0.2504 0 1.5707963 -0.1785</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2615</radius>
+            <length>0.3587</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 78 (right lane, Y=22.31m) -->
+      <visual name="field_bump_vis_78">
+        <pose>2.9900 22.3081 -0.2362 0 1.5707963 0.1382</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2467</radius>
+            <length>0.3375</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 79 (right lane, Y=23.54m) -->
+      <visual name="field_bump_vis_79">
+        <pose>2.9900 23.5377 -0.2181 0 1.5707963 -0.0842</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2322</radius>
+            <length>0.4074</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 80 (right lane, Y=25.35m) -->
+      <visual name="field_bump_vis_80">
+        <pose>3.2400 25.3475 -0.2367 0 1.5707963 0.1023</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2510</radius>
+            <length>0.6388</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 81 (right lane, Y=26.23m) -->
+      <visual name="field_bump_vis_81">
+        <pose>2.9900 26.2343 -0.2339 0 1.5707963 -0.1080</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2508</radius>
+            <length>0.3866</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 82 (right lane, Y=27.03m) -->
+      <visual name="field_bump_vis_82">
+        <pose>2.9900 27.0327 -0.2904 0 1.5707963 -0.1246</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3066</radius>
+            <length>0.3623</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 83 (right lane, Y=28.15m) -->
+      <visual name="field_bump_vis_83">
+        <pose>3.2400 28.1489 -0.2899 0 1.5707963 0.1674</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3029</radius>
+            <length>0.6422</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 84 (right lane, Y=30.23m) -->
+      <visual name="field_bump_vis_84">
+        <pose>3.4900 30.2323 -0.3042 0 1.5707963 0.1191</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3139</radius>
+            <length>0.3911</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 85 (right lane, Y=31.03m) -->
+      <visual name="field_bump_vis_85">
+        <pose>3.4900 31.0336 -0.2617 0 1.5707963 -0.1688</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2735</radius>
+            <length>0.3243</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 86 (right lane, Y=32.16m) -->
+      <visual name="field_bump_vis_86">
+        <pose>2.9900 32.1562 -0.2547 0 1.5707963 -0.1617</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2725</radius>
+            <length>0.4055</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Field Soil Bump 87 (right lane, Y=33.09m) -->
+      <visual name="field_bump_vis_87">
+        <pose>3.2400 33.0945 -0.2695 0 1.5707963 -0.1143</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2815</radius>
+            <length>0.7083</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/coco_peat_soil.png</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <collision name="field_bump_col_1">
+        <pose>-0.6900 0.3867 -0.2301 0 1.5707963 0.1349</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2467</radius>
+            <length>0.3969</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_2">
+        <pose>-0.4400 1.3020 -0.2948 0 1.5707963 -0.0586</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3052</radius>
+            <length>0.6532</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_3">
+        <pose>-0.6900 2.1857 -0.2946 0 1.5707963 0.1363</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3106</radius>
+            <length>0.3364</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_4">
+        <pose>-0.6900 3.1000 -0.2477 0 1.5707963 -0.1466</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2648</radius>
+            <length>0.3515</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_5">
+        <pose>-0.6900 5.0526 -0.2498 0 1.5707963 -0.0111</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2631</radius>
+            <length>0.3492</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_6">
+        <pose>-0.1900 5.7283 -0.2893 0 1.5707963 0.0392</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3001</radius>
+            <length>0.3543</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_7">
+        <pose>-0.1900 6.7473 -0.2945 0 1.5707963 -0.0236</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3093</radius>
+            <length>0.3213</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_8">
+        <pose>-0.4400 7.7742 -0.2897 0 1.5707963 -0.0290</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3034</radius>
+            <length>0.6797</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_9">
+        <pose>-0.4400 10.0244 -0.2848 0 1.5707963 0.0569</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3020</radius>
+            <length>0.6381</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_10">
+        <pose>-0.1900 10.7935 -0.2929 0 1.5707963 -0.0404</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3084</radius>
+            <length>0.3754</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_11">
+        <pose>-0.6900 11.9886 -0.2142 0 1.5707963 -0.1754</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2288</radius>
+            <length>0.3389</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_12">
+        <pose>-0.6900 12.8850 -0.2537 0 1.5707963 -0.1585</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2701</radius>
+            <length>0.3606</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_13">
+        <pose>-0.4400 14.7327 -0.2566 0 1.5707963 -0.1246</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2744</radius>
+            <length>0.6920</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_14">
+        <pose>-0.1900 15.7582 -0.2142 0 1.5707963 -0.1105</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2244</radius>
+            <length>0.3952</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_15">
+        <pose>-0.1900 16.5876 -0.3008 0 1.5707963 -0.1799</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3155</radius>
+            <length>0.3885</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_16">
+        <pose>-0.4400 17.6699 -0.2160 0 1.5707963 -0.1769</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2289</radius>
+            <length>0.6555</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_17">
+        <pose>-0.4400 19.3964 -0.2110 0 1.5707963 0.1641</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2229</radius>
+            <length>0.6835</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_18">
+        <pose>-0.4400 20.0695 -0.2401 0 1.5707963 0.1691</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2548</radius>
+            <length>0.6535</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_19">
+        <pose>-0.1900 21.3383 -0.2967 0 1.5707963 0.0608</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3070</radius>
+            <length>0.3264</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_20">
+        <pose>-0.4400 22.5091 -0.2580 0 1.5707963 -0.1274</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2719</radius>
+            <length>0.6257</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_21">
+        <pose>-0.1900 23.6183 -0.2488 0 1.5707963 0.1710</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2589</radius>
+            <length>0.3976</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_22">
+        <pose>-0.4400 24.6303 -0.2660 0 1.5707963 0.0869</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2789</radius>
+            <length>0.6367</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_23">
+        <pose>-0.6900 25.5986 -0.2914 0 1.5707963 0.1730</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3071</radius>
+            <length>0.3550</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_24">
+        <pose>-0.1900 26.7168 -0.2870 0 1.5707963 -0.0631</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2974</radius>
+            <length>0.3629</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_25">
+        <pose>-0.4400 27.7286 -0.2561 0 1.5707963 -0.0472</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2700</radius>
+            <length>0.6337</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_26">
+        <pose>-0.1900 29.8920 -0.2273 0 1.5707963 -0.0848</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2443</radius>
+            <length>0.4130</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_27">
+        <pose>-0.4400 30.5721 -0.2289 0 1.5707963 0.1783</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2397</radius>
+            <length>0.6280</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_28">
+        <pose>-0.6900 31.8457 -0.2287 0 1.5707963 -0.1499</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2431</radius>
+            <length>0.3468</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_29">
+        <pose>-0.6900 32.8839 -0.2871 0 1.5707963 0.1030</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3009</radius>
+            <length>0.4129</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_30">
+        <pose>1.1500 0.8614 -0.2891 0 1.5707963 -0.0050</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3033</radius>
+            <length>0.3457</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_31">
+        <pose>1.1500 1.7885 -0.2980 0 1.5707963 -0.1779</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3125</radius>
+            <length>0.4040</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_32">
+        <pose>1.4000 2.9941 -0.2542 0 1.5707963 -0.1360</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2694</radius>
+            <length>0.6809</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_33">
+        <pose>1.6500 4.9340 -0.2937 0 1.5707963 -0.1020</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3056</radius>
+            <length>0.4158</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_34">
+        <pose>1.1500 5.8983 -0.2203 0 1.5707963 -0.1575</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2381</radius>
+            <length>0.4020</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_35">
+        <pose>1.4000 6.8386 -0.2957 0 1.5707963 -0.0445</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3124</radius>
+            <length>0.6465</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_36">
+        <pose>1.6500 7.5370 -0.2302 0 1.5707963 -0.0640</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2465</radius>
+            <length>0.3322</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_37">
+        <pose>1.6500 9.5341 -0.2507 0 1.5707963 0.0743</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2666</radius>
+            <length>0.3499</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_38">
+        <pose>1.6500 10.3540 -0.2498 0 1.5707963 -0.0906</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2639</radius>
+            <length>0.3466</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_39">
+        <pose>1.4000 11.4873 -0.3003 0 1.5707963 -0.1624</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3123</radius>
+            <length>0.6775</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_40">
+        <pose>1.6500 12.2236 -0.2801 0 1.5707963 -0.1646</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2934</radius>
+            <length>0.3860</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_41">
+        <pose>1.1500 13.5723 -0.2395 0 1.5707963 0.0352</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2570</radius>
+            <length>0.3526</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_42">
+        <pose>1.4000 15.2477 -0.2347 0 1.5707963 0.1733</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2489</radius>
+            <length>0.6974</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_43">
+        <pose>1.6500 16.1222 -0.2919 0 1.5707963 -0.0774</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3088</radius>
+            <length>0.3428</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_44">
+        <pose>1.6500 17.4690 -0.2672 0 1.5707963 -0.1207</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2807</radius>
+            <length>0.3625</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_45">
+        <pose>1.4000 18.1516 -0.2799 0 1.5707963 -0.1101</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2937</radius>
+            <length>0.6366</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_46">
+        <pose>1.1500 20.4149 -0.2162 0 1.5707963 0.0162</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2292</radius>
+            <length>0.3482</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_47">
+        <pose>1.1500 21.2604 -0.2975 0 1.5707963 -0.0387</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3122</radius>
+            <length>0.3721</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_48">
+        <pose>1.6500 22.4688 -0.2611 0 1.5707963 -0.0230</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2770</radius>
+            <length>0.3311</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_49">
+        <pose>1.6500 23.3683 -0.2952 0 1.5707963 0.1701</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3130</radius>
+            <length>0.3335</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_50">
+        <pose>1.6500 24.9852 -0.2062 0 1.5707963 0.0169</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2211</radius>
+            <length>0.4127</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_51">
+        <pose>1.1500 25.6645 -0.2950 0 1.5707963 -0.0751</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3079</radius>
+            <length>0.3931</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_52">
+        <pose>1.1500 26.4446 -0.2724 0 1.5707963 0.0056</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2843</radius>
+            <length>0.3483</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_53">
+        <pose>1.1500 27.6187 -0.2478 0 1.5707963 0.1512</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2614</radius>
+            <length>0.3666</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_54">
+        <pose>1.1500 28.5422 -0.3049 0 1.5707963 -0.1647</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3184</radius>
+            <length>0.3590</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_55">
+        <pose>1.1500 30.4515 -0.2493 0 1.5707963 0.0186</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2660</radius>
+            <length>0.3326</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_56">
+        <pose>1.4000 31.1137 -0.2438 0 1.5707963 -0.1630</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2563</radius>
+            <length>0.6553</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_57">
+        <pose>1.1500 32.1196 -0.2427 0 1.5707963 0.0607</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2525</radius>
+            <length>0.3793</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_58">
+        <pose>1.1500 33.4411 -0.2974 0 1.5707963 0.1306</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3076</radius>
+            <length>0.3619</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_59">
+        <pose>2.9900 0.4638 -0.2188 0 1.5707963 -0.0251</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2298</radius>
+            <length>0.3531</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_60">
+        <pose>3.4900 1.2544 -0.2220 0 1.5707963 -0.1475</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2352</radius>
+            <length>0.3260</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_61">
+        <pose>3.4900 2.3722 -0.2903 0 1.5707963 -0.0939</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3012</radius>
+            <length>0.3639</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_62">
+        <pose>3.4900 3.5716 -0.2199 0 1.5707963 -0.0621</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2289</radius>
+            <length>0.3872</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_63">
+        <pose>2.9900 4.5021 -0.2162 0 1.5707963 0.1529</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2258</radius>
+            <length>0.4015</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_64">
+        <pose>2.9900 5.3537 -0.2031 0 1.5707963 0.1421</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2201</radius>
+            <length>0.3757</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_65">
+        <pose>3.2400 6.4523 -0.2442 0 1.5707963 -0.0476</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2621</radius>
+            <length>0.6463</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_66">
+        <pose>3.4900 7.5405 -0.2681 0 1.5707963 0.0685</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2803</radius>
+            <length>0.4077</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_67">
+        <pose>3.4900 8.1928 -0.2086 0 1.5707963 -0.0437</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2203</radius>
+            <length>0.3706</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_68">
+        <pose>2.9900 9.8493 -0.3018 0 1.5707963 -0.0363</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3157</radius>
+            <length>0.3933</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_69">
+        <pose>2.9900 10.9742 -0.2398 0 1.5707963 -0.0780</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2558</radius>
+            <length>0.3405</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_70">
+        <pose>3.2400 12.2474 -0.2071 0 1.5707963 0.0952</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2227</radius>
+            <length>0.6363</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_71">
+        <pose>3.2400 13.5281 -0.2286 0 1.5707963 -0.1309</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2393</radius>
+            <length>0.6361</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_72">
+        <pose>2.9900 14.6782 -0.2996 0 1.5707963 -0.1596</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3093</radius>
+            <length>0.3470</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_73">
+        <pose>2.9900 15.5066 -0.2179 0 1.5707963 0.1053</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2293</radius>
+            <length>0.3452</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_74">
+        <pose>3.2400 16.7615 -0.3055 0 1.5707963 0.1077</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3175</radius>
+            <length>0.6735</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_75">
+        <pose>3.2400 17.8580 -0.3066 0 1.5707963 0.1220</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3157</radius>
+            <length>0.6508</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_76">
+        <pose>3.4900 20.2442 -0.2848 0 1.5707963 -0.0508</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3018</radius>
+            <length>0.4037</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_77">
+        <pose>2.9900 21.3660 -0.2504 0 1.5707963 -0.1785</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2615</radius>
+            <length>0.3587</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_78">
+        <pose>2.9900 22.3081 -0.2362 0 1.5707963 0.1382</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2467</radius>
+            <length>0.3375</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_79">
+        <pose>2.9900 23.5377 -0.2181 0 1.5707963 -0.0842</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2322</radius>
+            <length>0.4074</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_80">
+        <pose>3.2400 25.3475 -0.2367 0 1.5707963 0.1023</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2510</radius>
+            <length>0.6388</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_81">
+        <pose>2.9900 26.2343 -0.2339 0 1.5707963 -0.1080</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2508</radius>
+            <length>0.3866</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_82">
+        <pose>2.9900 27.0327 -0.2904 0 1.5707963 -0.1246</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3066</radius>
+            <length>0.3623</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_83">
+        <pose>3.2400 28.1489 -0.2899 0 1.5707963 0.1674</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3029</radius>
+            <length>0.6422</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_84">
+        <pose>3.4900 30.2323 -0.3042 0 1.5707963 0.1191</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3139</radius>
+            <length>0.3911</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_85">
+        <pose>3.4900 31.0336 -0.2617 0 1.5707963 -0.1688</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2735</radius>
+            <length>0.3243</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_86">
+        <pose>2.9900 32.1562 -0.2547 0 1.5707963 -0.1617</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2725</radius>
+            <length>0.4055</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="field_bump_col_87">
+        <pose>3.2400 33.0945 -0.2695 0 1.5707963 -0.1143</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.2815</radius>
+            <length>0.7083</length>
+          </cylinder>
+        </geometry>
+      </collision>
       <visual name="strawberry_r1_p01_cls2_powdery_mildew">
         <pose>0.1018 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>

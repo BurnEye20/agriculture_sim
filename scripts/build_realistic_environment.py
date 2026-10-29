@@ -380,7 +380,74 @@ def generate_model_sdf():
       </visual>""")
             marker_id += 1
 
-    # 4. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
+    # 4. 65 Non-Uniform Physical Field Bumps & Soil Ridges (Collision + Visual) across Left, Center, Right lanes
+    bump_rng = random.Random(123)
+    bump_collisions = []
+    bump_idx = 0
+    for lane_name, lx in lane_x_map:
+        y_cursor = -0.30
+        while y_cursor < 33.20:
+            y_cursor += bump_rng.uniform(0.65, 1.35)
+            # Keep 0.35m clearance around ArUco markers so markers sit cleanly on the sloped ground
+            if any(abs(y_cursor - ay) < 0.38 for ay in aruco_y_positions):
+                continue
+
+            # Place bump asymmetrically under left wheel (-0.25m), right wheel (+0.25m), or across full lane (0.0m)
+            track_choice = bump_rng.choice(["left_wheel", "right_wheel", "full_lane"])
+            if track_choice == "left_wheel":
+                offset_x = -0.25
+                bump_len = bump_rng.uniform(0.32, 0.42)
+            elif track_choice == "right_wheel":
+                offset_x = 0.25
+                bump_len = bump_rng.uniform(0.32, 0.42)
+            else:
+                offset_x = 0.0
+                bump_len = bump_rng.uniform(0.62, 0.72)
+
+            bx = lx + offset_x
+            by = y_cursor
+            # Smooth soil ridge: height 0.9 cm to 1.8 cm above ground (radius 0.22m to 0.32m buried cylinder)
+            bump_r = bump_rng.uniform(0.22, 0.32)
+            bump_protrusion = bump_rng.uniform(0.009, 0.018)
+            bz = -bump_r + bump_protrusion
+            bump_yaw = bump_rng.uniform(-0.18, 0.18)
+
+            bump_idx += 1
+            visual_blocks.append(f"""      <!-- Field Soil Bump {bump_idx} ({lane_name} lane, Y={by:.2f}m) -->
+      <visual name="field_bump_vis_{bump_idx}">
+        <pose>{bx:.4f} {by:.4f} {bz:.4f} 0 1.5707963 {bump_yaw:.4f}</pose>
+        <geometry>
+          <cylinder>
+            <radius>{bump_r:.4f}</radius>
+            <length>{bump_len:.4f}</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.32 0.25 0.18 1</ambient>
+          <diffuse>0.42 0.33 0.24 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>{soil_tex_uri}</albedo_map>
+              <roughness>0.95</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>""")
+            bump_collisions.append(f"""      <collision name="field_bump_col_{bump_idx}">
+        <pose>{bx:.4f} {by:.4f} {bz:.4f} 0 1.5707963 {bump_yaw:.4f}</pose>
+        <geometry>
+          <cylinder>
+            <radius>{bump_r:.4f}</radius>
+            <length>{bump_len:.4f}</length>
+          </cylinder>
+        </geometry>
+      </collision>""")
+
+    visual_blocks.extend(bump_collisions)
+
+    # 5. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
         row_cls_seq = []
         for _ in range(PANELS_PER_ROW // 4):

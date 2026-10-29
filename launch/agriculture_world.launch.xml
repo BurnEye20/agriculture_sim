@@ -23,11 +23,19 @@
         <param name="config_file" value="$(var bridge_config_path)" />
     </node>
 
-    <!-- 4. EKF Localizer (IMU + Wheel Encoders Odometry + ArUco Absolute Correction + PGM Map Server) -->
+    <!-- 4. EKF Localizer + Dual-Loop PID Controller + PGM Map Server -->
     <node pkg="agriculture_sim" exec="ekf_aruco_localizer.py" name="ekf_aruco_localizer" output="screen">
         <param name="use_sim_time" value="true"/>
         <param name="auto_drive" value="true"/>
-        <param name="drive_speed" value="0.35"/>
+        <param name="target_speed" value="0.35"/>
+        <param name="target_lane" value="center"/>
+        <param name="steer_kp" value="2.20"/>
+        <param name="steer_ki" value="0.25"/>
+        <param name="steer_kd" value="0.65"/>
+        <param name="cte_weight" value="1.80"/>
+        <param name="speed_kp" value="1.40"/>
+        <param name="speed_ki" value="0.45"/>
+        <param name="speed_kd" value="0.12"/>
     </node>
 
     <!-- 5. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->

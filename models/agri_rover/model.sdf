@@ -427,7 +427,7 @@
       <sensor name="bottom_aruco_camera" type="camera">
         <pose>0.30 0 0.192 0 1.5707963 0</pose>
         <camera>
-          <horizontal_fov>1.25</horizontal_fov>
+          <horizontal_fov>1.65</horizontal_fov>
           <image>
             <width>640</width>
             <height>640</height>
@@ -497,11 +497,18 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <cylinder>
+          <sphere>
             <radius>0.13</radius>
-            <length>0.08</length>
-          </cylinder>
+          </sphere>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>2.2</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="tire_visual">
         <geometry>
@@ -547,11 +554,18 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <cylinder>
+          <sphere>
             <radius>0.13</radius>
-            <length>0.08</length>
-          </cylinder>
+          </sphere>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>2.2</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="tire_visual">
         <geometry>
@@ -597,11 +611,18 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <cylinder>
+          <sphere>
             <radius>0.13</radius>
-            <length>0.08</length>
-          </cylinder>
+          </sphere>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>2.2</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="tire_visual">
         <geometry>
@@ -647,11 +668,18 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <cylinder>
+          <sphere>
             <radius>0.13</radius>
-            <length>0.08</length>
-          </cylinder>
+          </sphere>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>2.2</mu>
+              <mu2>2.5</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="tire_visual">
         <geometry>
@@ -738,7 +766,8 @@
       <right_joint>rear_right_wheel_joint</right_joint>
       <wheel_separation>0.50</wheel_separation>
       <wheel_radius>0.13</wheel_radius>
-      <max_linear_acceleration>2.0</max_linear_acceleration>
+      <max_linear_acceleration>5.0</max_linear_acceleration>
+      <max_angular_acceleration>6.0</max_angular_acceleration>
       <topic>/model/agri_rover/cmd_vel</topic>
       <odom_topic>/model/agri_rover/wheel_odom</odom_topic>
       <frame_id>odom</frame_id>

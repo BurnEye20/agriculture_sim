@@ -60,17 +60,26 @@
       <specular>0.15 0.15 0.15 1</specular>
     </light>
 
-    <!-- Agricultural Field Ground Plane -->
+    <!-- Agricultural Field Ground Plane Tilted at 2.0 Degrees Steepness (Roll=1.732 deg, Pitch=-1.000 deg) -->
     <model name="ground_plane">
       <static>true</static>
+      <pose>0 0 0 0.0302300 -0.0174533 0</pose>
       <link name="link">
         <collision name="collision">
+          <pose>0 0 -0.10 0 0 0</pose>
           <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>120 120</size>
-            </plane>
+            <box>
+              <size>120 120 0.20</size>
+            </box>
           </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>2.00</mu>
+                <mu2>2.20</mu2>
+              </ode>
+            </friction>
+          </surface>
         </collision>
         <visual name="field_ground_visual">
           <pose>0 15 0 0 0 0</pose>
@@ -97,18 +106,18 @@
       </link>
     </model>
 
-    <!-- 4 Rows of Vertical Strawberry Systems + Foliage + Greenhouse Frame -->
+    <!-- 4 Rows of Vertical Strawberry Systems + 65 Non-Uniform Bumps + 24 Ground ArUco Markers (on 2.0 deg slope) -->
     <include>
       <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows</uri>
       <name>farming_rows</name>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0.0302300 -0.0174533 0</pose>
     </include>
 
-    <!-- Agricultural Inspection Rover between Row 2 and Row 3 -->
+    <!-- Agricultural Inspection Rover between Row 2 and Row 3 (aligned with 2.0 deg sloped surface) -->
     <include>
       <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/agri_rover</uri>
       <name>agri_rover</name>
-      <pose>1.40 -1.20 0.0 0 0 1.5707963</pose>
+      <pose>1.4004 -1.3494 -0.0110 -0.0174533 -0.0302300 1.5707963</pose>
     </include>
   </world>
 </sdf>
