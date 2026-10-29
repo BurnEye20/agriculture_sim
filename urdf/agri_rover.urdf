@@ -253,6 +253,14 @@
     <origin xyz="0.028 0 0" rpy="-1.5707963 0 -1.5707963"/>
   </joint>
 
+  <!-- IMU Link -->
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.35" rpy="0 0 0"/>
+  </joint>
+
   <!-- 4 Wheels -->
   <link name="front_left_wheel">
     <visual>

@@ -13,23 +13,30 @@
         <param name="use_sim_time" value="true"/>
     </node>
 
-    <!-- 2. Gazebo Sim with Strawberry Rows + Agricultural Rover -->
+    <!-- 2. Gazebo Sim with Strawberry Rows + Ground ArUco Codes + Agricultural Rover -->
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="$(var world_path) -r" />
     </include>
 
-    <!-- 3. ROS 2 <-> Gazebo Bridge (TF, JointStates, Odom, CmdVel, Left & Right Cameras) -->
+    <!-- 3. ROS 2 <-> Gazebo Bridge (IMU, Wheel Encoders, CmdVel, Left/Right/Bottom Cameras) -->
     <node pkg="ros_gz_bridge" exec="parameter_bridge">
         <param name="config_file" value="$(var bridge_config_path)" />
     </node>
 
-    <!-- 4. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->
+    <!-- 4. EKF Localizer (IMU + Wheel Encoders Odometry + ArUco Absolute Correction + PGM Map Server) -->
+    <node pkg="agriculture_sim" exec="ekf_aruco_localizer.py" name="ekf_aruco_localizer" output="screen">
+        <param name="use_sim_time" value="true"/>
+        <param name="auto_drive" value="true"/>
+        <param name="drive_speed" value="0.35"/>
+    </node>
+
+    <!-- 5. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->
     <node pkg="agriculture_sim" exec="yolo_strawberry_detector.py" name="yolo_strawberry_detector" output="screen">
         <param name="model_path" value="$(var yolo_model_path)"/>
         <param name="conf_threshold" value="0.25"/>
     </node>
 
-    <!-- 5. RViz2 with RobotModel, TF, and Left/Right YOLOv11 Detection Feeds -->
+    <!-- 6. RViz2 with PGM Map, Costmap, ArUco Landmarks, EKF Paths, and 3 Live Cameras -->
     <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)" output="screen">
         <param name="use_sim_time" value="true"/>
     </node>

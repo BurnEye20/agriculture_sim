@@ -5,8 +5,11 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1
-        - /RobotModel1
+        - /PGM Rows Map1
+        - /ArUco Landmarks & EKF Status1
+        - /EKF Path (IMU+Encoders+ArUco)1
+        - /Raw IMU+Encoder Odom Path1
+        - /Bottom Camera (ArUco + EKF Lock)1
         - /Left Camera (YOLOv11 Detections)1
         - /Right Camera (YOLOv11 Detections)1
       Splitter Ratio: 0.5
@@ -32,23 +35,63 @@ Panels:
 Visualization Manager:
   Class: ""
   Displays:
-    - Alpha: 0.5
+    - Alpha: 0.35
       Cell Size: 1
       Class: rviz_default_plugins/Grid
       Color: 160; 160; 164
       Enabled: true
       Line Style:
-        Line Width: 0.03
+        Line Width: 0.02
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
       Offset:
-        X: 0
-        Y: 0
+        X: 1.4
+        Y: 16.0
         Z: 0
       Plane: XY
-      Plane Cell Count: 40
+      Plane Cell Count: 45
       Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.85
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: true
+      Enabled: true
+      Name: PGM Rows Map
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updates
+      Use Timestamp: false
+      Value: true
+    - Alpha: 0.35
+      Class: rviz_default_plugins/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: Rows Costmap
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /costmap
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /costmap_updates
+      Use Timestamp: false
       Value: true
     - Class: rviz_default_plugins/TF
       Enabled: true
@@ -57,11 +100,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-      Marker Scale: 0.4
+      Marker Scale: 0.35
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -90,6 +133,91 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: ArUco Landmarks & EKF Status
+      Namespaces:
+        aruco_detection_ray: true
+        aruco_labels: true
+        aruco_landmarks: true
+        ekf_hud: true
+        ekf_uncertainty: true
+      Topic:
+        Depth: 10
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /aruco_localization_markers
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 40; 255; 90
+      Enabled: true
+      Head Diameter: 0.12
+      Head Length: 0.08
+      Length: 0.3
+      Line Style: Billboards
+      Line Width: 0.05
+      Name: EKF Path (IMU+Encoders+ArUco)
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.02
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.03
+      Shaft Diameter: 0.04
+      Shaft Length: 0.1
+      Topic:
+        Depth: 10
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ekf_path
+      Value: true
+    - Alpha: 0.9
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 255; 140; 0
+      Enabled: true
+      Head Diameter: 0.1
+      Head Length: 0.06
+      Length: 0.3
+      Line Style: Lines
+      Line Width: 0.03
+      Name: Raw IMU+Encoder Odom Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.01
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.02
+      Shaft Diameter: 0.03
+      Shaft Length: 0.1
+      Topic:
+        Depth: 10
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /odom_imu_encoder_path
+      Value: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Bottom Camera (ArUco + EKF Lock)
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /rover/bottom_camera/aruco_detections/image_raw
+      Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
       Max Value: 1
@@ -120,25 +248,10 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /rover/right_camera/detections/image_raw
       Value: true
-    - Class: rviz_default_plugins/Image
-      Enabled: true
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Bottom ArUco Camera
-      Normalize Range: true
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /rover/bottom_camera/image_raw
-      Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Background Color: 38; 42; 48
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -156,7 +269,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.2
+      Distance: 4.5
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -165,23 +278,23 @@ Visualization Manager:
       Focal Point:
         X: 0
         Y: 0
-        Z: 0.6
+        Z: 0.4
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.35
-      Target Frame: <Fixed Frame>
+      Pitch: 0.65
+      Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 0.75
+      Yaw: 4.1
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 900
+  Height: 920
   Hide Left Dock: false
   Hide Right Dock: false
-  Width: 1400
-  X: 60
-  Y: 60
+  Width: 1440
+  X: 50
+  Y: 50

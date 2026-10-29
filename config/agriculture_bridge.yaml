@@ -10,14 +10,14 @@
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/tf"
-  gz_topic_name: "/model/agri_rover/tf"
-  ros_type_name: "tf2_msgs/msg/TFMessage"
-  gz_type_name: "gz.msgs.Pose_V"
+- ros_topic_name: "/rover/imu"
+  gz_topic_name: "/rover/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/odom"
-  gz_topic_name: "/model/agri_rover/odometry"
+- ros_topic_name: "/rover/ground_truth_odom"
+  gz_topic_name: "/model/agri_rover/ground_truth_odom"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
   direction: GZ_TO_ROS
@@ -75,3 +75,9 @@
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
+
+- ros_topic_name: "/rover/bottom_camera/aruco_detections/image_raw"
+  gz_topic_name: "/rover/bottom_camera/aruco_detections/image_raw"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: ROS_TO_GZ

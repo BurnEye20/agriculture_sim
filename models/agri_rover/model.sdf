@@ -445,6 +445,40 @@
         <visualize>true</visualize>
         <topic>/rover/bottom_camera/image_raw</topic>
       </sensor>
+
+      <!-- IMU SENSOR (Gyroscope + Accelerometer for EKF Odometry) -->
+      <sensor name="rover_imu" type="imu">
+        <pose>0 0 0.35 0 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <visualize>true</visualize>
+        <topic>/rover/imu</topic>
+        <gz_frame_id>imu_link</gz_frame_id>
+        <imu>
+          <angular_velocity>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.002</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </y>
+          </linear_acceleration>
+        </imu>
+      </sensor>
     </link>
 
     <!-- FRONT LEFT WHEEL -->
@@ -696,22 +730,30 @@
       </axis>
     </joint>
 
-    <!-- Automatic Forward Motion Along the Row (0.35 m/s) + /cmd_vel Control -->
-    <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl">
-      <initial_linear>0.35 0 0</initial_linear>
-      <initial_angular>0 0 0</initial_angular>
+    <!-- 4-Wheel Differential Drive (Spins wheels for genuine Wheel Encoder ticks on /joint_states) -->
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>front_left_wheel_joint</left_joint>
+      <left_joint>rear_left_wheel_joint</left_joint>
+      <right_joint>front_right_wheel_joint</right_joint>
+      <right_joint>rear_right_wheel_joint</right_joint>
+      <wheel_separation>0.50</wheel_separation>
+      <wheel_radius>0.13</wheel_radius>
+      <max_linear_acceleration>2.0</max_linear_acceleration>
       <topic>/model/agri_rover/cmd_vel</topic>
+      <odom_topic>/model/agri_rover/wheel_odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
     </plugin>
 
-    <!-- Publish Odom and TF (odom -> base_link) -->
+    <!-- Ground-Truth Pose Reference (used by simulation for initialization & validation) -->
     <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
-      <odom_frame>odom</odom_frame>
+      <odom_frame>map</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <odom_publish_frequency>30</odom_publish_frequency>
-      <odom_topic>/model/agri_rover/odometry</odom_topic>
-      <tf_topic>/model/agri_rover/tf</tf_topic>
+      <odom_topic>/model/agri_rover/ground_truth_odom</odom_topic>
     </plugin>
 
+    <!-- Wheel Encoder Joint State Publisher -->
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
       <joint_name>front_left_wheel_joint</joint_name>
       <joint_name>front_right_wheel_joint</joint_name>
