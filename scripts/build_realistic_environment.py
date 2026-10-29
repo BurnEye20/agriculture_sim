@@ -347,7 +347,40 @@ def generate_model_sdf():
         </material>
       </visual>""")
 
-    # 3. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
+    # 3. 24 Ground ArUco Markers (every 5.0m across Left, Center, and Right lanes)
+    aruco_obj_uri = f"file://{MESHES_DIR}/aruco_marker.obj"
+    lane_x_map = [("left", -0.4400), ("center", 1.4000), ("right", 3.2400)]
+    aruco_y_positions = [-1.0, 4.0, 9.0, 14.0, 19.0, 24.0, 29.0, 34.0]
+    marker_id = 0
+    for lane_name, lx in lane_x_map:
+        for y_pos in aruco_y_positions:
+            aruco_tex_uri = f"file://{TEXTURES_DIR}/aruco/aruco_id{marker_id:02d}.png"
+            visual_blocks.append(f"""      <!-- Ground ArUco Marker ID {marker_id:02d} ({lane_name} lane, Y={y_pos}m) -->
+      <visual name="aruco_marker_id{marker_id:02d}_{lane_name}">
+        <pose>{lx:.4f} {y_pos:.4f} 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>{aruco_obj_uri}</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>{aruco_tex_uri}</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>""")
+            marker_id += 1
+
+    # 4. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
         row_cls_seq = []
         for _ in range(PANELS_PER_ROW // 4):

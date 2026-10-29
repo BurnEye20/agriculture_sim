@@ -215,6 +215,44 @@
     <origin xyz="0.03 0 0" rpy="-1.5707963 0 -1.5707963"/>
   </joint>
 
+  <!-- Bottom Front Camera Link + Flashlight Ring (Facing Down -Z at Ground ArUco Codes) -->
+  <link name="bottom_camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.055 0.045"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+    <visual>
+      <origin xyz="0.023 0 0" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.026" length="0.006"/>
+      </geometry>
+      <material name="headlight"/>
+    </visual>
+    <visual>
+      <origin xyz="0.026 0 0" rpy="0 1.5707963 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.012"/>
+      </geometry>
+      <material name="lens_blue"/>
+    </visual>
+  </link>
+
+  <joint name="bottom_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom_camera_link"/>
+    <origin xyz="0.30 0 0.22" rpy="0 1.5707963 0"/>
+  </joint>
+
+  <link name="bottom_camera_optical_link"/>
+  <joint name="bottom_camera_optical_joint" type="fixed">
+    <parent link="bottom_camera_link"/>
+    <child link="bottom_camera_optical_link"/>
+    <origin xyz="0.028 0 0" rpy="-1.5707963 0 -1.5707963"/>
+  </joint>
+
   <!-- 4 Wheels -->
   <link name="front_left_wheel">
     <visual>

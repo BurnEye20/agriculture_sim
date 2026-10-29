@@ -370,6 +370,558 @@
           <specular>0.25 0.25 0.25 1</specular>
         </material>
       </visual>
+      <!-- Ground ArUco Marker ID 00 (left lane, Y=-1.0m) -->
+      <visual name="aruco_marker_id00_left">
+        <pose>-0.4400 -1.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id00.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 01 (left lane, Y=4.0m) -->
+      <visual name="aruco_marker_id01_left">
+        <pose>-0.4400 4.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id01.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 02 (left lane, Y=9.0m) -->
+      <visual name="aruco_marker_id02_left">
+        <pose>-0.4400 9.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id02.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 03 (left lane, Y=14.0m) -->
+      <visual name="aruco_marker_id03_left">
+        <pose>-0.4400 14.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id03.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 04 (left lane, Y=19.0m) -->
+      <visual name="aruco_marker_id04_left">
+        <pose>-0.4400 19.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id04.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 05 (left lane, Y=24.0m) -->
+      <visual name="aruco_marker_id05_left">
+        <pose>-0.4400 24.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id05.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 06 (left lane, Y=29.0m) -->
+      <visual name="aruco_marker_id06_left">
+        <pose>-0.4400 29.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id06.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 07 (left lane, Y=34.0m) -->
+      <visual name="aruco_marker_id07_left">
+        <pose>-0.4400 34.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id07.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 08 (center lane, Y=-1.0m) -->
+      <visual name="aruco_marker_id08_center">
+        <pose>1.4000 -1.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id08.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 09 (center lane, Y=4.0m) -->
+      <visual name="aruco_marker_id09_center">
+        <pose>1.4000 4.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id09.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 10 (center lane, Y=9.0m) -->
+      <visual name="aruco_marker_id10_center">
+        <pose>1.4000 9.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id10.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 11 (center lane, Y=14.0m) -->
+      <visual name="aruco_marker_id11_center">
+        <pose>1.4000 14.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id11.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 12 (center lane, Y=19.0m) -->
+      <visual name="aruco_marker_id12_center">
+        <pose>1.4000 19.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id12.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 13 (center lane, Y=24.0m) -->
+      <visual name="aruco_marker_id13_center">
+        <pose>1.4000 24.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id13.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 14 (center lane, Y=29.0m) -->
+      <visual name="aruco_marker_id14_center">
+        <pose>1.4000 29.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id14.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 15 (center lane, Y=34.0m) -->
+      <visual name="aruco_marker_id15_center">
+        <pose>1.4000 34.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id15.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 16 (right lane, Y=-1.0m) -->
+      <visual name="aruco_marker_id16_right">
+        <pose>3.2400 -1.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id16.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 17 (right lane, Y=4.0m) -->
+      <visual name="aruco_marker_id17_right">
+        <pose>3.2400 4.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id17.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 18 (right lane, Y=9.0m) -->
+      <visual name="aruco_marker_id18_right">
+        <pose>3.2400 9.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id18.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 19 (right lane, Y=14.0m) -->
+      <visual name="aruco_marker_id19_right">
+        <pose>3.2400 14.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id19.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 20 (right lane, Y=19.0m) -->
+      <visual name="aruco_marker_id20_right">
+        <pose>3.2400 19.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id20.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 21 (right lane, Y=24.0m) -->
+      <visual name="aruco_marker_id21_right">
+        <pose>3.2400 24.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id21.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 22 (right lane, Y=29.0m) -->
+      <visual name="aruco_marker_id22_right">
+        <pose>3.2400 29.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id22.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <!-- Ground ArUco Marker ID 23 (right lane, Y=34.0m) -->
+      <visual name="aruco_marker_id23_right">
+        <pose>3.2400 34.0000 0.004 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/aruco_marker.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1.0 1.0 1.0 1</ambient>
+          <diffuse>1.0 1.0 1.0 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/textures/aruco/aruco_id23.png</albedo_map>
+              <roughness>0.85</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
       <visual name="strawberry_r1_p01_cls2_powdery_mildew">
         <pose>0.1018 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
