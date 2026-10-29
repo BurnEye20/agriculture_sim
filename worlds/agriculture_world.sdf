@@ -107,7 +107,7 @@
     <include>
       <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/agri_rover</uri>
       <name>agri_rover</name>
-      <pose>1.40 -1.00 0.0 0 0 1.5707963</pose>
+      <pose>1.40 -1.20 0.0 0 0 1.5707963</pose>
     </include>
   </world>
 </sdf>

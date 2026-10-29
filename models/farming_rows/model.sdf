@@ -49,7 +49,7 @@
       <collision name="rows_collision">
         <geometry>
           <mesh>
-            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/2_farming_rows.stl</uri>
+            <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows/meshes/2_farming_rows_updated.STL</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -57,7 +57,7 @@
 
       <!-- Realistic Greenhouse Floor Matting with Fallen Leaves & Soil -->
       <visual name="greenhouse_floor_visual">
-        <pose>1.40 17.30 0.002 0 0 0</pose>
+        <pose>1.40 16.1075 0.002 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -80,7 +80,7 @@
       </visual>
       <!-- Row 1 Coco-Peat Substrate Strip -->
       <visual name="row_1_soil_strip">
-        <pose>0.1018 17.30 0.991 0 0 0</pose>
+        <pose>0.1018 16.1075 0.991 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -103,7 +103,7 @@
       </visual>
       <!-- Row 1 Lush Green Strawberry Foliage Canopy -->
       <visual name="row_1_foliage_canopy">
-        <pose>0.1018 17.30 0.992 0 0 0</pose>
+        <pose>0.1018 16.1075 0.992 0 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -124,9 +124,9 @@
           </pbr>
         </material>
       </visual>
-      <!-- Row 1 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <!-- Row 1 Front & Rear Black Drainage Catch Buckets -->
       <visual name="row_1_front_bucket">
-        <pose>0.1018 -1.24 0.70 0 0 0</pose>
+        <pose>0.1018 -1.4325 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -139,7 +139,7 @@
         </material>
       </visual>
       <visual name="row_1_rear_bucket">
-        <pose>0.1018 35.84 0.70 0 0 0</pose>
+        <pose>0.1018 33.6475 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -153,7 +153,7 @@
       </visual>
       <!-- Row 2 Coco-Peat Substrate Strip -->
       <visual name="row_2_soil_strip">
-        <pose>0.8585 17.30 0.991 0 0 0</pose>
+        <pose>0.8585 16.1075 0.991 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -176,7 +176,7 @@
       </visual>
       <!-- Row 2 Lush Green Strawberry Foliage Canopy -->
       <visual name="row_2_foliage_canopy">
-        <pose>0.8585 17.30 0.992 0 0 0</pose>
+        <pose>0.8585 16.1075 0.992 0 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -197,9 +197,9 @@
           </pbr>
         </material>
       </visual>
-      <!-- Row 2 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <!-- Row 2 Front & Rear Black Drainage Catch Buckets -->
       <visual name="row_2_front_bucket">
-        <pose>0.8585 -1.24 0.70 0 0 0</pose>
+        <pose>0.8585 -1.4325 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -212,7 +212,7 @@
         </material>
       </visual>
       <visual name="row_2_rear_bucket">
-        <pose>0.8585 35.84 0.70 0 0 0</pose>
+        <pose>0.8585 33.6475 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -226,7 +226,7 @@
       </visual>
       <!-- Row 3 Coco-Peat Substrate Strip -->
       <visual name="row_3_soil_strip">
-        <pose>1.9418 17.30 0.991 0 0 0</pose>
+        <pose>1.9418 16.1075 0.991 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -249,7 +249,7 @@
       </visual>
       <!-- Row 3 Lush Green Strawberry Foliage Canopy -->
       <visual name="row_3_foliage_canopy">
-        <pose>1.9418 17.30 0.992 0 0 0</pose>
+        <pose>1.9418 16.1075 0.992 0 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -270,9 +270,9 @@
           </pbr>
         </material>
       </visual>
-      <!-- Row 3 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <!-- Row 3 Front & Rear Black Drainage Catch Buckets -->
       <visual name="row_3_front_bucket">
-        <pose>1.9418 -1.24 0.70 0 0 0</pose>
+        <pose>1.9418 -1.4325 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -285,7 +285,7 @@
         </material>
       </visual>
       <visual name="row_3_rear_bucket">
-        <pose>1.9418 35.84 0.70 0 0 0</pose>
+        <pose>1.9418 33.6475 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -299,7 +299,7 @@
       </visual>
       <!-- Row 4 Coco-Peat Substrate Strip -->
       <visual name="row_4_soil_strip">
-        <pose>2.6985 17.30 0.991 0 0 0</pose>
+        <pose>2.6985 16.1075 0.991 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -322,7 +322,7 @@
       </visual>
       <!-- Row 4 Lush Green Strawberry Foliage Canopy -->
       <visual name="row_4_foliage_canopy">
-        <pose>2.6985 17.30 0.992 0 0 0</pose>
+        <pose>2.6985 16.1075 0.992 0 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -343,9 +343,9 @@
           </pbr>
         </material>
       </visual>
-      <!-- Row 4 Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <!-- Row 4 Front & Rear Black Drainage Catch Buckets -->
       <visual name="row_4_front_bucket">
-        <pose>2.6985 -1.24 0.70 0 0 0</pose>
+        <pose>2.6985 -1.4325 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -358,7 +358,7 @@
         </material>
       </visual>
       <visual name="row_4_rear_bucket">
-        <pose>2.6985 35.84 0.70 0 0 0</pose>
+        <pose>2.6985 33.6475 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -370,352 +370,8 @@
           <specular>0.25 0.25 0.25 1</specular>
         </material>
       </visual>
-      <!-- Greenhouse Steel Arch Frame 1 at Y=-1m -->
-      <visual name="gh_post_left_0">
-        <pose>-0.80 -1.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_0">
-        <pose>3.60 -1.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_0">
-        <pose>1.40 -1.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 2 at Y=4m -->
-      <visual name="gh_post_left_1">
-        <pose>-0.80 4.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_1">
-        <pose>3.60 4.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_1">
-        <pose>1.40 4.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 3 at Y=9m -->
-      <visual name="gh_post_left_2">
-        <pose>-0.80 9.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_2">
-        <pose>3.60 9.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_2">
-        <pose>1.40 9.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 4 at Y=14m -->
-      <visual name="gh_post_left_3">
-        <pose>-0.80 14.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_3">
-        <pose>3.60 14.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_3">
-        <pose>1.40 14.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 5 at Y=19m -->
-      <visual name="gh_post_left_4">
-        <pose>-0.80 19.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_4">
-        <pose>3.60 19.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_4">
-        <pose>1.40 19.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 6 at Y=24m -->
-      <visual name="gh_post_left_5">
-        <pose>-0.80 24.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_5">
-        <pose>3.60 24.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_5">
-        <pose>1.40 24.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 7 at Y=29m -->
-      <visual name="gh_post_left_6">
-        <pose>-0.80 29.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_6">
-        <pose>3.60 29.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_6">
-        <pose>1.40 29.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <!-- Greenhouse Steel Arch Frame 8 at Y=34m -->
-      <visual name="gh_post_left_7">
-        <pose>-0.80 34.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_7">
-        <pose>3.60 34.00 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_7">
-        <pose>1.40 34.00 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
       <visual name="strawberry_r1_p01_cls2_powdery_mildew">
-        <pose>0.1018 -0.2000 1.0904 0 0 0</pose>
+        <pose>0.1018 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -737,7 +393,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p02_cls1_gray_mold">
-        <pose>0.1018 0.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 0.3550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -759,7 +415,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p03_cls3_healthy">
-        <pose>0.1018 1.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 1.3100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -781,7 +437,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p04_cls0_anthracnose">
-        <pose>0.1018 2.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 2.2650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -803,7 +459,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p05_cls3_healthy">
-        <pose>0.1018 3.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 3.2200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -825,7 +481,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p06_cls2_powdery_mildew">
-        <pose>0.1018 4.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 4.1750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -847,7 +503,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p07_cls0_anthracnose">
-        <pose>0.1018 5.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 5.1300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -869,7 +525,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p08_cls1_gray_mold">
-        <pose>0.1018 6.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 6.0850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -891,7 +547,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p09_cls1_gray_mold">
-        <pose>0.1018 7.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 7.0400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -913,7 +569,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p10_cls3_healthy">
-        <pose>0.1018 8.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 7.9950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -935,7 +591,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p11_cls2_powdery_mildew">
-        <pose>0.1018 9.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 8.9500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -957,7 +613,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p12_cls0_anthracnose">
-        <pose>0.1018 10.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 9.9050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -979,7 +635,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p13_cls1_gray_mold">
-        <pose>0.1018 11.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 10.8600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1001,7 +657,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p14_cls2_powdery_mildew">
-        <pose>0.1018 12.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 11.8150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1023,7 +679,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p15_cls0_anthracnose">
-        <pose>0.1018 13.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 12.7700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1045,7 +701,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p16_cls3_healthy">
-        <pose>0.1018 14.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 13.7250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1067,7 +723,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p17_cls1_gray_mold">
-        <pose>0.1018 15.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 14.6800 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1089,7 +745,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p18_cls2_powdery_mildew">
-        <pose>0.1018 16.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 15.6350 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1111,7 +767,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p19_cls3_healthy">
-        <pose>0.1018 17.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 16.5900 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1133,7 +789,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p20_cls0_anthracnose">
-        <pose>0.1018 18.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 17.5450 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1155,7 +811,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p21_cls1_gray_mold">
-        <pose>0.1018 19.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 18.5000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1177,7 +833,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p22_cls3_healthy">
-        <pose>0.1018 20.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 19.4550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1199,7 +855,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p23_cls2_powdery_mildew">
-        <pose>0.1018 21.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 20.4100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1221,7 +877,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p24_cls0_anthracnose">
-        <pose>0.1018 22.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 21.3650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1243,7 +899,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p25_cls2_powdery_mildew">
-        <pose>0.1018 23.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 22.3200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1265,7 +921,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p26_cls1_gray_mold">
-        <pose>0.1018 24.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 23.2750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1287,7 +943,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p27_cls0_anthracnose">
-        <pose>0.1018 25.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 24.2300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1309,7 +965,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p28_cls3_healthy">
-        <pose>0.1018 26.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 25.1850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1331,7 +987,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p29_cls1_gray_mold">
-        <pose>0.1018 27.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 26.1400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1353,7 +1009,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p30_cls3_healthy">
-        <pose>0.1018 28.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 27.0950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1375,7 +1031,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p31_cls0_anthracnose">
-        <pose>0.1018 29.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 28.0500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1397,7 +1053,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p32_cls2_powdery_mildew">
-        <pose>0.1018 30.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 29.0050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1419,7 +1075,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p33_cls0_anthracnose">
-        <pose>0.1018 31.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 29.9600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1441,7 +1097,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p34_cls2_powdery_mildew">
-        <pose>0.1018 32.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 30.9150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1463,7 +1119,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p35_cls1_gray_mold">
-        <pose>0.1018 33.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 31.8700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1485,7 +1141,7 @@
         </material>
       </visual>
       <visual name="strawberry_r1_p36_cls3_healthy">
-        <pose>0.1018 34.8000 1.0904 0 0 0</pose>
+        <pose>0.1018 32.8250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1507,7 +1163,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p01_cls2_powdery_mildew">
-        <pose>0.8585 -0.2000 1.0904 0 0 0</pose>
+        <pose>0.8585 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1529,7 +1185,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p02_cls3_healthy">
-        <pose>0.8585 0.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 0.3550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1551,7 +1207,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p03_cls0_anthracnose">
-        <pose>0.8585 1.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 1.3100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1573,7 +1229,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p04_cls1_gray_mold">
-        <pose>0.8585 2.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 2.2650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1595,7 +1251,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p05_cls2_powdery_mildew">
-        <pose>0.8585 3.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 3.2200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1617,7 +1273,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p06_cls1_gray_mold">
-        <pose>0.8585 4.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 4.1750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1639,7 +1295,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p07_cls3_healthy">
-        <pose>0.8585 5.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 5.1300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1661,7 +1317,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p08_cls0_anthracnose">
-        <pose>0.8585 6.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 6.0850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1683,7 +1339,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p09_cls3_healthy">
-        <pose>0.8585 7.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 7.0400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1705,7 +1361,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p10_cls2_powdery_mildew">
-        <pose>0.8585 8.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 7.9950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1727,7 +1383,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p11_cls1_gray_mold">
-        <pose>0.8585 9.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 8.9500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1749,7 +1405,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p12_cls0_anthracnose">
-        <pose>0.8585 10.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 9.9050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1771,7 +1427,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p13_cls3_healthy">
-        <pose>0.8585 11.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 10.8600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1793,7 +1449,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p14_cls1_gray_mold">
-        <pose>0.8585 12.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 11.8150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1815,7 +1471,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p15_cls0_anthracnose">
-        <pose>0.8585 13.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 12.7700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1837,7 +1493,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p16_cls2_powdery_mildew">
-        <pose>0.8585 14.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 13.7250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1859,7 +1515,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p17_cls2_powdery_mildew">
-        <pose>0.8585 15.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 14.6800 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1881,7 +1537,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p18_cls3_healthy">
-        <pose>0.8585 16.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 15.6350 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1903,7 +1559,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p19_cls1_gray_mold">
-        <pose>0.8585 17.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 16.5900 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1925,7 +1581,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p20_cls0_anthracnose">
-        <pose>0.8585 18.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 17.5450 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1947,7 +1603,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p21_cls0_anthracnose">
-        <pose>0.8585 19.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 18.5000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1969,7 +1625,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p22_cls1_gray_mold">
-        <pose>0.8585 20.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 19.4550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -1991,7 +1647,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p23_cls3_healthy">
-        <pose>0.8585 21.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 20.4100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2013,7 +1669,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p24_cls2_powdery_mildew">
-        <pose>0.8585 22.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 21.3650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2035,7 +1691,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p25_cls3_healthy">
-        <pose>0.8585 23.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 22.3200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2057,7 +1713,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p26_cls0_anthracnose">
-        <pose>0.8585 24.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 23.2750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2079,7 +1735,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p27_cls2_powdery_mildew">
-        <pose>0.8585 25.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 24.2300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2101,7 +1757,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p28_cls1_gray_mold">
-        <pose>0.8585 26.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 25.1850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2123,7 +1779,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p29_cls1_gray_mold">
-        <pose>0.8585 27.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 26.1400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2145,7 +1801,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p30_cls3_healthy">
-        <pose>0.8585 28.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 27.0950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2167,7 +1823,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p31_cls2_powdery_mildew">
-        <pose>0.8585 29.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 28.0500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2189,7 +1845,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p32_cls0_anthracnose">
-        <pose>0.8585 30.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 29.0050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2211,7 +1867,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p33_cls1_gray_mold">
-        <pose>0.8585 31.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 29.9600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2233,7 +1889,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p34_cls3_healthy">
-        <pose>0.8585 32.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 30.9150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2255,7 +1911,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p35_cls0_anthracnose">
-        <pose>0.8585 33.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 31.8700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2277,7 +1933,7 @@
         </material>
       </visual>
       <visual name="strawberry_r2_p36_cls2_powdery_mildew">
-        <pose>0.8585 34.8000 1.0904 0 0 0</pose>
+        <pose>0.8585 32.8250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2299,7 +1955,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p01_cls3_healthy">
-        <pose>1.9418 -0.2000 1.0904 0 0 0</pose>
+        <pose>1.9418 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2321,7 +1977,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p02_cls2_powdery_mildew">
-        <pose>1.9418 0.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 0.3550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2343,7 +1999,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p03_cls1_gray_mold">
-        <pose>1.9418 1.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 1.3100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2365,7 +2021,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p04_cls0_anthracnose">
-        <pose>1.9418 2.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 2.2650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2387,7 +2043,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p05_cls0_anthracnose">
-        <pose>1.9418 3.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 3.2200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2409,7 +2065,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p06_cls1_gray_mold">
-        <pose>1.9418 4.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 4.1750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2431,7 +2087,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p07_cls2_powdery_mildew">
-        <pose>1.9418 5.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 5.1300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2453,7 +2109,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p08_cls3_healthy">
-        <pose>1.9418 6.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 6.0850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2475,7 +2131,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p09_cls0_anthracnose">
-        <pose>1.9418 7.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 7.0400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2497,7 +2153,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p10_cls2_powdery_mildew">
-        <pose>1.9418 8.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 7.9950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2519,7 +2175,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p11_cls3_healthy">
-        <pose>1.9418 9.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 8.9500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2541,7 +2197,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p12_cls1_gray_mold">
-        <pose>1.9418 10.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 9.9050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2563,7 +2219,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p13_cls0_anthracnose">
-        <pose>1.9418 11.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 10.8600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2585,7 +2241,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p14_cls3_healthy">
-        <pose>1.9418 12.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 11.8150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2607,7 +2263,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p15_cls2_powdery_mildew">
-        <pose>1.9418 13.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 12.7700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2629,7 +2285,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p16_cls1_gray_mold">
-        <pose>1.9418 14.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 13.7250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2651,7 +2307,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p17_cls1_gray_mold">
-        <pose>1.9418 15.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 14.6800 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2673,7 +2329,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p18_cls3_healthy">
-        <pose>1.9418 16.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 15.6350 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2695,7 +2351,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p19_cls2_powdery_mildew">
-        <pose>1.9418 17.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 16.5900 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2717,7 +2373,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p20_cls0_anthracnose">
-        <pose>1.9418 18.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 17.5450 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2739,7 +2395,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p21_cls2_powdery_mildew">
-        <pose>1.9418 19.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 18.5000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2761,7 +2417,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p22_cls3_healthy">
-        <pose>1.9418 20.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 19.4550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2783,7 +2439,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p23_cls0_anthracnose">
-        <pose>1.9418 21.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 20.4100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2805,7 +2461,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p24_cls1_gray_mold">
-        <pose>1.9418 22.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 21.3650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2827,7 +2483,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p25_cls2_powdery_mildew">
-        <pose>1.9418 23.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 22.3200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2849,7 +2505,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p26_cls0_anthracnose">
-        <pose>1.9418 24.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 23.2750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2871,7 +2527,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p27_cls1_gray_mold">
-        <pose>1.9418 25.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 24.2300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2893,7 +2549,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p28_cls3_healthy">
-        <pose>1.9418 26.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 25.1850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2915,7 +2571,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p29_cls1_gray_mold">
-        <pose>1.9418 27.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 26.1400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2937,7 +2593,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p30_cls3_healthy">
-        <pose>1.9418 28.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 27.0950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2959,7 +2615,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p31_cls0_anthracnose">
-        <pose>1.9418 29.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 28.0500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -2981,7 +2637,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p32_cls2_powdery_mildew">
-        <pose>1.9418 30.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 29.0050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3003,7 +2659,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p33_cls3_healthy">
-        <pose>1.9418 31.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 29.9600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3025,7 +2681,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p34_cls2_powdery_mildew">
-        <pose>1.9418 32.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 30.9150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3047,7 +2703,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p35_cls1_gray_mold">
-        <pose>1.9418 33.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 31.8700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3069,7 +2725,7 @@
         </material>
       </visual>
       <visual name="strawberry_r3_p36_cls0_anthracnose">
-        <pose>1.9418 34.8000 1.0904 0 0 0</pose>
+        <pose>1.9418 32.8250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3091,7 +2747,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p01_cls1_gray_mold">
-        <pose>2.6985 -0.2000 1.0904 0 0 0</pose>
+        <pose>2.6985 -0.6000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3113,7 +2769,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p02_cls3_healthy">
-        <pose>2.6985 0.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 0.3550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3135,7 +2791,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p03_cls0_anthracnose">
-        <pose>2.6985 1.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 1.3100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3157,7 +2813,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p04_cls2_powdery_mildew">
-        <pose>2.6985 2.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 2.2650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3179,7 +2835,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p05_cls3_healthy">
-        <pose>2.6985 3.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 3.2200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3201,7 +2857,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p06_cls1_gray_mold">
-        <pose>2.6985 4.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 4.1750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3223,7 +2879,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p07_cls0_anthracnose">
-        <pose>2.6985 5.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 5.1300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3245,7 +2901,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p08_cls2_powdery_mildew">
-        <pose>2.6985 6.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 6.0850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3267,7 +2923,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p09_cls0_anthracnose">
-        <pose>2.6985 7.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 7.0400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3289,7 +2945,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p10_cls1_gray_mold">
-        <pose>2.6985 8.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 7.9950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3311,7 +2967,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p11_cls2_powdery_mildew">
-        <pose>2.6985 9.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 8.9500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3333,7 +2989,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p12_cls3_healthy">
-        <pose>2.6985 10.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 9.9050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3355,7 +3011,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p13_cls2_powdery_mildew">
-        <pose>2.6985 11.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 10.8600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3377,7 +3033,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p14_cls0_anthracnose">
-        <pose>2.6985 12.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 11.8150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3399,7 +3055,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p15_cls3_healthy">
-        <pose>2.6985 13.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 12.7700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3421,7 +3077,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p16_cls1_gray_mold">
-        <pose>2.6985 14.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 13.7250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3443,7 +3099,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p17_cls0_anthracnose">
-        <pose>2.6985 15.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 14.6800 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3465,7 +3121,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p18_cls3_healthy">
-        <pose>2.6985 16.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 15.6350 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3487,7 +3143,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p19_cls2_powdery_mildew">
-        <pose>2.6985 17.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 16.5900 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3509,7 +3165,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p20_cls1_gray_mold">
-        <pose>2.6985 18.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 17.5450 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3531,7 +3187,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p21_cls0_anthracnose">
-        <pose>2.6985 19.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 18.5000 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3553,7 +3209,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p22_cls1_gray_mold">
-        <pose>2.6985 20.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 19.4550 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3575,7 +3231,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p23_cls2_powdery_mildew">
-        <pose>2.6985 21.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 20.4100 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3597,7 +3253,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p24_cls3_healthy">
-        <pose>2.6985 22.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 21.3650 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3619,7 +3275,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p25_cls1_gray_mold">
-        <pose>2.6985 23.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 22.3200 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3641,7 +3297,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p26_cls3_healthy">
-        <pose>2.6985 24.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 23.2750 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3663,7 +3319,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p27_cls0_anthracnose">
-        <pose>2.6985 25.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 24.2300 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3685,7 +3341,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p28_cls2_powdery_mildew">
-        <pose>2.6985 26.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 25.1850 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3707,7 +3363,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p29_cls1_gray_mold">
-        <pose>2.6985 27.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 26.1400 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3729,7 +3385,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p30_cls2_powdery_mildew">
-        <pose>2.6985 28.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 27.0950 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3751,7 +3407,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p31_cls0_anthracnose">
-        <pose>2.6985 29.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 28.0500 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3773,7 +3429,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p32_cls3_healthy">
-        <pose>2.6985 30.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 29.0050 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3795,7 +3451,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p33_cls1_gray_mold">
-        <pose>2.6985 31.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 29.9600 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3817,7 +3473,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p34_cls2_powdery_mildew">
-        <pose>2.6985 32.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 30.9150 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3839,7 +3495,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p35_cls3_healthy">
-        <pose>2.6985 33.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 31.8700 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -3861,7 +3517,7 @@
         </material>
       </visual>
       <visual name="strawberry_r4_p36_cls0_anthracnose">
-        <pose>2.6985 34.8000 1.0904 0 0 0</pose>
+        <pose>2.6985 32.8250 1.0904 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>

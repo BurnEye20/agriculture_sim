@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate realistic textures, split STL sub-meshes by material (galvanized steel vs white grow-bags),
-and build an enhanced, colorful agricultural greenhouse environment in Gazebo Sim.
+Generate realistic textures, split 2_farming_rows_updated.STL into sub-meshes by material
+(galvanized steel vs white grow-bags), and build the agricultural greenhouse environment in Gazebo Sim.
 """
 
 import os
@@ -16,12 +16,21 @@ TEXTURES_DIR = os.path.join(MESHES_DIR, "textures")
 TEST_IMAGES_DIR = os.path.join(PACKAGE_DIR, "Final_Fruit_Dataset_YOLOv11/test/images")
 MODEL_SDF_PATH = os.path.join(PACKAGE_DIR, "models/farming_rows/model.sdf")
 
+UPDATED_STL_NAME = "2_farming_rows_updated.STL"
+
+# Refined 35.0 m row dimensions from 2_farming_rows_updated.STL:
+# X in [0.0045, 2.7958], Y in [-1.3925, 33.6075] (length = 35.0 m, midpoint Y = 16.1075 m), Z in [0.0, 0.9904]
 ROW_X_CENTERS = [0.1018, 0.8585, 1.9418, 2.6985]
 ROW_X_RANGES = [(0.00, 0.21), (0.75, 0.97), (1.83, 2.05), (2.59, 2.81)]
+ROW_Y_MIN = -1.3925
+ROW_Y_MAX = 33.6075
+ROW_Y_MID = (ROW_Y_MIN + ROW_Y_MAX) / 2.0  # 16.1075 m
+ROW_LENGTH = ROW_Y_MAX - ROW_Y_MIN         # 35.0 m
+
 PANEL_Z_CENTER = 1.0904
 PANELS_PER_ROW = 36
-Y_START = -0.20
-Y_STEP = 1.00
+Y_START = -0.60
+Y_STEP = 0.955
 
 
 def generate_textures():
@@ -31,14 +40,12 @@ def generate_textures():
     # 1. Outer Agriculture Field Grass & Soil Texture (1024x1024)
     h, w = 1024, 1024
     base_grass = np.zeros((h, w, 3), dtype=np.float32)
-    # BGR in OpenCV: lush natural meadow green with warm soil patches
     base_grass[:, :] = [48, 118, 72]
     noise_fine = rng.normal(0, 14, (h, w, 3)).astype(np.float32)
     noise_coarse = cv2.GaussianBlur(
         rng.normal(0, 35, (h // 8, w // 8, 3)).astype(np.float32), (0, 0), 3
     )
     noise_coarse = cv2.resize(noise_coarse, (w, h), interpolation=cv2.INTER_CUBIC)
-    # Add subtle agricultural field plow/furrow lines along Y
     x_grid = np.linspace(0, 32 * np.pi, w, dtype=np.float32)
     furrows = (np.sin(x_grid) * 8.0)[None, :, None]
     field_img = np.clip(base_grass + noise_fine + noise_coarse + furrows, 20, 220).astype(
@@ -48,9 +55,7 @@ def generate_textures():
 
     # 2. Greenhouse Floor Matting + Soil + Fallen Leaves Texture (1024x1024)
     floor = np.zeros((h, w, 3), dtype=np.float32)
-    # Dark earthy brown-gray woven ground cover (BGR)
     floor[:, :] = [58, 66, 72]
-    # Woven grid pattern
     for i in range(0, h, 8):
         floor[i : i + 2, :] += 6
     for j in range(0, w, 8):
@@ -62,7 +67,6 @@ def generate_textures():
     floor = np.clip(floor + soil_patches + rng.normal(0, 7, (h, w, 3)), 30, 150).astype(
         np.uint8
     )
-    # Scatter fallen green/brown dried strawberry leaves across the greenhouse floor
     for _ in range(900):
         cx = int(rng.integers(10, w - 10))
         cy = int(rng.integers(10, h - 10))
@@ -70,14 +74,12 @@ def generate_textures():
         ax2 = int(rng.integers(2, 6))
         angle = int(rng.integers(0, 180))
         if rng.random() < 0.65:
-            # Greenish fallen leaf
             color = (
                 int(rng.integers(35, 65)),
                 int(rng.integers(85, 135)),
                 int(rng.integers(55, 95)),
             )
         else:
-            # Dried brown leaf
             color = (
                 int(rng.integers(30, 50)),
                 int(rng.integers(65, 95)),
@@ -89,7 +91,7 @@ def generate_textures():
     # 3. Rich Coco-Peat / Organic Substrate Texture (512x512)
     sh, sw = 512, 512
     soil = np.zeros((sh, sw, 3), dtype=np.float32)
-    soil[:, :] = [34, 52, 78]  # Rich dark peat brown (BGR)
+    soil[:, :] = [34, 52, 78]
     soil += rng.normal(0, 14, (sh, sw, 3))
     soil = np.clip(soil, 15, 130).astype(np.uint8)
     cv2.imwrite(os.path.join(TEXTURES_DIR, "coco_peat_soil.png"), soil)
@@ -109,7 +111,6 @@ def generate_textures():
         cv2.ellipse(
             foliage, (cx, cy), (r1, r2), ang, 0, 360, (b_val, g_val, r_val), -1, cv2.LINE_AA
         )
-        # Small white strawberry blossoms & tiny unripe/ripe berries for realism
         if rng.random() < 0.03:
             cv2.circle(foliage, (cx, cy), 4, (220, 245, 250), -1, cv2.LINE_AA)
             cv2.circle(foliage, (cx, cy), 2, (40, 210, 245), -1, cv2.LINE_AA)
@@ -144,7 +145,6 @@ f 1/1/1 3/3/1 4/4/1
 
 
 def write_canopy_hedge_obj(path, width_x, length_y, height_z, uv_y):
-    """Create a 3D rounded/trapezoidal strawberry foliage hedge mesh running along Y."""
     hx_bot = width_x / 2.0
     hx_top = width_x * 0.38
     hy = length_y / 2.0
@@ -184,8 +184,8 @@ f 4/1/3 7/3/3 8/4/3
 
 
 def split_stl_by_material():
-    """Split 2_farming_rows.stl into white grow-bag troughs vs galvanized steel support structure."""
-    src_stl = os.path.join(MESHES_DIR, "2_farming_rows.stl")
+    """Split 2_farming_rows_updated.STL into white grow-bag troughs vs galvanized steel support structure."""
+    src_stl = os.path.join(MESHES_DIR, UPDATED_STL_NAME)
     steel_stl = os.path.join(MESHES_DIR, "rows_steel_structure.stl")
     growbag_stl = os.path.join(MESHES_DIR, "rows_white_growbags.stl")
 
@@ -201,7 +201,6 @@ def split_stl_by_material():
             x_avg = (data[3] + data[6] + data[9]) / 3.0
             z_avg = (data[5] + data[8] + data[11]) / 3.0
             in_trough_x = any(xmin <= x_avg <= xmax for xmin, xmax in ROW_X_RANGES)
-            # Upper trough walls & bags (z_avg >= 0.875 inside the 4 row X ranges)
             if in_trough_x and z_avg >= 0.875:
                 growbag_tris.append(raw)
             else:
@@ -215,12 +214,12 @@ def split_stl_by_material():
                 f.write(t)
 
     print(
-        f"Split STL into steel structure ({len(steel_tris)} tris) and white grow-bags ({len(growbag_tris)} tris)."
+        f"Split {UPDATED_STL_NAME} into steel structure ({len(steel_tris)} tris) and white grow-bags ({len(growbag_tris)} tris)."
     )
 
 
 def generate_model_sdf():
-    stl_full_uri = f"file://{MESHES_DIR}/2_farming_rows.stl"
+    stl_full_uri = f"file://{MESHES_DIR}/{UPDATED_STL_NAME}"
     steel_uri = f"file://{MESHES_DIR}/rows_steel_structure.stl"
     growbag_uri = f"file://{MESHES_DIR}/rows_white_growbags.stl"
     panel_obj_uri = f"file://{MESHES_DIR}/strawberry_panel.obj"
@@ -245,10 +244,10 @@ def generate_model_sdf():
 
     visual_blocks = []
 
-    # 1. Greenhouse Floor Matting under the 4 rows (X centered at 1.40m, Y centered at 17.30m)
+    # 1. Greenhouse Floor Matting under the 4 rows (X centered at 1.40m, Y centered at ROW_Y_MID = 16.1075m)
     visual_blocks.append(f"""      <!-- Realistic Greenhouse Floor Matting with Fallen Leaves & Soil -->
       <visual name="greenhouse_floor_visual">
-        <pose>1.40 17.30 0.002 0 0 0</pose>
+        <pose>1.40 {ROW_Y_MID:.4f} 0.002 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -270,11 +269,13 @@ def generate_model_sdf():
         </material>
       </visual>""")
 
-    # 2. Coco-peat soil strips, lush green foliage hedges, black drip lines, and end catch buckets for each of the 4 rows
+    # 2. Coco-peat soil strips, lush green foliage hedges, and end catch buckets for each of the 4 rows
+    front_bucket_y = ROW_Y_MIN - 0.04  # -1.4325 m
+    rear_bucket_y = ROW_Y_MAX + 0.04   # 33.6475 m
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
         visual_blocks.append(f"""      <!-- Row {row_idx + 1} Coco-Peat Substrate Strip -->
       <visual name="row_{row_idx + 1}_soil_strip">
-        <pose>{x_pos:.4f} 17.30 0.991 0 0 0</pose>
+        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} 0.991 0 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -297,7 +298,7 @@ def generate_model_sdf():
       </visual>
       <!-- Row {row_idx + 1} Lush Green Strawberry Foliage Canopy -->
       <visual name="row_{row_idx + 1}_foliage_canopy">
-        <pose>{x_pos:.4f} 17.30 0.992 0 0 0</pose>
+        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} 0.992 0 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -318,9 +319,9 @@ def generate_model_sdf():
           </pbr>
         </material>
       </visual>
-      <!-- Row {row_idx + 1} Front & Rear Black Drainage Catch Buckets (like reference photo) -->
+      <!-- Row {row_idx + 1} Front & Rear Black Drainage Catch Buckets -->
       <visual name="row_{row_idx + 1}_front_bucket">
-        <pose>{x_pos:.4f} -1.24 0.70 0 0 0</pose>
+        <pose>{x_pos:.4f} {front_bucket_y:.4f} 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -333,7 +334,7 @@ def generate_model_sdf():
         </material>
       </visual>
       <visual name="row_{row_idx + 1}_rear_bucket">
-        <pose>{x_pos:.4f} 35.84 0.70 0 0 0</pose>
+        <pose>{x_pos:.4f} {rear_bucket_y:.4f} 0.70 0 0 0</pose>
         <geometry>
           <box>
             <size>0.22 0.24 0.16</size>
@@ -346,53 +347,7 @@ def generate_model_sdf():
         </material>
       </visual>""")
 
-    # 3. Greenhouse Galvanized Steel Side Posts & Overhead Roof Trusses spanning over the 4 rows
-    for arch_idx, y_arch in enumerate(range(-1, 37, 5)):
-        visual_blocks.append(f"""      <!-- Greenhouse Steel Arch Frame {arch_idx + 1} at Y={y_arch}m -->
-      <visual name="gh_post_left_{arch_idx}">
-        <pose>-0.80 {y_arch:.2f} 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_post_right_{arch_idx}">
-        <pose>3.60 {y_arch:.2f} 1.40 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.03</radius>
-            <length>2.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>
-      <visual name="gh_truss_beam_{arch_idx}">
-        <pose>1.40 {y_arch:.2f} 2.80 0 1.5707963 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.025</radius>
-            <length>4.44</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.55 0.58 0.62 1</ambient>
-          <diffuse>0.70 0.73 0.76 1</diffuse>
-          <specular>0.6 0.6 0.6 1</specular>
-        </material>
-      </visual>""")
-
-    # 4. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
+    # 3. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
         row_cls_seq = []
         for _ in range(PANELS_PER_ROW // 4):
@@ -503,9 +458,9 @@ def generate_model_sdf():
 def main():
     generate_textures()
     write_tiled_obj(os.path.join(MESHES_DIR, "field_ground.obj"), 120.0, 120.0, 30.0, 30.0)
-    write_tiled_obj(os.path.join(MESHES_DIR, "greenhouse_floor.obj"), 5.2, 40.0, 4.0, 30.0)
-    write_tiled_obj(os.path.join(MESHES_DIR, "soil_strip.obj"), 0.17, 36.8, 1.0, 180.0)
-    write_canopy_hedge_obj(os.path.join(MESHES_DIR, "foliage_hedge.obj"), 0.22, 36.6, 0.085, 90.0)
+    write_tiled_obj(os.path.join(MESHES_DIR, "greenhouse_floor.obj"), 5.2, 38.0, 4.0, 28.0)
+    write_tiled_obj(os.path.join(MESHES_DIR, "soil_strip.obj"), 0.17, 34.8, 1.0, 170.0)
+    write_canopy_hedge_obj(os.path.join(MESHES_DIR, "foliage_hedge.obj"), 0.22, 34.6, 0.085, 85.0)
     split_stl_by_material()
     generate_model_sdf()
 
