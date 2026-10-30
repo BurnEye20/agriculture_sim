@@ -1,0 +1,102 @@
+# robot_localization EKF configuration (world_frame: map)
+# Fuses:
+#   1. Wheel Odometry (/rover/wheel_odom) -> linear velocities (vx, vy)
+#   2. IMU (/rover/imu)                   -> orientation (yaw) & angular velocity (vyaw)
+#   3. ArUco Landmarks (/aruco_pose)      -> absolute map pose corrections (x, y, yaw)
+ekf_filter_node:
+  ros__parameters:
+    use_sim_time: true
+    frequency: 50.0
+    sensor_timeout: 0.1
+    two_d_mode: true
+    transform_time_offset: 0.0
+    transform_timeout: 0.0
+    print_diagnostics: true
+    debug: false
+    publish_tf: true
+    publish_acceleration: false
+
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: map
+
+    # Initial state at Left Lane start: [x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az]
+    initial_state: [-0.44, -1.75, 0.0,
+                    0.0, 0.0, 1.5707963,
+                    0.0, 0.0, 0.0,
+                    0.0, 0.0, 0.0,
+                    0.0, 0.0, 0.0]
+
+    # 1. Wheel Odometry input (/rover/wheel_odom from Gazebo DiffDrive)
+    # State order: [x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az]
+    odom0: /rover/wheel_odom
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true,  true,  false,
+                   false, false, false,
+                   false, false, false]
+    odom0_queue_size: 10
+    odom0_differential: false
+    odom0_relative: false
+
+    # 2. IMU input (/rover/imu) -> fuses 50 Hz gyroscope yaw rate (vyaw)
+    imu0: /rover/imu
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,
+                  false, false, false]
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 20
+    imu0_remove_gravitational_acceleration: true
+
+    # 3. ArUco Marker Absolute Pose Corrections (/aruco_pose PoseWithCovarianceStamped in map frame)
+    pose0: /aruco_pose
+    pose0_config: [true,  true,  false,
+                   false, false, true,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    pose0_differential: false
+    pose0_relative: false
+    pose0_queue_size: 10
+
+    # 15x15 Process Noise Covariance (Q)
+    process_noise_covariance: [
+      0.05, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.05, 0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.06, 0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.03, 0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.03, 0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.03, 0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.025, 0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.025, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.04, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.01, 0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.01, 0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.02, 0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.01, 0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.01, 0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,   0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.015
+    ]
+
+    # 15x15 Initial Estimate Error Covariance (P0)
+    initial_estimate_covariance: [
+      1e-3, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  1e-3, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-9, 0.0,  0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,  0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,  0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-3, 0.0,
+      0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1e-9
+    ]

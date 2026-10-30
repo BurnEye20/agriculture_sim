@@ -113,11 +113,11 @@
       <pose>0 0 0 0.0302300 -0.0174533 0</pose>
     </include>
 
-    <!-- Agricultural Inspection Rover between Row 2 and Row 3 (aligned with 2.0 deg sloped surface) -->
+    <!-- Agricultural Inspection Rover starting in Left Lane (X=-0.44m, Y=-1.75m, aligned with 2.0 deg sloped surface) -->
     <include>
       <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/agri_rover</uri>
       <name>agri_rover</name>
-      <pose>1.4004 -1.3494 -0.0110 -0.0174533 -0.0302300 1.5707963</pose>
+      <pose>-0.4394 -1.7492 -0.0502 -0.0174533 -0.0302300 1.5707963</pose>
     </include>
   </world>
 </sdf>

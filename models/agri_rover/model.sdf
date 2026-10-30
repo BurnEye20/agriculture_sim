@@ -359,12 +359,25 @@
         <topic>/rover/right_camera/image_raw</topic>
       </sensor>
 
-      <!-- BOTTOM FRONT ARUCO CAMERA + FLASHLIGHT VISUALS (Looking straight down at the ground) -->
-      <visual name="bottom_aruco_camera_body_visual">
-        <pose>0.30 0 0.22 0 1.5707963 0</pose>
+      <!-- UPPER-FRAME TILTED ARUCO CAMERA + FLASHLIGHT VISUALS (Mounted on Top Surface of Main Frame, Tilted at 48.7 deg to Ground) -->
+      <visual name="upper_aruco_camera_mount_visual">
+        <pose>0.325 0 0.432 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.045 0.055 0.045</size>
+            <size>0.045 0.050 0.026</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.12 0.12 0.14 1</ambient>
+          <diffuse>0.18 0.18 0.20 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="bottom_aruco_camera_body_visual">
+        <pose>0.340 0 0.452 0 0.8500 0</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.055 0.040</size>
           </box>
         </geometry>
         <material>
@@ -374,7 +387,7 @@
         </material>
       </visual>
       <visual name="bottom_aruco_camera_lens_visual">
-        <pose>0.30 0 0.194 0 0 0</pose>
+        <pose>0.358 0 0.436 0 2.4208 0</pose>
         <geometry>
           <cylinder>
             <radius>0.015</radius>
@@ -388,10 +401,10 @@
         </material>
       </visual>
       <visual name="bottom_flashlight_ring_visual">
-        <pose>0.30 0 0.197 0 0 0</pose>
+        <pose>0.356 0 0.438 0 2.4208 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.026</radius>
+            <radius>0.024</radius>
             <length>0.006</length>
           </cylinder>
         </geometry>
@@ -402,32 +415,32 @@
         </material>
       </visual>
 
-      <!-- DOWNWARD FLASHLIGHT SPOTLIGHT (Illuminating Ground ArUco Codes) -->
+      <!-- TILTED FLASHLIGHT SPOTLIGHT ON UPPER MAIN FRAME (Illuminating Ground ArUco Codes Ahead) -->
       <light name="aruco_flashlight" type="spot">
-        <pose>0.30 0 0.192 0 0 0</pose>
+        <pose>0.365 0 0.445 0 0.8500 0</pose>
         <cast_shadows>false</cast_shadows>
-        <intensity>2.5</intensity>
-        <direction>0 0 -1</direction>
+        <intensity>2.8</intensity>
+        <direction>1 0 0</direction>
         <diffuse>1.0 1.0 0.96 1</diffuse>
         <specular>0.5 0.5 0.5 1</specular>
         <attenuation>
-          <range>3.0</range>
-          <linear>0.1</linear>
+          <range>4.5</range>
+          <linear>0.08</linear>
           <constant>0.5</constant>
-          <quadratic>0.05</quadratic>
+          <quadratic>0.03</quadratic>
         </attenuation>
         <spot>
-          <inner_angle>0.65</inner_angle>
-          <outer_angle>1.35</outer_angle>
+          <inner_angle>0.75</inner_angle>
+          <outer_angle>1.45</outer_angle>
           <falloff>0.8</falloff>
         </spot>
       </light>
 
-      <!-- BOTTOM FRONT ARUCO CAMERA SENSOR (Looking straight down at Ground ArUco Codes) -->
+      <!-- UPPER-FRAME TILTED ARUCO CAMERA SENSOR (Mounted at z=0.445m, Tilted 0.85 rad / 48.7 deg Downward) -->
       <sensor name="bottom_aruco_camera" type="camera">
-        <pose>0.30 0 0.192 0 1.5707963 0</pose>
+        <pose>0.365 0 0.445 0 0.8500 0</pose>
         <camera>
-          <horizontal_fov>1.65</horizontal_fov>
+          <horizontal_fov>1.35</horizontal_fov>
           <image>
             <width>640</width>
             <height>640</height>
@@ -435,7 +448,7 @@
           </image>
           <clip>
             <near>0.02</near>
-            <far>5.0</far>
+            <far>6.0</far>
           </clip>
           <optical_frame_id>bottom_camera_optical_link</optical_frame_id>
           <camera_info_topic>/rover/bottom_camera/camera_info</camera_info_topic>
@@ -455,6 +468,9 @@
         <topic>/rover/imu</topic>
         <gz_frame_id>imu_link</gz_frame_id>
         <imu>
+          <orientation_reference_frame>
+            <localization>ENU</localization>
+          </orientation_reference_frame>
           <angular_velocity>
             <z>
               <noise type="gaussian">
@@ -618,8 +634,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>2.2</mu>
-              <mu2>2.5</mu2>
+              <mu>0.05</mu>
+              <mu2>0.05</mu2>
             </ode>
           </friction>
         </surface>
@@ -675,8 +691,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>2.2</mu>
-              <mu2>2.5</mu2>
+              <mu>0.05</mu>
+              <mu2>0.05</mu2>
             </ode>
           </friction>
         </surface>
@@ -770,8 +786,10 @@
       <max_angular_acceleration>6.0</max_angular_acceleration>
       <topic>/model/agri_rover/cmd_vel</topic>
       <odom_topic>/model/agri_rover/wheel_odom</odom_topic>
+      <tf_topic>/model/agri_rover/tf</tf_topic>
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
+      <odom_publish_frequency>50</odom_publish_frequency>
     </plugin>
 
     <!-- Ground-Truth Pose Reference (used by simulation for initialization & validation) -->

@@ -20,7 +20,8 @@ install(DIRECTORY
 
 install(PROGRAMS
   scripts/yolo_strawberry_detector.py
-  scripts/ekf_aruco_localizer.py
+  scripts/aruco_localizer_node.py
+  scripts/nav2_row_mission.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

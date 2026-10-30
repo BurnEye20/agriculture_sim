@@ -1,6 +1,6 @@
 # Ground-truth ArUco landmark coordinates (DICT_4X4_50) placed every 5.0m across all 3 lanes
 aruco_dictionary: DICT_4X4_50
-marker_size_m: 0.18
+marker_size_m: 0.28
 lanes:
   left: -0.4400
   center: 1.4000
