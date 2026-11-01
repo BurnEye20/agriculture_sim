@@ -90,13 +90,18 @@
         <param name="use_sim_time" value="true"/>
     </node>
 
-    <!-- 8. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->
+    <!-- 8. Telescopic Camera Mast Controller (linear actuator; set height on /camera_mast/set_height) -->
+    <node pkg="agriculture_sim" exec="camera_mast_controller.py" name="camera_mast_controller" output="screen">
+        <param name="use_sim_time" value="true"/>
+    </node>
+
+    <!-- 9. YOLOv11 Strawberry Disease Detector for Left & Right Rover Cameras -->
     <node pkg="agriculture_sim" exec="yolo_strawberry_detector.py" name="yolo_strawberry_detector" output="screen">
         <param name="model_path" value="$(var yolo_model_path)"/>
         <param name="conf_threshold" value="0.25"/>
     </node>
 
-    <!-- 9. RViz2 Visualization -->
+    <!-- 10. RViz2 Visualization -->
     <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)" output="screen">
         <param name="use_sim_time" value="true"/>
     </node>

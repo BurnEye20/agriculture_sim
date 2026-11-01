@@ -1,0 +1,37 @@
+# Telescopic camera mast (3-section linear-actuator lifting column) for agri_rover.
+#
+# All heights are the left/right row cameras' optical-centre heights above the
+# ground (base_link origin), in metres.
+#
+# Real strawberry rows vary between 1.20 m and 1.30 m in height, so the mast must
+# be able to raise the cameras up to 1.40 m. If you change any GEOMETRY value,
+# regenerate the robot description and rebuild:
+#
+#   python3 scripts/generate_camera_mast.py
+#   cd ~/ros2_ws && colcon build --packages-select agriculture_sim
+#
+# RUNTIME values are read by camera_mast_controller.py at startup and only need a
+# rebuild/relaunch.
+camera_mast:
+  # ---------------- GEOMETRY (regenerate model.sdf / agri_rover.urdf) ----------------
+  mast_x: 0.02              # mast position on the deck along base_link +X [m]
+  deck_top_z: 0.42          # chassis deck top surface height [m]
+  min_camera_height: 0.95   # camera height with the column fully retracted [m]
+  max_camera_height: 1.40   # camera height with the column fully extended [m] (max reach)
+  camera_below_top: 0.05    # camera optical centre below the top cap of the last section [m]
+  nest_step: 0.02           # how far each inner section protrudes when retracted [m]
+  min_overlap: 0.10         # minimum section overlap at full extension (stiffness) [m]
+  # Outer cross-section [X, Y] of the 3 sections, outer (fixed) -> inner (camera head) [m]
+  section_profiles:
+    - [0.110, 0.090]
+    - [0.094, 0.074]
+    - [0.078, 0.058]
+  section_masses: [1.6, 1.0, 1.4]   # [kg] (last one includes camera head + GNSS)
+  actuator_effort: 800.0            # max linear-motor force per stage [N]
+
+  # ---------------- RUNTIME (camera_mast_controller.py / Gazebo plugin) ----------------
+  max_speed_per_stage: 0.03  # linear motor speed per stage [m/s] (2 stages -> 0.06 m/s lift)
+  # Startup height. 1.09 m matches the strawberry height of the current Gazebo rows
+  # (real rows 1.20-1.30 m -> command e.g. 1.25-1.35 m on /camera_mast/set_height).
+  default_camera_height: 1.09
+  height_tolerance: 0.005    # [m] "target reached" tolerance

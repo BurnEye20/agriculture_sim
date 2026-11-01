@@ -3,7 +3,7 @@
   <model name="agri_rover">
     <pose>0 0 0 0 0 0</pose>
 
-    <!-- Main Rover Chassis + Suspension + Mast + Dual Opposite Cameras -->
+    <!-- Main Rover Chassis + Suspension (telescopic camera mast is a separate link chain below) -->
     <link name="base_link">
       <inertial>
         <pose>0 0 0.30 0 0 0</pose>
@@ -193,172 +193,6 @@
         </material>
       </visual>
 
-      <!-- Central Camera Mast Base Flange -->
-      <visual name="mast_base_visual">
-        <pose>0.02 0 0.43 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.045</radius>
-            <length>0.02</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.2 0.2 0.22 1</ambient>
-          <diffuse>0.25 0.25 0.28 1</diffuse>
-        </material>
-      </visual>
-
-      <!-- Central Aluminum Vertical Mast Pole -->
-      <visual name="mast_pole_visual">
-        <pose>0.02 0 0.82 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.018</radius>
-            <length>0.80</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.75 0.77 0.80 1</ambient>
-          <diffuse>0.82 0.84 0.88 1</diffuse>
-          <specular>0.7 0.7 0.7 1</specular>
-        </material>
-      </visual>
-
-      <!-- Top GNSS/GPS Receiver Disk -->
-      <visual name="gnss_disk_visual">
-        <pose>0.02 0 1.235 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.085</radius>
-            <length>0.035</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.15 0.16 0.18 1</ambient>
-          <diffuse>0.20 0.22 0.24 1</diffuse>
-          <specular>0.3 0.3 0.3 1</specular>
-        </material>
-      </visual>
-
-      <!-- Cross-Bracket on Mast for Opposite-Facing Dual Cameras (at Z = 1.0904 m) -->
-      <visual name="camera_mount_bar_visual">
-        <pose>0.02 0 1.0904 1.5707963 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.010</radius>
-            <length>0.14</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.15 0.15 0.15 1</ambient>
-          <diffuse>0.2 0.2 0.2 1</diffuse>
-        </material>
-      </visual>
-
-      <!-- LEFT CAMERA VISUAL (Facing +Y_rover -> Left Strawberry Row) -->
-      <visual name="left_camera_body_visual">
-        <pose>0.02 0.075 1.0904 0 0 1.5707963</pose>
-        <geometry>
-          <box>
-            <size>0.045 0.055 0.045</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.10 0.10 0.12 1</ambient>
-          <diffuse>0.14 0.14 0.16 1</diffuse>
-          <specular>0.4 0.4 0.4 1</specular>
-        </material>
-      </visual>
-      <visual name="left_camera_lens_visual">
-        <pose>0.02 0.102 1.0904 1.5707963 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.016</radius>
-            <length>0.015</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.05 0.15 0.25 1</ambient>
-          <diffuse>0.10 0.25 0.40 1</diffuse>
-          <specular>0.9 0.9 0.9 1</specular>
-        </material>
-      </visual>
-
-      <!-- RIGHT CAMERA VISUAL (Facing -Y_rover -> Right Strawberry Row) -->
-      <visual name="right_camera_body_visual">
-        <pose>0.02 -0.075 1.0904 0 0 -1.5707963</pose>
-        <geometry>
-          <box>
-            <size>0.045 0.055 0.045</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.10 0.10 0.12 1</ambient>
-          <diffuse>0.14 0.14 0.16 1</diffuse>
-          <specular>0.4 0.4 0.4 1</specular>
-        </material>
-      </visual>
-      <visual name="right_camera_lens_visual">
-        <pose>0.02 -0.102 1.0904 1.5707963 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.016</radius>
-            <length>0.015</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.05 0.15 0.25 1</ambient>
-          <diffuse>0.10 0.25 0.40 1</diffuse>
-          <specular>0.9 0.9 0.9 1</specular>
-        </material>
-      </visual>
-
-      <!-- LEFT CAMERA SENSOR (Looking left at Row 2) -->
-      <sensor name="left_row_camera" type="camera">
-        <pose>0.02 0.105 1.0904 0 0 1.5707963</pose>
-        <camera>
-          <horizontal_fov>1.0472</horizontal_fov>
-          <image>
-            <width>640</width>
-            <height>640</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.05</near>
-            <far>15.0</far>
-          </clip>
-          <optical_frame_id>left_camera_optical_link</optical_frame_id>
-          <camera_info_topic>/rover/left_camera/camera_info</camera_info_topic>
-        </camera>
-        <always_on>1</always_on>
-        <update_rate>15</update_rate>
-        <visualize>true</visualize>
-        <topic>/rover/left_camera/image_raw</topic>
-      </sensor>
-
-      <!-- RIGHT CAMERA SENSOR (Looking right at Row 3) -->
-      <sensor name="right_row_camera" type="camera">
-        <pose>0.02 -0.105 1.0904 0 0 -1.5707963</pose>
-        <camera>
-          <horizontal_fov>1.0472</horizontal_fov>
-          <image>
-            <width>640</width>
-            <height>640</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.05</near>
-            <far>15.0</far>
-          </clip>
-          <optical_frame_id>right_camera_optical_link</optical_frame_id>
-          <camera_info_topic>/rover/right_camera/camera_info</camera_info_topic>
-        </camera>
-        <always_on>1</always_on>
-        <update_rate>15</update_rate>
-        <visualize>true</visualize>
-        <topic>/rover/right_camera/image_raw</topic>
-      </sensor>
-
       <!-- UPPER-FRAME TILTED ARUCO CAMERA + FLASHLIGHT VISUALS (Mounted on Top Surface of Main Frame, Tilted at 48.7 deg to Ground) -->
       <visual name="upper_aruco_camera_mount_visual">
         <pose>0.325 0 0.432 0 0 0</pose>
@@ -496,6 +330,394 @@
         </imu>
       </sensor>
     </link>
+
+    <!-- CAMERA_MAST_BEGIN (auto-generated by scripts/generate_camera_mast.py from config/camera_mast.yaml - do not edit by hand) -->
+    <!-- TELESCOPIC CAMERA MAST - 3-section linear-actuator lifting column. Camera height 0.95 m (retracted) .. 1.40 m (extended), section length 0.540 m, stroke 0.225 m per stage -->
+
+    <link name="mast_stage1_link">
+      <pose>0.02 0 0.42 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.27 0 0 0</pose>
+        <mass>1.6</mass>
+        <inertia>
+          <ixx>0.039960</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.040493</iyy>
+          <iyz>0</iyz>
+          <izz>0.002693</izz>
+        </inertia>
+      </inertial>
+      <collision name="section_collision">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.11 0.09 0.54</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="section_visual">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.11 0.09 0.54</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.70 0.72 0.75 1</ambient>
+          <diffuse>0.80 0.82 0.85 1</diffuse>
+          <specular>0.85 0.85 0.85 1</specular>
+        </material>
+      </visual>
+      <visual name="top_collar_visual">
+        <pose>0 0 0.532 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.114 0.094 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.45 0.47 0.50 1</ambient>
+          <diffuse>0.55 0.57 0.60 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <visual name="deck_flange_visual">
+        <pose>0 0 0.008 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.16 0.14 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="linear_motor_housing_visual">
+        <pose>-0.085 0 0.075 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.06 0.13</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name="mast_stage2_link">
+      <pose>0.02 0 0.44 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.27 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.024756</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.025036</iyy>
+          <iyz>0</iyz>
+          <izz>0.001193</izz>
+        </inertia>
+      </inertial>
+      <collision name="section_collision">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.094 0.074 0.54</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="section_visual">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.094 0.074 0.54</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.70 0.72 0.75 1</ambient>
+          <diffuse>0.80 0.82 0.85 1</diffuse>
+          <specular>0.85 0.85 0.85 1</specular>
+        </material>
+      </visual>
+      <visual name="top_collar_visual">
+        <pose>0 0 0.532 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.098 0.078 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.45 0.47 0.50 1</ambient>
+          <diffuse>0.55 0.57 0.60 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name="mast_stage3_link">
+      <pose>0.02 0 0.46 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.27 0 0 0</pose>
+        <mass>1.4</mass>
+        <inertia>
+          <ixx>0.034412</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.034730</iyy>
+          <iyz>0</iyz>
+          <izz>0.001102</izz>
+        </inertia>
+      </inertial>
+      <collision name="section_collision">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.078 0.058 0.54</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="section_visual">
+        <pose>0 0 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.078 0.058 0.54</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.70 0.72 0.75 1</ambient>
+          <diffuse>0.80 0.82 0.85 1</diffuse>
+          <specular>0.85 0.85 0.85 1</specular>
+        </material>
+      </visual>
+      <visual name="top_collar_visual">
+        <pose>0 0 0.532 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.082 0.062 0.016</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.45 0.47 0.50 1</ambient>
+          <diffuse>0.55 0.57 0.60 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular>
+        </material>
+      </visual>
+      <collision name="camera_head_collision">
+        <pose>0 0 0.49 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.06 0.24 0.06</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="top_plate_visual">
+        <pose>0 0 0.545 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.088 0.068 0.010</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="gnss_disk_visual">
+        <pose>0 0 0.5675 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.085</radius>
+            <length>0.035</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.15 0.16 0.18 1</ambient>
+          <diffuse>0.20 0.22 0.24 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+      <visual name="camera_mount_bar_visual">
+        <pose>0 0 0.49 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="left_camera_body_visual">
+        <pose>0 0.075 0.49 0 0 1.5707963</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.055 0.045</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="left_camera_lens_visual">
+        <pose>0 0.102 0.49 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.015</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.15 0.25 1</ambient>
+          <diffuse>0.10 0.25 0.40 1</diffuse>
+          <specular>0.9 0.9 0.9 1</specular>
+        </material>
+      </visual>
+      <visual name="right_camera_body_visual">
+        <pose>0 -0.075 0.49 0 0 -1.5707963</pose>
+        <geometry>
+          <box>
+            <size>0.045 0.055 0.045</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.10 0.10 0.12 1</ambient>
+          <diffuse>0.14 0.14 0.16 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+        </material>
+      </visual>
+      <visual name="right_camera_lens_visual">
+        <pose>0 -0.102 0.49 1.5707963 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.016</radius>
+            <length>0.015</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.05 0.15 0.25 1</ambient>
+          <diffuse>0.10 0.25 0.40 1</diffuse>
+          <specular>0.9 0.9 0.9 1</specular>
+        </material>
+      </visual>
+      <!-- LEFT ROW CAMERA SENSOR (looking +Y_rover at the left strawberry row) -->
+      <sensor name="left_row_camera" type="camera">
+        <pose>0 0.105 0.49 0 0 1.5707963</pose>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>640</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>15.0</far>
+          </clip>
+          <optical_frame_id>left_camera_optical_link</optical_frame_id>
+          <camera_info_topic>/rover/left_camera/camera_info</camera_info_topic>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>15</update_rate>
+        <visualize>true</visualize>
+        <topic>/rover/left_camera/image_raw</topic>
+      </sensor>
+      <!-- RIGHT ROW CAMERA SENSOR (looking -Y_rover at the right strawberry row) -->
+      <sensor name="right_row_camera" type="camera">
+        <pose>0 -0.105 0.49 0 0 -1.5707963</pose>
+        <camera>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>640</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>15.0</far>
+          </clip>
+          <optical_frame_id>right_camera_optical_link</optical_frame_id>
+          <camera_info_topic>/rover/right_camera/camera_info</camera_info_topic>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>15</update_rate>
+        <visualize>true</visualize>
+        <topic>/rover/right_camera/image_raw</topic>
+      </sensor>
+    </link>
+
+    <joint name="camera_mast_base_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>mast_stage1_link</child>
+    </joint>
+
+    <joint name="mast_stage2_joint" type="prismatic">
+      <parent>mast_stage1_link</parent>
+      <child>mast_stage2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.2250</upper>
+          <effort>800</effort>
+          <velocity>0.03</velocity>
+        </limit>
+        <dynamics>
+          <damping>30.0</damping>
+          <friction>2.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <joint name="mast_stage3_joint" type="prismatic">
+      <parent>mast_stage2_link</parent>
+      <child>mast_stage3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.2250</upper>
+          <effort>800</effort>
+          <velocity>0.03</velocity>
+        </limit>
+        <dynamics>
+          <damping>30.0</damping>
+          <friction>2.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Linear motors: position-controlled with speed limit (cmd topics bridged from /camera_mast/stageN_cmd) -->
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>mast_stage2_joint</joint_name>
+      <topic>/model/agri_rover/camera_mast/stage2_cmd</topic>
+      <use_velocity_commands>true</use_velocity_commands>
+      <cmd_max>0.03</cmd_max>
+      <cmd_min>-0.03</cmd_min>
+      <initial_position>0.0700</initial_position>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>mast_stage3_joint</joint_name>
+      <topic>/model/agri_rover/camera_mast/stage3_cmd</topic>
+      <use_velocity_commands>true</use_velocity_commands>
+      <cmd_max>0.03</cmd_max>
+      <cmd_min>-0.03</cmd_min>
+      <initial_position>0.0700</initial_position>
+    </plugin>
+    <!-- CAMERA_MAST_END -->
 
     <!-- FRONT LEFT WHEEL -->
     <link name="front_left_wheel">
@@ -806,6 +1028,8 @@
       <joint_name>front_right_wheel_joint</joint_name>
       <joint_name>rear_left_wheel_joint</joint_name>
       <joint_name>rear_right_wheel_joint</joint_name>
+      <joint_name>mast_stage2_joint</joint_name>
+      <joint_name>mast_stage3_joint</joint_name>
     </plugin>
   </model>
 </sdf>
