@@ -53,6 +53,7 @@ class CameraMastController(Node):
         self.n_stages = len(self.stage_joints)
 
         self.target = self.clamp(float(self.get_parameter("default_camera_height").value))
+        self.last_logged_target = self.target
         self.current = None
         self.was_in_position = False
 
@@ -79,15 +80,18 @@ class CameraMastController(Node):
 
     def set_height_cb(self, msg: Float64):
         requested = float(msg.data)
-        self.target = self.clamp(requested)
-        if abs(requested - self.target) > 1e-6:
+        new_target = self.clamp(requested)
+        if abs(requested - new_target) > 1e-6:
             self.get_logger().warn(
                 f"Requested camera height {requested:.3f} m outside "
-                f"[{self.h_min:.2f}, {self.h_max:.2f}] m -> clamped to {self.target:.3f} m"
+                f"[{self.h_min:.2f}, {self.h_max:.2f}] m -> clamped to {new_target:.3f} m"
             )
-        else:
-            self.get_logger().info(f"New camera height target: {self.target:.3f} m")
-        self.was_in_position = False
+        elif abs(new_target - self.last_logged_target) >= 0.025:
+            self.get_logger().info(f"New camera height target: {new_target:.3f} m")
+            self.last_logged_target = new_target
+        if self.current is None or abs(self.current - new_target) > self.tol:
+            self.was_in_position = False
+        self.target = new_target
         self.send_target()
 
     def send_target(self):
