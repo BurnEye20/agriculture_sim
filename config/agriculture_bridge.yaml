@@ -40,15 +40,10 @@
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
 
-# Telescopic camera mast linear motors (driven by camera_mast_controller.py)
-- ros_topic_name: "/camera_mast/stage2_cmd"
-  gz_topic_name: "/model/agri_rover/camera_mast/stage2_cmd"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/camera_mast/stage3_cmd"
-  gz_topic_name: "/model/agri_rover/camera_mast/stage3_cmd"
+# Telescopic camera mast linear motors (one per-stage command shared by all stages,
+# published by camera_mast_controller.py)
+- ros_topic_name: "/camera_mast/stage_cmd"
+  gz_topic_name: "/model/agri_rover/camera_mast/stage_cmd"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ

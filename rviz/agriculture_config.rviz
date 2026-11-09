@@ -137,11 +137,7 @@ Visualization Manager:
       Enabled: true
       Name: ArUco Landmarks & EKF Status
       Namespaces:
-        aruco_detection_ray: true
-        aruco_labels: true
         aruco_landmarks: true
-        ekf_hud: true
-        ekf_uncertainty: true
       Topic:
         Depth: 10
         Durability Policy: Volatile

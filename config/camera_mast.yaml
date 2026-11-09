@@ -1,11 +1,13 @@
 # Telescopic camera mast (3-section linear-actuator lifting column) for agri_rover.
 #
-# All heights are the left/right row cameras' optical-centre heights above the
-# ground (base_link origin), in metres.
+# Heights are measured from the ground (base_link origin), in metres.
 #
-# Real strawberry rows vary between 1.20 m and 1.30 m in height, so the mast must
-# be able to raise the cameras up to 1.40 m. If you change any GEOMETRY value,
-# regenerate the robot description and rebuild:
+# The section length is computed automatically so that `num_sections` equal
+# sections reach `max_height` at full extension while keeping `overlap_ratio`
+# of each section inside the one below it (stiffness + proportions like a real
+# lifting column).
+#
+# If you change any GEOMETRY value, regenerate the robot description and rebuild:
 #
 #   python3 scripts/generate_camera_mast.py
 #   cd ~/ros2_ws && colcon build --packages-select agriculture_sim
@@ -14,24 +16,27 @@
 # rebuild/relaunch.
 camera_mast:
   # ---------------- GEOMETRY (regenerate model.sdf / agri_rover.urdf) ----------------
+  num_sections: 3           # telescopic frames: 1 fixed outer + 2 extending
+  max_height: 1.20          # maximum height at full extension [m]
+  # What max_height refers to:
+  #   top    -> physical top of the whole mast (GNSS cap) = overall design height
+  #   camera -> optical centre of the left/right row cameras
+  max_height_reference: top
+  overlap_ratio: 0.40       # fraction of each section that stays inside the one below at full extension
+  min_overlap: 0.10         # hard lower limit for that overlap [m]
   mast_x: 0.02              # mast position on the deck along base_link +X [m]
   deck_top_z: 0.42          # chassis deck top surface height [m]
-  min_camera_height: 0.95   # camera height with the column fully retracted [m]
-  max_camera_height: 1.40   # camera height with the column fully extended [m] (max reach)
-  camera_below_top: 0.05    # camera optical centre below the top cap of the last section [m]
+  camera_below_top: 0.05    # camera optical centre below the top of the last section [m]
+  head_above_top: 0.045     # top plate + GNSS cap height above the last section [m]
   nest_step: 0.02           # how far each inner section protrudes when retracted [m]
-  min_overlap: 0.10         # minimum section overlap at full extension (stiffness) [m]
-  # Outer cross-section [X, Y] of the 3 sections, outer (fixed) -> inner (camera head) [m]
-  section_profiles:
-    - [0.110, 0.090]
-    - [0.094, 0.074]
-    - [0.078, 0.058]
-  section_masses: [1.6, 1.0, 1.4]   # [kg] (last one includes camera head + GNSS)
-  actuator_effort: 800.0            # max linear-motor force per stage [N]
+  outer_profile: [0.110, 0.090]  # cross-section [X, Y] of the outer (fixed) section [m]
+  profile_step: 0.016       # each inner section is this much smaller in X and Y [m]
+  section_mass: 0.7         # mass of one aluminium section [kg]
+  camera_head_mass: 0.8     # cameras + cross-bar + GNSS on the top section [kg]
+  actuator_effort: 800.0    # max linear-motor force per stage [N]
 
   # ---------------- RUNTIME (camera_mast_controller.py / Gazebo plugin) ----------------
-  max_speed_per_stage: 0.03  # linear motor speed per stage [m/s] (2 stages -> 0.06 m/s lift)
-  # Startup height. 1.09 m matches the strawberry height of the current Gazebo rows
-  # (real rows 1.20-1.30 m -> command e.g. 1.25-1.35 m on /camera_mast/set_height).
+  max_speed_per_stage: 0.03  # linear motor speed per stage [m/s]
+  # Startup camera height. 1.09 m matches the strawberry height of the current Gazebo rows.
   default_camera_height: 1.09
   height_tolerance: 0.005    # [m] "target reached" tolerance

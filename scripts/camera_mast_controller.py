@@ -4,21 +4,21 @@ Camera Mast Controller (telescopic linear-actuator lifting column)
 ==================================================================
 Single interface for setting the row-camera height. A future computer-vision
 node only needs to publish the desired camera height; this node clamps it to the
-mechanical range and splits it into synchronized stage commands (like a real
-multi-stage lifting column driven by one linear motor).
+mechanical range and converts it into one per-stage extension command that all
+stages follow synchronously (like a real multi-stage lifting column driven by a
+single linear motor).
 
 Subscribes:
   /camera_mast/set_height       std_msgs/Float64  desired camera height above ground [m]
-  /joint_states                 sensor_msgs/JointState (mast_stage2_joint, mast_stage3_joint)
+  /joint_states                 sensor_msgs/JointState (mast_stage2_joint .. mast_stageN_joint)
 Publishes:
-  /camera_mast/stage2_cmd       std_msgs/Float64  -> Gazebo JointPositionController
-  /camera_mast/stage3_cmd       std_msgs/Float64  -> Gazebo JointPositionController
+  /camera_mast/stage_cmd        std_msgs/Float64  per-stage extension -> Gazebo JointPositionControllers
   /camera_mast/current_height   std_msgs/Float64  measured camera height [m]
   /camera_mast/target_height    std_msgs/Float64  active (clamped) target [m]
   /camera_mast/in_position      std_msgs/Bool     True when within height_tolerance
 
-Range/speed defaults come from config/camera_mast.yaml (same file used to
-generate the robot model) and can be overridden as ROS parameters.
+Range and stage count come from config/camera_mast_derived.yaml (written by
+scripts/generate_camera_mast.py); speed/startup values from config/camera_mast.yaml.
 """
 
 import os
@@ -30,37 +30,33 @@ from sensor_msgs.msg import JointState
 from std_msgs.msg import Bool, Float64
 import yaml
 
-STAGE_JOINTS = ("mast_stage2_joint", "mast_stage3_joint")
-
 
 class CameraMastController(Node):
     def __init__(self):
         super().__init__("camera_mast_controller")
 
-        cfg_path = os.path.join(
-            get_package_share_directory("agriculture_sim"), "config", "camera_mast.yaml"
-        )
-        with open(cfg_path, "r") as fh:
+        cfg_dir = os.path.join(get_package_share_directory("agriculture_sim"), "config")
+        with open(os.path.join(cfg_dir, "camera_mast.yaml"), "r") as fh:
             cfg = yaml.safe_load(fh)["camera_mast"]
+        with open(os.path.join(cfg_dir, "camera_mast_derived.yaml"), "r") as fh:
+            derived = yaml.safe_load(fh)["camera_mast_derived"]
 
-        self.declare_parameter("min_camera_height", float(cfg["min_camera_height"]))
-        self.declare_parameter("max_camera_height", float(cfg["max_camera_height"]))
+        self.stage_joints = list(derived["stage_joints"])
+        self.declare_parameter("min_camera_height", float(derived["min_camera_height"]))
+        self.declare_parameter("max_camera_height", float(derived["max_camera_height"]))
         self.declare_parameter("default_camera_height", float(cfg["default_camera_height"]))
         self.declare_parameter("height_tolerance", float(cfg.get("height_tolerance", 0.005)))
 
         self.h_min = float(self.get_parameter("min_camera_height").value)
         self.h_max = float(self.get_parameter("max_camera_height").value)
         self.tol = float(self.get_parameter("height_tolerance").value)
-        self.n_stages = len(STAGE_JOINTS)
+        self.n_stages = len(self.stage_joints)
 
         self.target = self.clamp(float(self.get_parameter("default_camera_height").value))
         self.current = None
         self.was_in_position = False
 
-        self.stage_pubs = [
-            self.create_publisher(Float64, "/camera_mast/stage2_cmd", 10),
-            self.create_publisher(Float64, "/camera_mast/stage3_cmd", 10),
-        ]
+        self.stage_pub = self.create_publisher(Float64, "/camera_mast/stage_cmd", 10)
         self.current_pub = self.create_publisher(Float64, "/camera_mast/current_height", 10)
         self.target_pub = self.create_publisher(Float64, "/camera_mast/target_height", 10)
         self.in_pos_pub = self.create_publisher(Bool, "/camera_mast/in_position", 10)
@@ -73,8 +69,9 @@ class CameraMastController(Node):
         self.create_timer(0.1, self.publish_status)
 
         self.get_logger().info(
-            f"Camera mast range {self.h_min:.2f}-{self.h_max:.2f} m, startup target "
-            f"{self.target:.3f} m. Command height on /camera_mast/set_height (std_msgs/Float64)."
+            f"{int(derived['num_sections'])}-section camera mast, range {self.h_min:.2f}-"
+            f"{self.h_max:.2f} m, startup target {self.target:.3f} m. "
+            f"Command height on /camera_mast/set_height (std_msgs/Float64)."
         )
 
     def clamp(self, h: float) -> float:
@@ -94,14 +91,12 @@ class CameraMastController(Node):
         self.send_target()
 
     def send_target(self):
-        per_stage = (self.target - self.h_min) / self.n_stages
-        for pub in self.stage_pubs:
-            pub.publish(Float64(data=per_stage))
+        self.stage_pub.publish(Float64(data=(self.target - self.h_min) / self.n_stages))
 
     def joint_state_cb(self, msg: JointState):
         pos = dict(zip(msg.name, msg.position))
-        if all(j in pos for j in STAGE_JOINTS):
-            self.current = self.h_min + sum(pos[j] for j in STAGE_JOINTS)
+        if all(j in pos for j in self.stage_joints):
+            self.current = self.h_min + sum(pos[j] for j in self.stage_joints)
 
     def publish_status(self):
         self.target_pub.publish(Float64(data=self.target))
