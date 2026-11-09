@@ -4,6 +4,7 @@ Generate realistic textures, split 2_farming_rows_updated.STL into sub-meshes by
 (galvanized steel vs white grow-bags), and build the agricultural greenhouse environment in Gazebo Sim.
 """
 
+import math
 import os
 import random
 import struct
@@ -27,10 +28,67 @@ ROW_Y_MAX = 33.6075
 ROW_Y_MID = (ROW_Y_MIN + ROW_Y_MAX) / 2.0  # 16.1075 m
 ROW_LENGTH = ROW_Y_MAX - ROW_Y_MIN         # 35.0 m
 
-PANEL_Z_CENTER = 1.0904
+ORIG_TROUGH_Z = 0.9904
+PANEL_OFFSET_ABOVE_TROUGH = 0.1000
 PANELS_PER_ROW = 36
 Y_START = -0.60
 Y_STEP = 0.955
+
+# Uneven strawberry aisle configuration (smooth 0.25 degree aisle inclination + subtle per-row offsets)
+# Over the 35 m row length, 0.25 deg produces a natural ~15.3 cm elevation change (panels spanning
+# ~0.86 m to ~1.06 m), sitting smoothly between the previous extremes and within the telescopic
+# camera mast's 0.726 m - 1.105 m optical height adjustment range.
+AISLE_ANGLE_DEG = 0.25
+AISLE_ANGLE_RAD = math.radians(AISLE_ANGLE_DEG)
+AISLE_SLOPE_TAN = math.tan(AISLE_ANGLE_RAD)
+BASE_TROUGH_Z_MID = 0.8550
+ROW_SLOPE_SIGNS = [1.0, 1.0, -1.0, -1.0]         # Left pair rises +0.25 deg, right pair descends -0.25 deg
+ROW_Z_OFFSETS = [-0.020, 0.015, -0.010, 0.025]   # Smooth uneven base heights across the 4 rows (m)
+
+
+def row_trough_z(row_idx: int, y: float) -> float:
+    """Return the top-of-trough Z height (m) for row `row_idx` (0..3) at coordinate `y`."""
+    return (
+        BASE_TROUGH_Z_MID
+        + ROW_Z_OFFSETS[row_idx]
+        + ROW_SLOPE_SIGNS[row_idx] * (y - ROW_Y_MID) * AISLE_SLOPE_TAN
+    )
+
+
+def row_panel_z(row_idx: int, y: float) -> float:
+    """Return the strawberry inspection panel center Z height (m) for row `row_idx` at `y`."""
+    return row_trough_z(row_idx, y) + PANEL_OFFSET_ABOVE_TROUGH
+
+
+def row_roll_rad(row_idx: int) -> float:
+    """Return the SDF roll angle (rad around +X) that tilts a Y-aligned row by +/-1.0 deg."""
+    return ROW_SLOPE_SIGNS[row_idx] * AISLE_ANGLE_RAD
+
+
+def target_trough_z_at_xy(x: float, y: float) -> float:
+    """Continuous target trough top Z(x, y) across the left (rows 0,1) and right (rows 2,3) stands."""
+    if x < 1.40:
+        w = min(max((x - 0.25) / (0.71 - 0.25), 0.0), 1.0)
+        return (1.0 - w) * row_trough_z(0, y) + w * row_trough_z(1, y)
+    else:
+        w = min(max((x - 2.09) / (2.55 - 2.09), 0.0), 1.0)
+        return (1.0 - w) * row_trough_z(2, y) + w * row_trough_z(3, y)
+
+
+def warp_stl_vertex_z(x: float, y: float, z: float) -> float:
+    """
+    Transform vertex Z in 2_farming_rows_updated.STL to follow the 1.0 deg uneven aisle profile:
+    - Base plates at z == 0 remain flush on the ground (z_new = 0).
+    - Upper gutter channels & grow-bags (z >= 0.85 m) shift rigidly by delta_z(x, y).
+    - Support legs & diagonal braces (0 < z < 0.85 m) scale linearly from 0 to 0.85 + delta_z(x, y).
+    """
+    if z <= 1e-5:
+        return 0.0
+    delta_z = target_trough_z_at_xy(x, y) - ORIG_TROUGH_Z
+    z_join = 0.85
+    if z >= z_join:
+        return z + delta_z
+    return z * ((z_join + delta_z) / z_join)
 
 
 def generate_textures():
@@ -184,13 +242,19 @@ f 4/1/3 7/3/3 8/4/3
 
 
 def split_stl_by_material():
-    """Split 2_farming_rows_updated.STL into white grow-bag troughs vs galvanized steel support structure."""
+    """
+    Split 2_farming_rows_updated.STL into white grow-bag troughs vs galvanized steel support
+    structure while warping the 4 rows to the 1.0 deg uneven aisle height profile (keeping
+    all steel support feet at z = 0 on the sloped ground).
+    """
     src_stl = os.path.join(MESHES_DIR, UPDATED_STL_NAME)
     steel_stl = os.path.join(MESHES_DIR, "rows_steel_structure.stl")
     growbag_stl = os.path.join(MESHES_DIR, "rows_white_growbags.stl")
+    collision_stl = os.path.join(MESHES_DIR, "rows_sloped_collision.stl")
 
     steel_tris = []
     growbag_tris = []
+    all_sloped_tris = []
 
     with open(src_stl, "rb") as f:
         header = f.read(80)
@@ -198,15 +262,45 @@ def split_stl_by_material():
         for _ in range(num_tri):
             raw = f.read(50)
             data = struct.unpack("<12fH", raw)
-            x_avg = (data[3] + data[6] + data[9]) / 3.0
-            z_avg = (data[5] + data[8] + data[11]) / 3.0
-            in_trough_x = any(xmin <= x_avg <= xmax for xmin, xmax in ROW_X_RANGES)
-            if in_trough_x and z_avg >= 0.875:
-                growbag_tris.append(raw)
-            else:
-                steel_tris.append(raw)
+            x1, y1, z1 = data[3], data[4], data[5]
+            x2, y2, z2 = data[6], data[7], data[8]
+            x3, y3, z3 = data[9], data[10], data[11]
+            attr = data[12]
 
-    for out_path, tris in [(steel_stl, steel_tris), (growbag_stl, growbag_tris)]:
+            x_avg = (x1 + x2 + x3) / 3.0
+            z_avg = (z1 + z2 + z3) / 3.0
+            in_trough_x = any(xmin <= x_avg <= xmax for xmin, xmax in ROW_X_RANGES)
+
+            nz1 = warp_stl_vertex_z(x1, y1, z1)
+            nz2 = warp_stl_vertex_z(x2, y2, z2)
+            nz3 = warp_stl_vertex_z(x3, y3, z3)
+
+            # Recompute triangle normal after Z warp
+            ux, uy, uz = x2 - x1, y2 - y1, nz2 - nz1
+            vx, vy, vz = x3 - x1, y3 - y1, nz3 - nz1
+            nx = uy * vz - uz * vy
+            ny = uz * vx - ux * vz
+            nz = ux * vy - uy * vx
+            norm = math.sqrt(nx * nx + ny * ny + nz * nz)
+            if norm > 1e-12:
+                nx, ny, nz = nx / norm, ny / norm, nz / norm
+            else:
+                nx, ny, nz = data[0], data[1], data[2]
+
+            warped_raw = struct.pack(
+                "<12fH", nx, ny, nz, x1, y1, nz1, x2, y2, nz2, x3, y3, nz3, attr
+            )
+            all_sloped_tris.append(warped_raw)
+            if in_trough_x and z_avg >= 0.875:
+                growbag_tris.append(warped_raw)
+            else:
+                steel_tris.append(warped_raw)
+
+    for out_path, tris in [
+        (steel_stl, steel_tris),
+        (growbag_stl, growbag_tris),
+        (collision_stl, all_sloped_tris),
+    ]:
         with open(out_path, "wb") as f:
             f.write(header)
             f.write(struct.pack("<I", len(tris)))
@@ -214,12 +308,14 @@ def split_stl_by_material():
                 f.write(t)
 
     print(
-        f"Split {UPDATED_STL_NAME} into steel structure ({len(steel_tris)} tris) and white grow-bags ({len(growbag_tris)} tris)."
+        f"Warped & split {UPDATED_STL_NAME} (1.0 deg uneven aisles): "
+        f"steel ({len(steel_tris)} tris), grow-bags ({len(growbag_tris)} tris), "
+        f"collision ({len(all_sloped_tris)} tris)."
     )
 
 
 def generate_model_sdf():
-    stl_full_uri = f"file://{MESHES_DIR}/{UPDATED_STL_NAME}"
+    stl_collision_uri = f"file://{MESHES_DIR}/rows_sloped_collision.stl"
     steel_uri = f"file://{MESHES_DIR}/rows_steel_structure.stl"
     growbag_uri = f"file://{MESHES_DIR}/rows_white_growbags.stl"
     panel_obj_uri = f"file://{MESHES_DIR}/strawberry_panel.obj"
@@ -269,13 +365,18 @@ def generate_model_sdf():
         </material>
       </visual>""")
 
-    # 2. Coco-peat soil strips, lush green foliage hedges, and end catch buckets for each of the 4 rows
-    front_bucket_y = ROW_Y_MIN - 0.04  # -1.4325 m
-    rear_bucket_y = ROW_Y_MAX + 0.04   # 33.6475 m
+    # 2. Coco-peat soil strips and lush green foliage hedges for each of the 4 rows
+    #    Each row is inclined at 0.25 deg (roll around +X) with smooth uneven heights across the 4 aisles.
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
-        visual_blocks.append(f"""      <!-- Row {row_idx + 1} Coco-Peat Substrate Strip -->
+        roll_rad = row_roll_rad(row_idx)
+        z_trough_mid = row_trough_z(row_idx, ROW_Y_MID)
+        z_soil_mid = z_trough_mid + 0.0006
+        z_foliage_mid = z_trough_mid + 0.0016
+        slope_deg_signed = ROW_SLOPE_SIGNS[row_idx] * AISLE_ANGLE_DEG
+
+        visual_blocks.append(f"""      <!-- Row {row_idx + 1} Coco-Peat Substrate Strip (Aisle Slope: {slope_deg_signed:+.2f} deg) -->
       <visual name="row_{row_idx + 1}_soil_strip">
-        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} 0.991 0 0 0</pose>
+        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} {z_soil_mid:.4f} {roll_rad:.7f} 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -296,9 +397,9 @@ def generate_model_sdf():
           </pbr>
         </material>
       </visual>
-      <!-- Row {row_idx + 1} Lush Green Strawberry Foliage Canopy -->
+      <!-- Row {row_idx + 1} Lush Green Strawberry Foliage Canopy (Aisle Slope: {slope_deg_signed:+.2f} deg) -->
       <visual name="row_{row_idx + 1}_foliage_canopy">
-        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} 0.992 0 0 0</pose>
+        <pose>{x_pos:.4f} {ROW_Y_MID:.4f} {z_foliage_mid:.4f} {roll_rad:.7f} 0 0</pose>
         <cast_shadows>true</cast_shadows>
         <geometry>
           <mesh>
@@ -317,33 +418,6 @@ def generate_model_sdf():
               <metalness>0.0</metalness>
             </metal>
           </pbr>
-        </material>
-      </visual>
-      <!-- Row {row_idx + 1} Front & Rear Black Drainage Catch Buckets -->
-      <visual name="row_{row_idx + 1}_front_bucket">
-        <pose>{x_pos:.4f} {front_bucket_y:.4f} 0.70 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.22 0.24 0.16</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.08 0.08 0.09 1</ambient>
-          <diffuse>0.12 0.12 0.14 1</diffuse>
-          <specular>0.25 0.25 0.25 1</specular>
-        </material>
-      </visual>
-      <visual name="row_{row_idx + 1}_rear_bucket">
-        <pose>{x_pos:.4f} {rear_bucket_y:.4f} 0.70 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.22 0.24 0.16</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.08 0.08 0.09 1</ambient>
-          <diffuse>0.12 0.12 0.14 1</diffuse>
-          <specular>0.25 0.25 0.25 1</specular>
         </material>
       </visual>""")
 
@@ -447,8 +521,9 @@ def generate_model_sdf():
 
     visual_blocks.extend(bump_collisions)
 
-    # 5. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 rows
+    # 5. 144 Strawberry 20x20cm (640x640) Inspection Panels equally distributed across the 4 uneven 1.0 deg rows
     for row_idx, x_pos in enumerate(ROW_X_CENTERS):
+        roll_rad = row_roll_rad(row_idx)
         row_cls_seq = []
         for _ in range(PANELS_PER_ROW // 4):
             block = list(cls_keys)
@@ -457,6 +532,7 @@ def generate_model_sdf():
 
         for panel_idx, cls_key in enumerate(row_cls_seq):
             y_pos = Y_START + panel_idx * Y_STEP
+            z_panel = row_panel_z(row_idx, y_pos)
             img_list = classes[cls_key]
             img_name = img_list[cls_counters[cls_key] % len(img_list)]
             cls_counters[cls_key] += 1
@@ -464,7 +540,7 @@ def generate_model_sdf():
 
             visual_name = f"strawberry_r{row_idx + 1}_p{panel_idx + 1:02d}_{cls_key}"
             visual_blocks.append(f"""      <visual name="{visual_name}">
-        <pose>{x_pos:.4f} {y_pos:.4f} {PANEL_Z_CENTER:.4f} 0 0 0</pose>
+        <pose>{x_pos:.4f} {y_pos:.4f} {z_panel:.4f} {roll_rad:.7f} 0 0</pose>
         <cast_shadows>false</cast_shadows>
         <geometry>
           <mesh>
@@ -539,7 +615,7 @@ def generate_model_sdf():
       <collision name="rows_collision">
         <geometry>
           <mesh>
-            <uri>{stl_full_uri}</uri>
+            <uri>{stl_collision_uri}</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

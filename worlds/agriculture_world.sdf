@@ -106,7 +106,7 @@
       </link>
     </model>
 
-    <!-- 4 Rows of Vertical Strawberry Systems + 65 Non-Uniform Bumps + 24 Ground ArUco Markers (on 2.0 deg slope) -->
+    <!-- 4 Uneven Strawberry Rows (1.0 deg aisle slope) + 65 Non-Uniform Bumps + 24 Ground ArUco Markers (on 2.0 deg sloped field) -->
     <include>
       <uri>file:///home/burneye228/ros2_ws/src/agriculture_sim/models/farming_rows</uri>
       <name>farming_rows</name>
