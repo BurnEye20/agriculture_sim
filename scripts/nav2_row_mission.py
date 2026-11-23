@@ -17,12 +17,12 @@ Also publishes /ekf_path, /odom_imu_encoder_path, and /ground_truth_path for RVi
 import math
 
 from action_msgs.msg import GoalStatus
-from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseStamped, Twist
 from nav2_msgs.action import NavigateToPose
-from nav_msgs.msg import Odometry, Path
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
+from std_msgs.msg import String
 
 
 def yaw_to_quaternion(yaw: float):
@@ -33,6 +33,9 @@ def yaw_to_quaternion(yaw: float):
 class Nav2RowMissionNode(Node):
     def __init__(self):
         super().__init__("nav2_row_mission")
+
+        self.declare_parameter("auto_start", True)
+        auto_start = bool(self.get_parameter("auto_start").value)
 
         self.nav_client = ActionClient(self, NavigateToPose, "navigate_to_pose")
 
@@ -48,28 +51,101 @@ class Nav2RowMissionNode(Node):
         self.wp_idx = 0
         self.goal_active = False
         self.mission_done = False
+        self.paused = not auto_start
+        self.estop = False
+        self.returning_to_base = False
+        self.current_goal_handle = None
 
-        # RViz trajectory paths
-        self.ekf_path = Path()
-        self.ekf_path.header.frame_id = "map"
-        self.raw_path = Path()
-        self.raw_path.header.frame_id = "map"
-        self.gt_path = Path()
-        self.gt_path.header.frame_id = "map"
-
-        self.ekf_path_pub = self.create_publisher(Path, "/ekf_path", 10)
-        self.raw_path_pub = self.create_publisher(Path, "/odom_imu_encoder_path", 10)
-        self.gt_path_pub = self.create_publisher(Path, "/ground_truth_path", 10)
-
-        self.create_subscription(Odometry, "/odometry/filtered", self.ekf_callback, 10)
-        self.create_subscription(Odometry, "/rover/wheel_odom", self.wheel_odom_callback, 10)
-        self.create_subscription(Odometry, "/rover/ground_truth_odom", self.gt_odom_callback, 10)
+        # Ground Station mission command & status interface
+        self.status_pub = self.create_publisher(String, "/ground_station/mission_status", 10)
+        self.cmd_vel_pub = self.create_publisher(Twist, "/cmd_vel", 10)
+        self.create_subscription(
+            String, "/ground_station/mission_cmd", self.mission_cmd_callback, 10
+        )
 
         self.create_timer(1.0, self.mission_tick)
-        self.get_logger().info("Nav2 Row Mission Node initialized. Waiting for /navigate_to_pose action server...")
+        self.create_timer(0.5, self.publish_status)
+        self.get_logger().info(
+            f"Nav2 Row Mission Node initialized (auto_start={auto_start}). "
+            "Listening for Ground Station commands on /ground_station/mission_cmd."
+        )
+
+    def publish_status(self):
+        if self.estop:
+            payload = "estop|Emergency Stop Active"
+        elif self.mission_done:
+            payload = "at_base|Returned to Base — Ready for Next Mission"
+        elif self.paused:
+            payload = "manual_mode|Manual Control Mode (Nav2 Paused)"
+        elif self.returning_to_base or self.wp_idx >= 5:
+            desc = (
+                self.waypoints[self.wp_idx][0]
+                if self.wp_idx < len(self.waypoints)
+                else "Base (-0.44, -1.75)"
+            )
+            payload = f"returning_to_base|Returning to Base · {desc}"
+        else:
+            desc = (
+                self.waypoints[self.wp_idx][0]
+                if self.wp_idx < len(self.waypoints)
+                else "Inspecting Rows"
+            )
+            payload = f"running_mission|Running Mission · WP {self.wp_idx + 1}/{len(self.waypoints)} ({desc})"
+        self.status_pub.publish(String(data=payload))
+
+    def _cancel_active_goal(self):
+        if self.current_goal_handle is not None:
+            try:
+                self.current_goal_handle.cancel_goal_async()
+            except Exception:
+                pass
+            self.current_goal_handle = None
+        self.goal_active = False
+
+    def mission_cmd_callback(self, msg: String):
+        cmd = msg.data.strip().lower()
+        self.get_logger().info(f"[Ground Station Command] '{cmd}'")
+        if cmd in ("pause", "stop"):
+            self.paused = True
+            self.estop = False
+            self.returning_to_base = False
+            self._cancel_active_goal()
+            self.cmd_vel_pub.publish(Twist())
+        elif cmd == "estop":
+            self.paused = True
+            self.estop = True
+            self.returning_to_base = False
+            self._cancel_active_goal()
+            self.cmd_vel_pub.publish(Twist())
+        elif cmd == "release_estop":
+            self.estop = False
+            self.paused = True
+        elif cmd in ("start", "resume"):
+            self.estop = False
+            if self.mission_done or self.returning_to_base:
+                self._cancel_active_goal()
+                self.wp_idx = 0
+                self.mission_done = False
+                self.returning_to_base = False
+            self.paused = False
+        elif cmd == "reset":
+            self.estop = False
+            self.returning_to_base = False
+            self._cancel_active_goal()
+            self.wp_idx = 0
+            self.mission_done = False
+            self.paused = False
+        elif cmd == "rtb":
+            self.estop = False
+            self.returning_to_base = True
+            self._cancel_active_goal()
+            self.wp_idx = len(self.waypoints) - 1
+            self.mission_done = False
+            self.paused = False
+        self.publish_status()
 
     def mission_tick(self):
-        if self.mission_done or self.goal_active:
+        if self.paused or self.estop or self.mission_done or self.goal_active:
             return
 
         if not self.nav_client.server_is_ready():
@@ -78,6 +154,7 @@ class Nav2RowMissionNode(Node):
         if self.wp_idx >= len(self.waypoints):
             self.mission_done = True
             self.get_logger().info("All Nav2 multi-row waypoints completed! Rover returned to start.")
+            self.publish_status()
             return
 
         desc, gx, gy, gyaw = self.waypoints[self.wp_idx]
@@ -106,64 +183,35 @@ class Nav2RowMissionNode(Node):
         if not goal_handle.accepted:
             self.get_logger().warn("Nav2 goal rejected, retrying on next tick...")
             self.goal_active = False
+            self.current_goal_handle = None
+            return
+        self.current_goal_handle = goal_handle
+        if self.paused or self.estop:
+            # Cancelled while waiting for acceptance
+            self._cancel_active_goal()
             return
         result_future = goal_handle.get_result_async()
         result_future.add_done_callback(self.goal_result_callback)
 
     def goal_result_callback(self, future):
         status = future.result().status
-        desc, gx, gy, _ = self.waypoints[self.wp_idx]
-        if status == GoalStatus.STATUS_SUCCEEDED:
-            self.get_logger().info(f"[Nav2 Goal Reached] Completed '{desc}' at ({gx:.2f}, {gy:.2f}m).")
-            self.wp_idx += 1
-        else:
-            self.get_logger().warn(f"[Nav2 Goal Status={status}] Retrying '{desc}'...")
+        self.current_goal_handle = None
         self.goal_active = False
-
-    def _append_path(self, path_msg: Path, pub, x: float, y: float, stamp):
-        if len(path_msg.poses) == 0 or (
-            math.hypot(x - path_msg.poses[-1].pose.position.x, y - path_msg.poses[-1].pose.position.y) > 0.08
-        ):
-            ps = PoseStamped()
-            ps.header.stamp = stamp
-            ps.header.frame_id = "map"
-            ps.pose.position.x = float(x)
-            ps.pose.position.y = float(y)
-            ps.pose.orientation.w = 1.0
-            path_msg.header.stamp = stamp
-            path_msg.poses.append(ps)
-            if len(path_msg.poses) > 1500:
-                path_msg.poses.pop(0)
-            pub.publish(path_msg)
-
-    def ekf_callback(self, msg: Odometry):
-        self._append_path(
-            self.ekf_path,
-            self.ekf_path_pub,
-            msg.pose.pose.position.x,
-            msg.pose.pose.position.y,
-            msg.header.stamp,
-        )
-
-    def wheel_odom_callback(self, msg: Odometry):
-        ox = msg.pose.pose.position.x
-        oy = msg.pose.pose.position.y
-        self._append_path(
-            self.raw_path,
-            self.raw_path_pub,
-            -0.44 - oy,
-            -1.75 + ox,
-            msg.header.stamp,
-        )
-
-    def gt_odom_callback(self, msg: Odometry):
-        self._append_path(
-            self.gt_path,
-            self.gt_path_pub,
-            msg.pose.pose.position.x,
-            msg.pose.pose.position.y,
-            msg.header.stamp,
-        )
+        if self.paused or self.estop or status == GoalStatus.STATUS_CANCELED:
+            self.get_logger().info("[Nav2 Goal Canceled] Yielding control to Ground Station operator.")
+            return
+        if self.wp_idx < len(self.waypoints):
+            desc, gx, gy, _ = self.waypoints[self.wp_idx]
+            if status == GoalStatus.STATUS_SUCCEEDED:
+                self.get_logger().info(f"[Nav2 Goal Reached] Completed '{desc}' at ({gx:.2f}, {gy:.2f}m).")
+                self.wp_idx += 1
+                if self.wp_idx >= len(self.waypoints):
+                    self.mission_done = True
+                    self.returning_to_base = False
+                    self.get_logger().info("Returned to initial base (-0.44, -1.75m). Ready for next mission.")
+                    self.publish_status()
+            else:
+                self.get_logger().warn(f"[Nav2 Goal Status={status}] Retrying '{desc}'...")
 
 
 def main(args=None):

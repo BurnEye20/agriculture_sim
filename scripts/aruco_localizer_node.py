@@ -251,14 +251,14 @@ class ArucoLocalizerNode(Node):
                 self.trigger_pub.publish(trig)
 
                 # Publish PoseWithCovarianceStamped (/aruco_pose) for robot_localization ekf_node
-                if dist_3d <= self.max_dist_3d and abs(marker_rel_y) <= 0.55 and abs(self.current_wz) < 0.35:
+                if dist_3d <= self.max_dist_3d and abs(marker_rel_y) <= 0.65 and abs(self.current_wz) < 0.45:
                     ground_corners = cand["ground_corners"]
                     edge_dx = ground_corners[1][0] - ground_corners[0][0]
                     edge_dy = ground_corners[1][1] - ground_corners[0][1]
                     # Directed vector P0 -> P1 of all markers points along +X_map (0 rad),
                     # so body edge angle = -robot_yaw over the full [-pi, pi] range.
                     measured_yaw = normalize_angle(-math.atan2(edge_dy, edge_dx))
-                    yaw_innov = max(-0.12, min(0.12, normalize_angle(measured_yaw - self.ekf_yaw)))
+                    yaw_innov = max(-0.25, min(0.25, normalize_angle(measured_yaw - self.ekf_yaw)))
                     z_yaw = normalize_angle(self.ekf_yaw + yaw_innov)
 
                     proj_yaw = normalize_angle(self.ekf_yaw + 0.5 * yaw_innov)

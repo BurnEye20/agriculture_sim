@@ -40,8 +40,8 @@ ekf_filter_node:
     odom0_differential: false
     odom0_relative: false
 
-    # 2. IMU input (/rover/imu) -> fuses 50 Hz gyroscope yaw rate (vyaw)
-    imu0: /rover/imu
+    # 2. IMU input (/rover/imu_noisy from wheel_odom_noise_node) -> fuses 50 Hz gyroscope yaw rate (vyaw)
+    imu0: /rover/imu_noisy
     imu0_config: [false, false, false,
                   false, false, false,
                   false, false, false,

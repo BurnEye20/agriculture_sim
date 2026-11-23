@@ -21,6 +21,7 @@ install(DIRECTORY
 install(PROGRAMS
   scripts/yolo_strawberry_detector.py
   scripts/aruco_localizer_node.py
+  scripts/wheel_odom_noise_node.py
   scripts/nav2_row_mission.py
   scripts/camera_mast_controller.py
   scripts/generate_camera_mast.py

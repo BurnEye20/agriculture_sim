@@ -4,3 +4,11 @@ log/
 *.pyc
 __pycache__/
 .vscode/
+
+# Ground Station build artifacts, dependencies & runtime trial data
+ground_station/frontend/node_modules/
+ground_station/frontend/dist/
+ground_station/backend/data/*.db
+ground_station/backend/data/*.db-*
+ground_station/backend/data/snapshots/*.jpg
+ground_station/backend/data/snapshots/*.png

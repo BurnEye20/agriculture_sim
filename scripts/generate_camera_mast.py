@@ -188,7 +188,9 @@ def sdf_camera_sensor(name, pose, optical_frame, topic_ns):
           </image>
           <clip>
             <near>0.05</near>
-            <far>15.0</far>
+            <!-- 0.98 m optical depth gate - sees only the current adjacent row (0.34-0.55 m),
+                 excluding background rows 2/3/4 (>= 1.09 m) and distant field grass -->
+            <far>0.98</far>
           </clip>
           <optical_frame_id>{optical_frame}</optical_frame_id>
           <camera_info_topic>/rover/{topic_ns}/camera_info</camera_info_topic>

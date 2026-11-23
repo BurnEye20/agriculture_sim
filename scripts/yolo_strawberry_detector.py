@@ -1,12 +1,19 @@
 #!/home/burneye228/ros2_ws/.venv/bin/python
 """
 ROS 2 node running YOLOv11 (best.pt) on both left and right rover cameras in Gazebo,
-coupled with a multi-cue Visual-Servoing Camera Mast Auto-Alignment controller:
-  1. YOLOv11 Strawberry & Leaf Detections (with corner/edge out-of-scope boost)
-  2. HSV + Excess-Green Foliage Canopy Area & Vertical Centroid Tracking
-  3. White Hydroponic Grow-Bag Trough Reference & No-Green Vertical Search Recovery
+coupled with:
+  1. Depth-gated current-row fast-path (skips YOLO completely on blank-sky outer camera
+     frames, doubling active-row frame rate + depth=1 QoS for zero stale-frame lag).
+  2. High-recall, low-false-positive detection filter (captures all 4 classes including
+     compact Anthracnose lesions >= 18x18 px; instant confirm at conf >= 0.58 and 2-of-3
+     temporal confirmation for moderate 0.45-0.58 detections).
+  3. Synchronized JPEG frame capture embedded in /rover/yolo_detections.
+  4. Cloud-immune current-row Visual-Servoing Camera Mast Auto-Alignment controller.
 """
 
+import base64
+from collections import deque
+import json
 import os
 import time
 from ament_index_python.packages import get_package_share_directory
@@ -14,26 +21,37 @@ import cv2
 import numpy as np
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import HistoryPolicy, QoSProfile, ReliabilityPolicy
 from sensor_msgs.msg import Image
-from std_msgs.msg import Float64
+from std_msgs.msg import Bool, Float64, String
+import torch
 from cv_bridge import CvBridge
 from ultralytics import YOLO
 import yaml
 
+# Prevent PyTorch OpenMP from starving Gazebo/RViz on 6-core CPUs
+torch.set_num_threads(3)
 
 DEFAULT_MODEL_PATH = (
     "/home/burneye228/ros2_ws/src/agriculture_sim/"
     "Final_Fruit_Dataset_YOLOv11/runs/detect/train4/weights/best.pt"
 )
 
-# Physical vertical field-of-view span at nominal row standoff distance D_row = 0.44 m
-# (VFOV = 1.0472 rad = 60 deg -> H_phys = 2 * 0.44 * tan(30 deg) = 0.508 m)
+# Physical vertical FOV span at nominal current-row standoff distance D_row = 0.44 m
 NOMINAL_VERTICAL_SPAN_M = 0.508
 
 # Normalized vertical image targets (v_norm = v / H in [0, 1], 0 = top, 1 = bottom)
-TARGET_V_YOLO = 0.50    # Center strawberry detections vertically in frame
-TARGET_V_GREEN = 0.58   # Foliage canopy hedge sits just below panel center
-TARGET_V_WHITE = 0.77   # White hydroponic grow-bag sits below green foliage
+TARGET_V_YOLO = 0.48    # Center foreground strawberry panels vertically in frame
+TARGET_V_GREEN = 0.58   # Current-row foliage canopy hedge sits just below panel center
+TARGET_V_WHITE = 0.76   # Current-row white hydroponic grow-bag sits below green foliage
+
+# Class colors (BGR)
+CLASS_COLORS_BGR = {
+    0: (38, 38, 220),   # Anthracnose (Red)
+    1: (6, 119, 217),   # Gray Mold (Amber)
+    2: (237, 58, 124),  # Powdery Mildew (Violet)
+    3: (105, 150, 5),   # Healthy (Emerald)
+}
 
 
 class YoloStrawberryDetector(Node):
@@ -41,29 +59,29 @@ class YoloStrawberryDetector(Node):
         super().__init__("yolo_strawberry_detector")
 
         self.declare_parameter("model_path", DEFAULT_MODEL_PATH)
-        self.declare_parameter("conf_threshold", 0.25)
+        self.declare_parameter("conf_threshold", 0.45)
+        self.declare_parameter("instant_conf_threshold", 0.58)
+        self.declare_parameter("imgsz", 480)
         self.declare_parameter("auto_align_mast", True)
 
         model_path = self.get_parameter("model_path").get_parameter_value().string_value
-        self.conf_threshold = (
-            self.get_parameter("conf_threshold").get_parameter_value().double_value
-        )
-        self.auto_align_mast = (
-            self.get_parameter("auto_align_mast").get_parameter_value().bool_value
-        )
+        self.conf_threshold = float(self.get_parameter("conf_threshold").value)
+        self.instant_conf_threshold = float(self.get_parameter("instant_conf_threshold").value)
+        self.imgsz = int(self.get_parameter("imgsz").value)
+        self.auto_align_mast = bool(self.get_parameter("auto_align_mast").value)
 
         # Load camera mast height bounds from config
         self.h_min = 0.7259
         self.h_max = 1.1050
-        self.current_mast_height = 1.0900
-        self.target_mast_height = 1.0900
+        self.current_mast_height = 0.9400
+        self.target_mast_height = 0.9400
         try:
             cfg_dir = os.path.join(
                 get_package_share_directory("agriculture_sim"), "config"
             )
             with open(os.path.join(cfg_dir, "camera_mast.yaml"), "r") as fh:
                 mast_cfg = yaml.safe_load(fh)["camera_mast"]
-                self.current_mast_height = float(mast_cfg.get("default_camera_height", 1.09))
+                self.current_mast_height = float(mast_cfg.get("default_camera_height", 0.94))
                 self.target_mast_height = self.current_mast_height
             with open(os.path.join(cfg_dir, "camera_mast_derived.yaml"), "r") as fh:
                 derived_cfg = yaml.safe_load(fh)["camera_mast_derived"]
@@ -86,32 +104,40 @@ class YoloStrawberryDetector(Node):
         self.scan_dir = -1.0
         self.align_status = "INIT"
 
-        # Subscribers for both opposite-facing rover cameras & mast height feedback
-        self.left_sub = self.create_subscription(
-            Image,
-            "/rover/left_camera/image_raw",
-            self.left_camera_callback,
-            10,
-        )
-        self.right_sub = self.create_subscription(
-            Image,
-            "/rover/right_camera/image_raw",
-            self.right_camera_callback,
-            10,
-        )
-        self.mast_height_sub = self.create_subscription(
-            Float64,
-            "/camera_mast/current_height",
-            self.mast_height_callback,
-            10,
+        # 3-frame rolling buffer for moderate-confidence (0.45-0.58) 2-of-3 confirmation
+        self.det_history = {
+            "left": deque(maxlen=3),
+            "right": deque(maxlen=3),
+        }
+
+        # Latest-frame-only QoS (depth=1) eliminates multi-second camera backlog lag
+        cam_qos = QoSProfile(
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1,
+            reliability=ReliabilityPolicy.RELIABLE,
         )
 
-        # Publishers for annotated YOLOv11 detection streams & mast height command
+        self.left_sub = self.create_subscription(
+            Image, "/rover/left_camera/image_raw", self.left_camera_callback, cam_qos
+        )
+        self.right_sub = self.create_subscription(
+            Image, "/rover/right_camera/image_raw", self.right_camera_callback, cam_qos
+        )
+        self.mast_height_sub = self.create_subscription(
+            Float64, "/camera_mast/current_height", self.mast_height_callback, 10
+        )
+        self.auto_align_sub = self.create_subscription(
+            Bool, "/camera_mast/auto_align", self.auto_align_callback, 10
+        )
+
         self.left_pub = self.create_publisher(
-            Image, "/rover/left_camera/detections/image_raw", 10
+            Image, "/rover/left_camera/detections/image_raw", 2
         )
         self.right_pub = self.create_publisher(
-            Image, "/rover/right_camera/detections/image_raw", 10
+            Image, "/rover/right_camera/detections/image_raw", 2
+        )
+        self.det_json_pub = self.create_publisher(
+            String, "/rover/yolo_detections", 10
         )
         self.mast_cmd_pub = self.create_publisher(
             Float64, "/camera_mast/set_height", 10
@@ -121,130 +147,158 @@ class YoloStrawberryDetector(Node):
         self.create_timer(0.20, self.update_mast_alignment)
 
         self.get_logger().info(
-            f"YOLOv11 Detector + Visual Mast Auto-Aligner ready "
-            f"(range [{self.h_min:.3f}, {self.h_max:.3f}] m)."
+            f"YOLOv11 Detector + Current-Row Mast Aligner ready "
+            f"(imgsz={self.imgsz}, conf>={self.conf_threshold:.2f}, instant>={self.instant_conf_threshold:.2f}, "
+            f"mast [{self.h_min:.3f}, {self.h_max:.3f}] m)."
         )
 
     def mast_height_callback(self, msg: Float64):
         self.current_mast_height = float(msg.data)
 
-    def analyze_aisle_view(self, frame: np.ndarray, boxes) -> dict:
+    def auto_align_callback(self, msg: Bool):
+        self.auto_align_mast = bool(msg.data)
+        self.align_status = "AUTO-ALIGN ON" if self.auto_align_mast else "MANUAL OVERRIDE"
+        self.get_logger().info(f"Camera mast auto_align_mast set to {self.auto_align_mast}")
+
+    def quick_has_row_geometry(self, frame: np.ndarray) -> bool:
         """
-        Analyze a 640x640 camera frame for:
-          1. YOLOv11 strawberry/leaf bounding boxes (including corner/edge out-of-scope check)
-          2. Green strawberry foliage canopy area & vertical centroid
-          3. White hydroponic grow-bag trough band (rejects outer-field background grass)
+        Fast (<0.5 ms) pre-check before YOLO inference: returns False on pure sky/cloud
+        frames (outer-facing camera with 0.98 m far-clip), saving ~50% CPU load.
         """
+        small = frame[::8, ::8]  # 80x80 downsample
+        b = small[:, :, 0].astype(np.int16)
+        g = small[:, :, 1].astype(np.int16)
+        r = small[:, :, 2].astype(np.int16)
+        # Non-sky pixels: either darker than bright sky/clouds OR green foliage
+        is_sky_or_cloud = (r > 135) & (g > 155) & (b > 165) & ((b - r) >= -10)
+        non_sky_frac = float((~is_sky_or_cloud).mean())
+        return non_sky_frac >= 0.04
+
+    def filter_foreground_detections(self, boxes, names: dict, w: int, h: int) -> list[dict]:
+        """
+        Filter detections for the depth-gated current row:
+          - Rejects tiny noise specks (<18x18 px or <360 px^2) while keeping real
+            Anthracnose lesions (26-60 px) and larger berries.
+          - Rejects extreme edge slivers (u < 0.04 or u > 0.96).
+        """
+        valid = []
+        if boxes is None or len(boxes) == 0:
+            return valid
+
+        xyxy_arr = boxes.xyxy.cpu().numpy()
+        conf_arr = boxes.conf.cpu().numpy()
+        cls_arr = boxes.cls.cpu().numpy()
+
+        for (x1, y1, x2, y2), conf, cls_id in zip(xyxy_arr, conf_arr, cls_arr):
+            cid = int(cls_id)
+            c = float(conf)
+            bw = float(x2 - x1)
+            bh = float(y2 - y1)
+            area = bw * bh
+            u_c = 0.5 * (x1 + x2) / w
+            v_c = 0.5 * (y1 + y2) / h
+
+            if bw < 18.0 or bh < 18.0 or area < 360.0:
+                continue
+            aspect = bw / max(1.0, bh)
+            if aspect < 0.20 or aspect > 5.0:
+                continue
+            if u_c < 0.04 or u_c > 0.96:
+                continue
+
+            valid.append(
+                {
+                    "class_id": cid,
+                    "class_name": str(names.get(cid, f"cls_{cid}")),
+                    "confidence": round(c, 3),
+                    "bbox": [round(float(x1), 1), round(float(y1), 1), round(float(x2), 1), round(float(y2), 1)],
+                    "u_c": u_c,
+                    "v_c": v_c,
+                    "instant_ok": c >= self.instant_conf_threshold,
+                }
+            )
+        return valid
+
+    def analyze_aisle_view(self, frame: np.ndarray, valid_dets: list[dict]) -> dict:
         h, w = frame.shape[:2]
         x_margin = int(0.05 * w)
         roi = frame[:, x_margin : w - x_margin]
-        rh, rw = roi.shape[:2]
+        rh, _rw = roi.shape[:2]
 
-        # --- 1. YOLOv11 Detections & Corner/Edge Check ---
-        num_dets = 0
+        num_dets = len(valid_dets)
         v_yolo_norm = None
         has_corner_det = False
-        yolo_conf_sum = 0.0
-
-        if boxes is not None and len(boxes) > 0:
-            xyxy = boxes.xyxy.cpu().numpy()
-            confs = boxes.conf.cpu().numpy()
-            num_dets = len(xyxy)
-            weighted_v = 0.0
-            for (x1, y1, x2, y2), conf in zip(xyxy, confs):
-                u_c = 0.5 * (x1 + x2) / w
-                v_c = 0.5 * (y1 + y2) / h
-
-                # Check if strawberry is in the corner or clipped at top/bottom edge (out of scope)
-                clipped_top = y1 <= 14.0
-                clipped_bot = y2 >= (h - 14.0)
-                in_vertical_edge = (v_c < 0.26) or (v_c > 0.74)
-                in_corner = ((u_c < 0.24) or (u_c > 0.76)) and (
-                    (v_c < 0.32) or (v_c > 0.68)
-                )
-                if clipped_top or clipped_bot or in_vertical_edge or in_corner:
+        if num_dets > 0:
+            w_sum = 0.0
+            v_sum = 0.0
+            for d in valid_dets:
+                _x1, y1, _x2, y2 = d["bbox"]
+                v_c = d["v_c"]
+                u_c = d["u_c"]
+                clipped_top = y1 <= 16.0
+                clipped_bot = y2 >= (h - 16.0)
+                in_v_edge = (v_c < 0.24) or (v_c > 0.76)
+                in_corner = ((u_c < 0.22) or (u_c > 0.78)) and ((v_c < 0.30) or (v_c > 0.70))
+                if clipped_top or clipped_bot or in_v_edge or in_corner:
                     has_corner_det = True
-
-                # Compensate for clipped bounding boxes extending beyond top/bottom frame edge
                 if clipped_top:
                     v_c = max(0.02, v_c - 0.08)
                 elif clipped_bot:
                     v_c = min(0.98, v_c + 0.08)
+                v_sum += d["confidence"] * v_c
+                w_sum += d["confidence"]
+            if w_sum > 1e-6:
+                v_yolo_norm = v_sum / w_sum
 
-                weighted_v += float(conf) * v_c
-                yolo_conf_sum += float(conf)
-
-            if yolo_conf_sum > 1e-6:
-                v_yolo_norm = weighted_v / yolo_conf_sum
-
-        # --- 2. HSV & Channel Segmentation for White Grow-Bag Trough, Sky, Floor, and Green Canopy ---
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
         h_ch, s_ch, v_ch = hsv[:, :, 0], hsv[:, :, 1], hsv[:, :, 2]
         b_ch = roi[:, :, 0].astype(np.int16)
         g_ch = roi[:, :, 1].astype(np.int16)
         r_ch = roi[:, :, 2].astype(np.int16)
 
-        # Warm-white hydroponic grow-bag trough: bright, low saturation, neutral B-R (rejects blue sky)
-        white_raw = (s_ch <= 40) & (v_ch >= 162) & (np.abs(b_ch - r_ch) <= 22)
-        row_white_frac = white_raw.mean(axis=1)
-        valid_white_rows = row_white_frac >= 0.16
-        white_mask = white_raw & valid_white_rows[:, None]
-        white_ratio = float(white_mask.mean())
-
-        v_white_norm = None
-        v_white_top_norm = None
-        if white_ratio >= 0.008:
-            wy = np.where(white_mask)[0]
-            v_white_norm = float(wy.mean()) / rh
-            v_white_top_norm = float(np.percentile(wy, 10)) / rh
-
-        # Sky & dark greenhouse floor masks (for out-of-scope recovery)
-        sky_mask = ((b_ch - r_ch) > 28) & (v_ch > 165)
-        sky_top_ratio = float(sky_mask[: int(0.45 * rh), :].mean())
-        sky_ratio = float(sky_mask.mean())
+        blue_sky = ((b_ch - r_ch) > 20) & (v_ch > 150)
+        sky_ratio = float(blue_sky.mean())
         floor_mask = (v_ch < 105) & (s_ch < 110)
         floor_ratio = float(floor_mask.mean())
 
-        # Green foliage mask (HSV + Excess Green)
         green_raw = (
-            (h_ch >= 34)
-            & (h_ch <= 86)
-            & (s_ch >= 72)
-            & (v_ch >= 48)
-            & ((g_ch - np.maximum(r_ch, b_ch)) >= 12)
+            (h_ch >= 33)
+            & (h_ch <= 88)
+            & (s_ch >= 65)
+            & (v_ch >= 42)
+            & ((g_ch - np.maximum(r_ch, b_ch)) >= 10)
         )
+        row_green_frac = green_raw.mean(axis=1)
+        valid_green_rows = row_green_frac >= 0.18
+        green_band_mask = green_raw & valid_green_rows[:, None]
+        green_ratio = float(green_band_mask.mean())
 
-        # If the white grow-bag trough is visible, only keep green foliage above/on the trough
-        # (cleanly rejects any distant field grass visible underneath the steel stands)
-        if v_white_norm is not None:
-            cutoff_row = min(rh, int((v_white_norm + 0.05) * rh))
-            green_mask = np.zeros_like(green_raw)
-            green_mask[:cutoff_row, :] = green_raw[:cutoff_row, :]
-        else:
-            green_mask = green_raw
-
-        green_ratio = float(green_mask.mean())
         v_green_norm = None
-        if green_ratio >= 0.004:
-            gy = np.where(green_mask)[0]
+        if green_ratio >= 0.006:
+            gy = np.where(green_band_mask)[0]
             v_green_norm = float(gy.mean()) / rh
 
-        # --- 3. Active Strawberry Row Gate (Rejects Open-Field Grass on Outer Camera) ---
-        # A camera faces an active strawberry row if it sees YOLO detections OR the white
-        # hydroponic grow-bag trough OR close-up canopy without open-sky horizon grass.
-        is_open_field_grass = (
-            (num_dets == 0)
-            and (white_ratio < 0.008)
-            and (sky_top_ratio > 0.50)
-        )
-        is_active_row = (not is_open_field_grass) and (
-            (num_dets > 0) or (white_ratio >= 0.008) or (green_ratio >= 0.025)
+        white_raw = (s_ch <= 34) & (v_ch >= 172) & (np.abs(b_ch - r_ch) <= 18)
+        row_white_frac = white_raw.mean(axis=1)
+        valid_white_rows = row_white_frac >= 0.50
+        sky_cutoff_px = int((v_green_norm if v_green_norm is not None else 0.32) * rh)
+        valid_white_rows[:sky_cutoff_px] = False
+        valid_white_rows &= blue_sky.mean(axis=1) < 0.05
+
+        white_mask = white_raw & valid_white_rows[:, None]
+        white_ratio = float(white_mask.mean())
+        v_white_norm = None
+        if white_ratio >= 0.015:
+            wy = np.where(white_mask)[0]
+            v_white_norm = float(wy.mean()) / rh
+
+        is_active_row = (
+            (num_dets > 0) or (green_ratio >= 0.015) or (white_ratio >= 0.020)
         )
 
-        # --- 4. Compute Height Error delta_z (m) (+ = Move Mast UP, - = Move Mast DOWN) ---
         delta_z = 0.0
         confidence = 0.0
-        mode = "IDLE (OUTER FIELD)"
+        mode = "IDLE (NO ROW)"
 
         if is_active_row:
             dz_yolo = (
@@ -265,7 +319,7 @@ class YoloStrawberryDetector(Node):
 
             if dz_yolo is not None and dz_green is not None:
                 if has_corner_det:
-                    delta_z = 1.45 * (0.75 * dz_yolo + 0.25 * dz_green)
+                    delta_z = 1.40 * (0.75 * dz_yolo + 0.25 * dz_green)
                     mode = "CORNER DET -> ALIGN"
                     confidence = 1.0
                 else:
@@ -273,26 +327,20 @@ class YoloStrawberryDetector(Node):
                     mode = "YOLO+GREEN LOCK"
                     confidence = 0.95
             elif dz_yolo is not None:
-                boost = 1.45 if has_corner_det else 1.0
+                boost = 1.40 if has_corner_det else 1.0
                 delta_z = boost * dz_yolo
                 mode = "CORNER DET -> ALIGN" if has_corner_det else "YOLO TRACK"
                 confidence = 0.90
-            elif dz_green is not None and green_ratio >= 0.008:
-                # If green area is very small (<3.5%), canopy is near edge -> boost step
-                low_green_boost = 1.35 if green_ratio < 0.035 else 1.0
+            elif dz_green is not None and green_ratio >= 0.015:
+                low_green_boost = 1.30 if green_ratio < 0.04 else 1.0
                 if dz_white is not None:
                     delta_z = low_green_boost * (0.75 * dz_green + 0.25 * dz_white)
                 else:
                     delta_z = low_green_boost * dz_green
-                mode = (
-                    "LOW GREEN -> SEEK"
-                    if green_ratio < 0.035
-                    else "GREEN CANOPY LOCK"
-                )
-                confidence = min(0.85, 0.40 + green_ratio * 3.0)
+                mode = "LOW GREEN -> SEEK" if green_ratio < 0.04 else "GREEN CANOPY LOCK"
+                confidence = min(0.88, 0.45 + green_ratio * 2.5)
             elif dz_white is not None:
-                # No green leaves and no strawberries visible, but white trough is in view
-                delta_z = 1.25 * dz_white
+                delta_z = 1.20 * dz_white
                 mode = "NO GREEN -> TROUGH SEEK"
                 confidence = 0.60
 
@@ -314,7 +362,6 @@ class YoloStrawberryDetector(Node):
         }
 
     def update_mast_alignment(self):
-        """5 Hz control loop that fuses left & right camera visual cues and commands mast height."""
         if not self.auto_align_mast:
             return
 
@@ -333,41 +380,34 @@ class YoloStrawberryDetector(Node):
             any_corner = any(c["has_corner_det"] for c in active_cues)
             best_cue = max(active_cues, key=lambda c: c["confidence"])
 
-            # Deadband when well-aligned and no strawberry is in a corner/edge
-            if abs(fused_dz) < 0.008 and not any_corner:
+            if abs(fused_dz) < 0.010 and not any_corner:
                 self.align_status = f"ALIGNED ({best_cue['mode']})"
                 return
 
-            # Damped proportional visual-servoing update with EMA smoothing
-            kp = 0.65 if any_corner else 0.50
-            step = max(-0.045, min(0.045, kp * fused_dz))
+            kp = 0.60 if any_corner else 0.45
+            step = max(-0.040, min(0.040, kp * fused_dz))
             raw_desired = self.current_mast_height + step
             clamped_desired = max(self.h_min, min(self.h_max, raw_desired))
-            self.target_mast_height = (
-                0.35 * self.target_mast_height + 0.65 * clamped_desired
-            )
+            self.target_mast_height = 0.35 * self.target_mast_height + 0.65 * clamped_desired
             direction_str = "UP" if fused_dz > 0 else "DOWN"
             self.align_status = f"{best_cue['mode']} [{direction_str}]"
             self.mast_cmd_pub.publish(Float64(data=float(self.target_mast_height)))
             return
 
-        # If no active row cues for > 2.5s, perform intelligent vertical search
-        if (now - self.last_active_row_time) > 2.5:
-            # Check sky vs dark floor dominance across available cameras
+        if (now - self.last_active_row_time) > 3.0:
             recent_obs = [
-                obs
-                for obs in self.cam_obs.values()
+                obs for obs in self.cam_obs.values()
                 if obs is not None and (now - obs["time"]) < 1.0
             ]
             if recent_obs:
                 avg_floor = sum(o["floor_ratio"] for o in recent_obs) / len(recent_obs)
                 avg_sky = sum(o["sky_ratio"] for o in recent_obs) / len(recent_obs)
-                if avg_floor > 0.52:
-                    self.scan_dir = 1.0   # Looking too low at dark floor -> scan UP
-                elif avg_sky > 0.58:
-                    self.scan_dir = -1.0  # Looking too high at sky -> scan DOWN
+                if avg_floor > 0.55:
+                    self.scan_dir = 1.0
+                elif avg_sky > 0.60:
+                    self.scan_dir = -1.0
 
-            next_h = self.target_mast_height + self.scan_dir * 0.010
+            next_h = self.target_mast_height + self.scan_dir * 0.008
             if next_h >= self.h_max:
                 next_h = self.h_max
                 self.scan_dir = -1.0
@@ -376,62 +416,79 @@ class YoloStrawberryDetector(Node):
                 self.scan_dir = 1.0
 
             self.target_mast_height = next_h
-            scan_str = "UP" if self.scan_dir > 0 else "DOWN"
-            self.align_status = f"NO GREEN -> SCAN {scan_str}"
+            self.align_status = f"NO ROW -> SCAN {'UP' if self.scan_dir > 0 else 'DOWN'}"
             self.mast_cmd_pub.publish(Float64(data=float(self.target_mast_height)))
         else:
             self.align_status = "HOLDING HEIGHT"
 
-    def run_detection(self, msg: Image, camera_label: str, side_key: str) -> Image:
+    def run_detection(self, msg: Image, camera_label: str, side_key: str, pub) -> None:
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
-        results = self.model.predict(
-            source=frame,
-            imgsz=640,
-            conf=self.conf_threshold,
-            verbose=False,
-        )
-        boxes = results[0].boxes
-        obs = self.analyze_aisle_view(frame, boxes)
+        h, w = frame.shape[:2]
+
+        # Fast-path: skip expensive YOLO inference when outer camera sees pure sky
+        if self.quick_has_row_geometry(frame):
+            results = self.model.predict(
+                source=frame,
+                imgsz=self.imgsz,
+                conf=self.conf_threshold,
+                verbose=False,
+            )
+            names = results[0].names or {}
+            valid_dets = self.filter_foreground_detections(results[0].boxes, names, w, h)
+        else:
+            valid_dets = []
+
+        obs = self.analyze_aisle_view(frame, valid_dets)
         self.cam_obs[side_key] = obs
 
-        annotated = results[0].plot(line_width=2, font_size=12)
-        h, w = annotated.shape[:2]
-
-        # Draw visual-servoing target alignment guides when facing an active row
-        if obs["is_active_row"]:
-            y_target_yolo = int(TARGET_V_YOLO * h)
-            cv2.line(
-                annotated, (0, y_target_yolo), (w, y_target_yolo), (180, 180, 180), 1, cv2.LINE_AA
+        annotated = frame.copy()
+        for d in valid_dets:
+            x1, y1, x2, y2 = [int(round(v)) for v in d["bbox"]]
+            color = CLASS_COLORS_BGR.get(d["class_id"], (80, 220, 255))
+            thickness = 3 if d["instant_ok"] else 2
+            cv2.rectangle(annotated, (x1, y1), (x2, y2), color, thickness)
+            tag = f"{d['class_name']} {d['confidence']:.2f}"
+            (tw, th), _ = cv2.getTextSize(tag, cv2.FONT_HERSHEY_SIMPLEX, 0.52, 1)
+            cv2.rectangle(
+                annotated,
+                (x1, max(56, y1 - th - 8)),
+                (x1 + tw + 8, max(56 + th + 8, y1)),
+                color,
+                -1,
             )
-            if obs["v_green_norm"] is not None:
-                y_green = int(obs["v_green_norm"] * h)
-                cv2.circle(annotated, (w - 28, y_green), 7, (40, 240, 80), -1, cv2.LINE_AA)
-            if obs["v_yolo_norm"] is not None:
-                y_yolo = int(obs["v_yolo_norm"] * h)
-                color_yolo = (0, 140, 255) if obs["has_corner_det"] else (80, 220, 255)
-                cv2.circle(annotated, (w - 28, y_yolo), 7, color_yolo, 2, cv2.LINE_AA)
+            cv2.putText(
+                annotated,
+                tag,
+                (x1 + 4, max(56 + th + 4, y1 - 4)),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.52,
+                (255, 255, 255),
+                1,
+                cv2.LINE_AA,
+            )
 
-        # Draw two-line HUD overlay with detection count, green leaf %, and mast auto-alignment state
-        num_dets = obs["num_dets"]
+        if obs["is_active_row"]:
+            y_target = int(TARGET_V_YOLO * h)
+            cv2.line(annotated, (0, y_target), (w, y_target), (190, 190, 190), 1, cv2.LINE_AA)
+            if obs["v_green_norm"] is not None:
+                cv2.circle(
+                    annotated, (w - 26, int(obs["v_green_norm"] * h)), 7, (40, 240, 80), -1, cv2.LINE_AA
+                )
+            if obs["v_yolo_norm"] is not None:
+                col = (0, 140, 255) if obs["has_corner_det"] else (80, 220, 255)
+                cv2.circle(
+                    annotated, (w - 26, int(obs["v_yolo_norm"] * h)), 7, col, 2, cv2.LINE_AA
+                )
+
         green_pct = 100.0 * obs["green_ratio"]
-        header_line1 = (
-            f"{camera_label} | Dets: {num_dets} | Green: {green_pct:.1f}%"
-        )
+        header_line1 = f"{camera_label} | Dets: {len(valid_dets)} | Green: {green_pct:.1f}%"
         header_line2 = (
             f"Mast: {self.current_mast_height:.3f}m -> {self.target_mast_height:.3f}m "
-            f"[{ obs['mode'] if obs['is_active_row'] else self.align_status }]"
+            f"[{obs['mode'] if obs['is_active_row'] else self.align_status}]"
         )
-
-        cv2.rectangle(annotated, (0, 0), (w, 54), (20, 20, 20), -1)
+        cv2.rectangle(annotated, (0, 0), (w, 54), (18, 22, 28), -1)
         cv2.putText(
-            annotated,
-            header_line1,
-            (10, 21),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            0.54,
-            (80, 255, 120),
-            2,
-            cv2.LINE_AA,
+            annotated, header_line1, (10, 21), cv2.FONT_HERSHEY_SIMPLEX, 0.54, (80, 255, 120), 2, cv2.LINE_AA
         )
         status_color = (
             (60, 180, 255)
@@ -439,27 +496,50 @@ class YoloStrawberryDetector(Node):
             else ((120, 230, 255) if obs["is_active_row"] else (180, 180, 180))
         )
         cv2.putText(
-            annotated,
-            header_line2,
-            (10, 44),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            0.48,
-            status_color,
-            1,
-            cv2.LINE_AA,
+            annotated, header_line2, (10, 44), cv2.FONT_HERSHEY_SIMPLEX, 0.46, status_color, 1, cv2.LINE_AA
         )
 
         out_msg = self.bridge.cv2_to_imgmsg(annotated, encoding="bgr8")
         out_msg.header = msg.header
-        return out_msg
+        pub.publish(out_msg)
+
+        # --- Smart Confidence-Adaptive Confirmation ---
+        # - Strong detections (conf >= 0.58): instant 1-frame confirmation (zero missed panels!)
+        # - Moderate detections (0.45-0.58): 2-of-3 frame temporal confirmation (zero weak flickers!)
+        present_classes = {d["class_id"] for d in valid_dets}
+        hist = self.det_history[side_key]
+        hist.append(present_classes)
+
+        confirmed = []
+        for d in valid_dets:
+            cid = d["class_id"]
+            if d["instant_ok"] or sum(1 for s in hist if cid in s) >= 2:
+                confirmed.append(
+                    {
+                        "class_id": cid,
+                        "class_name": d["class_name"],
+                        "confidence": d["confidence"],
+                        "bbox": d["bbox"],
+                    }
+                )
+
+        if confirmed:
+            ok_jpg, enc = cv2.imencode(".jpg", annotated, [int(cv2.IMWRITE_JPEG_QUALITY), 86])
+            img_b64 = base64.b64encode(enc.tobytes()).decode("ascii") if ok_jpg else ""
+            payload = {
+                "camera": side_key,
+                "timestamp": time.time(),
+                "mast_height_m": round(float(self.current_mast_height), 4),
+                "detections": confirmed,
+                "image_jpeg_b64": img_b64,
+            }
+            self.det_json_pub.publish(String(data=json.dumps(payload)))
 
     def left_camera_callback(self, msg: Image):
-        out_msg = self.run_detection(msg, "LEFT CAM", "left")
-        self.left_pub.publish(out_msg)
+        self.run_detection(msg, "LEFT CAM", "left", self.left_pub)
 
     def right_camera_callback(self, msg: Image):
-        out_msg = self.run_detection(msg, "RIGHT CAM", "right")
-        self.right_pub.publish(out_msg)
+        self.run_detection(msg, "RIGHT CAM", "right", self.right_pub)
 
 
 def main(args=None):
